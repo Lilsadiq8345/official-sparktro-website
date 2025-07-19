@@ -1,0 +1,148 @@
+/* Import Work Sans from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap');
+
+/* Import Good Times (local or via @font-face if available) */
+@font-face {
+  font-family: 'Good Times';
+  src: url('/assets/fonts/GoodTimesRg-Regular.woff2') format('woff2'),
+       url('/assets/fonts/GoodTimesRg-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for Sparktro Brand (from Figma) */
+:root {
+  --color-primary: #0A97B0;
+  --color-yellow: #FDCB02;
+  --color-black: #1E2533;
+  --color-subtext: #5A556E;
+  --color-white: #FFFFFF;
+  --color-active: #0DC46E;
+  --color-green: #1D9993;
+  --color-fill: #8D97A3;
+
+  /* For Tailwind shades, fallback to primary for all */
+  --color-primary-50: #e6f7fa;
+  --color-primary-100: #cceff5;
+  --color-primary-200: #99dfee;
+  --color-primary-300: #66cfe8;
+  --color-primary-400: #33bfe1;
+  --color-primary-500: #0A97B0;
+  --color-primary-600: #087a8e;
+  --color-primary-700: #065c6b;
+  --color-primary-800: #043e49;
+  --color-primary-900: #022026;
+
+  --color-secondary-50: #f8fafc;
+  --color-secondary-100: #f1f5f9;
+  --color-secondary-200: #e2e8f0;
+  --color-secondary-300: #cbd5e1;
+  --color-secondary-400: #94a3b8;
+  --color-secondary-500: #64748b;
+  --color-secondary-600: #475569;
+  --color-secondary-700: #334155;
+  --color-secondary-800: #1e293b;
+  --color-secondary-900: #0f172a;
+
+  /* Typography */
+  --font-sans: 'Work Sans', Arial, sans-serif;
+  --font-heading: 'Good Times', 'Work Sans', Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary-50: #022026;
+    --color-primary-100: #043e49;
+    --color-primary-200: #065c6b;
+    --color-primary-300: #087a8e;
+    --color-primary-400: #0A97B0;
+    --color-primary-500: #33bfe1;
+    --color-primary-600: #66cfe8;
+    --color-primary-700: #99dfee;
+    --color-primary-800: #cceff5;
+    --color-primary-900: #e6f7fa;
+  }
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+  body {
+    color: var(--color-black);
+    background: var(--color-white);
+  }
+  h1, h2, h3, h4, h5, h6, .font-heading {
+    font-family: var(--font-heading);
+    color: var(--color-black);
+  }
+}
+
+/* Component styles */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
+  }
+
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary-100 text-secondary-900 hover:bg-secondary-200;
+  }
+
+  .btn-outline {
+    @apply border border-secondary-200 bg-transparent hover:bg-secondary-100;
+  }
+
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+    max-width: 1200px;
+  }
+
+  .section {
+    @apply py-16 lg:py-24;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6 border border-secondary-200;
+  }
+
+  .input {
+    @apply flex h-10 w-full rounded-md border border-secondary-200 bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-secondary-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+}
+
+/* Utility styles */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
+  }
+
+  .glass {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.3s ease-out;
+  }
+} 

@@ -1,0 +1,28 @@
+{
+  "name": "official-sparktro-website",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lilsadiq8345/official-sparktro-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Lilsadiq8345/official-sparktro-website/issues"
+  },
+  "homepage": "https://github.com/Lilsadiq8345/official-sparktro-website#readme",
+  "devDependencies": {
+    "@vitejs/plugin-legacy": "^6.1.1",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11",
+    "vite": "^6.3.5"
+  }
+}
