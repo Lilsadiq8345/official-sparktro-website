@@ -2,6 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Ensure sticky header works properly */
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Add padding to body to account for fixed header */
+body {
+  padding-top: 80px; /* Match the header height */
+}
+
+/* Ensure header wrapper doesn't interfere with sticky positioning */
+[data-include*="header.html"] {
+  position: static;
+  z-index: 1000;
+  width: 100%;
+}
+
 /* 2. Design Tokens (Light) --------------------------------------------- */
 :root {
   /* Brand Core - Exact Figma Colors */
@@ -108,14 +128,15 @@
   /* Header base background */
   --header-bg: #0b0b0b;
 
-  /* Header Custom Properties (adjust these to match Figma EXACTLY) */
-  --header-height: 80px;          /* If Figma shows 80px; change if 72 / 84 etc */
-  --header-gap: 40px;             /* Space between main nav items (e.g. 32 / 36 / 40) */
-  --header-pad-sm: 16px;          /* Horizontal padding small screens */
-  --header-pad-md: 32px;          /* ≥ sm / md */
-  --header-pad-lg: 48px;          /* ≥ lg */
-  --header-pad-xl: 120px;         /* ≥ xl (Figma often uses 120) */
-  --header-pad-2xl: 240px;        /* ≥ 2xl */
+  /* Header Custom Properties  */
+
+  --header-height: 80px;         
+  --header-gap: 40px;            
+  --header-pad-sm: 16px;       
+  --header-pad-md: 32px;      
+  --header-pad-lg: 48px;        
+  --header-pad-xl: 120px;        
+  --header-pad-2xl: 240px;      
   --header-underline-thickness: 2px;
   --header-underline-radius: 2px;
   --dropdown-min-width: 220px;
@@ -133,6 +154,14 @@
   --mobile-overlay-bg: rgba(0,0,0,0.60);
 }
 
+/* Antialiased class */
+.antialiased {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #fff;
+}
+
 /* --------------- Background Gradient --------------- */
 .bg-header-gradient {
   background:
@@ -146,7 +175,8 @@
 /* --------------------------- HEADER (PIXEL PRECISION) --------------------------- */
 
 .site-header {
-  position: sticky;
+  /* Test with fixed positioning first */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
