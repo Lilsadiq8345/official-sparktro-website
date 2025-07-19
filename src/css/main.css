@@ -1,7 +1,9 @@
-/* Import Work Sans from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Import Good Times (local or via @font-face if available) */
+/* 1. Fonts -------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap');
 @font-face {
   font-family: 'Good Times';
   src: url('/assets/fonts/GoodTimesRg-Regular.woff2') format('woff2'),
@@ -11,13 +13,10 @@
   font-display: swap;
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* CSS Variables for Sparktro Brand (from Figma) */
+/* 2. Design Tokens (Light) --------------------------------------------- */
 :root {
-  --color-primary: #0A97B0;
+  /* Brand Core */
+  --color-primary: #0A97B0; /* Brand 500 */
   --color-yellow: #FDCB02;
   --color-black: #1E2533;
   --color-subtext: #5A556E;
@@ -26,123 +25,174 @@
   --color-green: #1D9993;
   --color-fill: #8D97A3;
 
-  /* For Tailwind shades, fallback to primary for all */
-  --color-primary-50: #e6f7fa;
-  --color-primary-100: #cceff5;
-  --color-primary-200: #99dfee;
-  --color-primary-300: #66cfe8;
-  --color-primary-400: #33bfe1;
-  --color-primary-500: #0A97B0;
-  --color-primary-600: #087a8e;
-  --color-primary-700: #065c6b;
-  --color-primary-800: #043e49;
-  --color-primary-900: #022026;
+  /* Gradient (Header bottom line spectrum from screenshot) */
+  --grad-red:   #FF6363;
+  --grad-blue:  #0482F9;
+  --grad-yellow:#F2D519;
+  --grad-slate: #7996B8;
+  --grad-green: #6BB54A;
 
-  --color-secondary-50: #f8fafc;
-  --color-secondary-100: #f1f5f9;
-  --color-secondary-200: #e2e8f0;
-  --color-secondary-300: #cbd5e1;
-  --color-secondary-400: #94a3b8;
-  --color-secondary-500: #64748b;
-  --color-secondary-600: #475569;
-  --color-secondary-700: #334155;
-  --color-secondary-800: #1e293b;
-  --color-secondary-900: #0f172a;
+  /* Brand scale */
+  --color-brand-50:  #e6f7fa;
+  --color-brand-100: #cceff5;
+  --color-brand-200: #99dfee;
+  --color-brand-300: #66cfe8;
+  --color-brand-400: #33bfe1;
+  --color-brand-500: #0A97B0;
+  --color-brand-600: #087a8e;
+  --color-brand-700: #065c6b;
+  --color-brand-800: #043e49;
+  --color-brand-900: #022026;
+  --color-brand-950: #011013;
 
-  /* Typography */
+  /* Neutral / Gray */
+  --color-gray-50:  #f9fafb;
+  --color-gray-100: #f2f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-300: #d1d5db;
+  --color-gray-400: #9ca3af;
+  --color-gray-500: #6b7280;
+  --color-gray-600: #4b5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1f2937;
+  --color-gray-900: #111827;
+  --color-gray-950: #0b0f17;
+
+  /* Semantic */
+  --color-success-500: #16a34a;
+  --color-success-600: #12833c;
+  --color-warning-500: #f59e0b;
+  --color-warning-600: #d28102;
+  --color-danger-500:  #ef4444;
+  --color-danger-600:  #dc2626;
+  --color-info-500:    #0ea5e9;
+  --color-info-600:    #0284c7;
+
+  /* Accent */
+  --color-accent-500: #8b5cf6;
+  --color-accent-600: #6d28d9;
+
+  /* Surfaces */
+  --color-bg:        #ffffff;
+  --color-bg-alt:    #f5f7fa;
+  --color-surface:   #ffffff;
+  --color-surface-2: #f2f4f7;
+  --color-border:    #e5e7eb;
+  --color-border-strong: #d1d5db;
+
+  /* Text */
+  --color-text:          #111827;
+  --color-text-soft:     #4b5563;
+  --color-text-faint:    #6b7280;
+  --color-text-inverse:  #ffffff;
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08),0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1),0 2px 4px -1px rgba(0,0,0,0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04);
+  --shadow-glow: 0 0 0 3px rgba(30,120,255,0.35);
+
+  /* Radius */
+  --radius-xs: 2px; --radius-sm: 4px; --radius: 6px; --radius-md: 8px; --radius-lg: 12px; --radius-xl: 16px; --radius-2xl: 24px; --radius-full: 9999px;
+
+  /* Spacing tokens (optional fine increments) */
+  --space-0_5: 2px; --space-1: 4px; --space-1_5: 6px; --space-2: 8px; --space-2_5: 10px; --space-3: 12px; --space-3_5: 14px; --space-4: 16px; --space-5: 20px; --space-6: 24px; --space-7: 28px; --space-8: 32px; --space-9: 36px; --space-10: 40px; --space-11: 44px; --space-12: 48px; --space-14: 56px; --space-16: 64px; --space-20: 80px; --space-24: 96px; --space-28: 112px; --space-32: 128px; --space-40: 160px; --space-48: 192px; --space-56: 224px; --space-64: 256px;
+
+  /* Timing */
+  --ease-out: cubic-bezier(.16,1,.3,1); --ease-in: cubic-bezier(.7,0,.84,0); --ease-in-out: cubic-bezier(.4,0,.2,1);
+  --duration-fast: 120ms; --duration: 200ms; --duration-slow: 320ms;
+
+  /* Typography families */
   --font-sans: 'Work Sans', Arial, sans-serif;
   --font-heading: 'Good Times', 'Work Sans', Arial, sans-serif;
+
+  /* Header background token */
+  --header-bg: #0b0b0b;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-primary-50: #022026;
-    --color-primary-100: #043e49;
-    --color-primary-200: #065c6b;
-    --color-primary-300: #087a8e;
-    --color-primary-400: #0A97B0;
-    --color-primary-500: #33bfe1;
-    --color-primary-600: #66cfe8;
-    --color-primary-700: #99dfee;
-    --color-primary-800: #cceff5;
-    --color-primary-900: #e6f7fa;
-  }
+/* 3. Dark Theme --------------------------------------------------------- */
+[data-theme="dark"] {
+  --color-bg:        #0f141b;
+  --color-bg-alt:    #161d27;
+  --color-surface:   #1c2531;
+  --color-surface-2: #242f3d;
+  --color-border:    #2f3a48;
+  --color-border-strong: #3d4b5b;
+  --color-text:          #f5f7fa;
+  --color-text-soft:     #c3ced9;
+  --color-text-faint:    #94a3b8;
+  --color-text-inverse:  #0f141b;
+  --shadow-xs: 0 1px 2px rgba(0,0,0,0.6);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.5),0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.55),0 2px 4px -1px rgba(0,0,0,0.45);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.6),0 4px 6px -2px rgba(0,0,0,0.45);
+  --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.65),0 10px 10px -5px rgba(0,0,0,0.5);
+  --shadow-glow: 0 0 0 3px rgba(30,120,255,0.55);
 }
 
+/* 4. Base Layer --------------------------------------------------------- */
 @layer base {
-  html {
-    font-family: var(--font-sans);
-    scroll-behavior: smooth;
-  }
-  body {
-    color: var(--color-black);
-    background: var(--color-white);
-  }
-  h1, h2, h3, h4, h5, h6, .font-heading {
-    font-family: var(--font-heading);
-    color: var(--color-black);
-  }
+  html { font-feature-settings: "ss01" on, "cv02" on; }
+  body { font-family: var(--font-sans); color: var(--color-text); background: var(--color-bg); -webkit-font-smoothing: antialiased; }
+  ::selection { background: var(--color-brand-500); color: var(--color-text-inverse); }
+  a { @apply text-brand-600 hover:text-brand-500 transition-colors; }
+  h1,h2,h3,h4,h5,h6 { font-family: var(--font-heading); font-weight:600; letter-spacing:-.02em; }
+  h1 { @apply text-4xl md:text-5xl leading-tight; }
+  h2 { @apply text-3xl md:text-4xl leading-snug; }
+  h3 { @apply text-2xl md:text-3xl leading-snug; }
+  h4 { @apply text-xl md:text-2xl; }
+  h5 { @apply text-lg font-semibold; }
+  h6 { @apply text-base font-semibold uppercase tracking-wide; }
+  p { @apply leading-relaxed text-gray-600 dark:text-gray-300; }
+  strong { @apply font-semibold text-gray-900 dark:text-gray-100; }
+  code { @apply font-mono text-sm bg-gray-100 dark:bg-surface-2 px-1.5 py-0.5 rounded; }
 }
 
-/* Component styles */
+/* 5. Components Layer --------------------------------------------------- */
 @layer components {
-  .btn {
-    @apply inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background;
-  }
+  .btn { @apply inline-flex items-center justify-center gap-2 font-medium rounded-md px-4 py-2 text-sm transition-colors focus:outline-none focus-visible:ring-2 ring-offset-2 ring-offset-bg disabled:opacity-50 disabled:pointer-events-none; }
+  .btn-primary { @apply btn bg-brand-600 text-white hover:bg-brand-500 focus-visible:ring-brand-500; }
+  .btn-outline { @apply btn border border-border text-gray-700 hover:bg-gray-100 dark:hover:bg-surface-2 focus-visible:ring-brand-500; }
+  .btn-ghost { @apply btn text-gray-600 hover:bg-gray-100 dark:hover:bg-surface-2; }
+  .card { @apply rounded-lg bg-surface shadow-sm border border-border p-6; }
+  .input { @apply w-full rounded-md border border-border bg-surface px-3 py-2 text-sm placeholder:text-gray-400 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/40 outline-none transition; }
+  .badge { @apply inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium bg-gray-100 text-gray-700 dark:bg-surface-2 dark:text-gray-300; }
+  .badge-brand { @apply badge bg-brand-50 text-brand-700 border-brand-100 dark:bg-brand-600/20 dark:text-brand-300; }
 
-  .btn-primary {
-    @apply bg-primary-600 text-white hover:bg-primary-700;
-  }
-
-  .btn-secondary {
-    @apply bg-secondary-100 text-secondary-900 hover:bg-secondary-200;
-  }
-
-  .btn-outline {
-    @apply border border-secondary-200 bg-transparent hover:bg-secondary-100;
-  }
-
-  .container {
-    @apply mx-auto px-4 sm:px-6 lg:px-8;
-    max-width: 1200px;
-  }
-
-  .section {
-    @apply py-16 lg:py-24;
-  }
-
-  .card {
-    @apply bg-white rounded-lg shadow-md p-6 border border-secondary-200;
-  }
-
-  .input {
-    @apply flex h-10 w-full rounded-md border border-secondary-200 bg-transparent px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-secondary-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50;
-  }
+  /* Header specific */
+  .header-nav-link { @apply font-semibold text-sm tracking-tight text-white/90 hover:text-yellow transition-colors; }
+  .dropdown-panel { @apply absolute left-0 top-full hidden min-w-[220px] translate-y-2 rounded-md bg-[#121212] p-4 shadow-lg ring-1 ring-white/10; }
+  .dropdown-item { @apply block py-1.5 text-sm text-white/70 hover:text-yellow transition-colors; }
+  .nav-group:hover .dropdown-panel, .nav-group:focus-within .dropdown-panel { @apply block; }
 }
 
-/* Utility styles */
+/* 6. Utilities Layer ---------------------------------------------------- */
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  .shadow-glow { box-shadow: var(--shadow-glow); }
+  .bg-gradient-brand { background: linear-gradient(90deg,var(--color-brand-500),var(--color-accent-500)); }
+  .container-responsive { @apply max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .scrollbar-thin { scrollbar-width: thin; }
+  .scrollbar-thin::-webkit-scrollbar { width:8px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: var(--color-gray-300); border-radius: 999px; }
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover { background: var(--color-gray-400); }
 
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary-600 to-accent-500 bg-clip-text text-transparent;
-  }
+  /* Layout padding that adapts while keeping 1440 content center at wide sizes */
+  .px-layout { padding-left: clamp(1rem, (100vw - 1440px)/2, 240px); padding-right: clamp(1rem, (100vw - 1440px)/2, 240px); }
 
-  .glass {
-    @apply bg-white/80 backdrop-blur-sm border border-white/20;
-  }
+  /* 1px bottom gradient border (applied to header) */
+  .gradient-bottom-border { background: linear-gradient(to right,var(--grad-red),var(--grad-blue),var(--grad-yellow),var(--grad-slate),var(--grad-green)) 0 100%/100% 1px no-repeat, var(--header-bg); }
 
-  .animate-fade-in {
-    animation: fadeIn 0.5s ease-in-out;
-  }
+  /* Mobile nav overlay visibility helper */
+  .mobile-menu-open body { overflow: hidden; }
+}
 
-  .animate-slide-up {
-    animation: slideUp 0.5s ease-out;
-  }
+/* 7. Motion Helpers ----------------------------------------------------- */
+.transition-base { transition: all var(--duration) var(--ease-in-out); }
+.animate-fade-in { animation: fadeIn 480ms var(--ease-out) both; }
+@keyframes fadeIn { from { opacity:0; transform: translateY(4px);} to { opacity:1; transform: translateY(0);} }
 
-  .animate-scale-in {
-    animation: scaleIn 0.3s ease-out;
-  }
-} 
+/* 8. Ring Offset bg fix */
+:root, [data-theme="dark"] { --tw-ring-offset-color: var(--color-bg); }
