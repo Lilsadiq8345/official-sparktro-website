@@ -2,52 +2,67 @@
 module.exports = {
     content: [
         './index.html',
-        './partials/**/*.html',
-        './js/**/*.{js,mjs}',
+        './components/**/*.{html,js}',
+        './src/**/*.{html,js,ts,vue,jsx,tsx}'
     ],
     theme: {
+        fontFamily: {
+            sans: ['Work Sans', 'ui-sans-serif', 'system-ui'],
+            display: ['Good Times', 'Work Sans', 'ui-sans-serif']
+        },
         extend: {
             colors: {
                 brand: {
-                    50: 'var(--color-brand-50)',
-                    100: 'var(--color-brand-100)',
-                    200: 'var(--color-brand-200)',
-                    300: 'var(--color-brand-300)',
-                    400: 'var(--color-brand-400)',
-                    500: 'var(--color-brand-500)',
-                    600: 'var(--color-brand-600)',
-                    700: 'var(--color-brand-700)',
-                    800: 'var(--color-brand-800)',
-                    900: 'var(--color-brand-900)',
-                    950: 'var(--color-brand-950)'
+                    500: '#0482F9'
                 },
-                yellow: 'var(--color-yellow)',
-                black: 'var(--color-black)',
-                surface: 'var(--color-surface)',
-                'surface-2': 'var(--color-surface-2)',
-                border: 'var(--color-border)',
-                success: 'var(--color-success-500)',
-                warning: 'var(--color-warning-500)',
-                danger: 'var(--color-danger-500)',
-                info: 'var(--color-info-500)',
-                header: 'var(--header-bg)',
+                accent: {
+                    red: '#FF6363',
+                    yellow: '#F2D519',
+                    slate: '#7996B8',
+                    green: '#6BB54A'
+                }
             },
-            fontFamily: {
-                sans: ['Work Sans', 'var(--font-sans)', 'sans-serif'],
-                heading: ['Good Times', 'Work Sans', 'sans-serif']
+            maxWidth: {
+                design: '1440px'
+            },
+            spacing: {
+                'pad-xl': '240px'
+            },
+            transitionTimingFunction: {
+                soft: 'cubic-bezier(.16,.84,.44,1)',
+                expo: 'cubic-bezier(.19,1,.22,1)'
+            },
+            keyframes: {
+                gradientMove: {
+                    '0%': { backgroundPosition: '0% 50%' },
+                    '100%': { backgroundPosition: '200% 50%' }
+                },
+                dropdownIn: {
+                    '0%': { opacity: 0, transform: 'translateY(-6px) scale(.98)' },
+                    '100%': { opacity: 1, transform: 'translateY(0) scale(1)' }
+                },
+                drawerIn: {
+                    '0%': { transform: 'translateX(6%)', opacity: 0 },
+                    '100%': { transform: 'translateX(0)', opacity: 1 }
+                }
+            },
+            animation: {
+                'gradient-line': 'gradientMove 12s linear infinite',
+                'dropdown-in': 'dropdownIn .18s var(--ease-soft) forwards',
+                'drawer-in': 'drawerIn .22s var(--ease-soft) forwards'
             },
             boxShadow: {
-                glow: 'var(--shadow-glow)'
-            },
-            borderRadius: {
-                xs: 'var(--radius-xs)', sm: 'var(--radius-sm)', DEFAULT: 'var(--radius)', md: 'var(--radius-md)', lg: 'var(--radius-lg)', xl: 'var(--radius-xl)', '2xl': 'var(--radius-2xl)', full: 'var(--radius-full)'
-            },
+                'elev-header': '0 1px 2px -1px rgba(0,0,0,.5),0 4px 18px -8px rgba(0,0,0,.6)'
+            }
         }
     },
-    safelist: [
-        'px-[240px]',
-        'gradient-bottom-border',
-        'bg-[linear-gradient(to_right,#FF6363,#0482F9,#F2D519,#7996B8,#6BB54A)]'
-    ],
-    plugins: []
+    plugins: [
+        function ({ addVariant, e }) {
+            addVariant('open-data', ({ modifySelectors, separator }) => {
+                modifySelectors(({ className }) =>
+                    `[data-open="true"].${e(`open-data${separator}${className}`)}`
+                );
+            });
+        }
+    ]
 };

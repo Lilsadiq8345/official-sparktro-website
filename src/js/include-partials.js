@@ -1,179 +1,160 @@
 // Component Import System
 class ComponentLoader {
     constructor() {
-        this.components = new Map();
-        this.loadedComponents = new Set();
+        this.init();
     }
 
-    // Load a component from a file
-    async loadComponent(path) {
-        if (this.loadedComponents.has(path)) {
-            return this.components.get(path);
-        }
-
-        try {
-            const response = await fetch(path);
-            if (!response.ok) {
-                throw new Error(`Failed to load component: ${path}`);
-            }
-
-            const html = await response.text();
-            this.components.set(path, html);
-            this.loadedComponents.add(path);
-            return html;
-        } catch (error) {
-            console.error(`Error loading component ${path}:`, error);
-            return `<div class="p-4 bg-red-100 text-red-700 rounded">Error loading component: ${path}</div>`;
-        }
+    async init() {
+        await this.loadComponents();
+        this.initializeHeader();
+        this.initializeSmoothScrolling();
+        this.initializeAnimations();
     }
 
-    // Replace all data-include elements with their component content
-    async loadAllComponents() {
+    async loadComponents() {
         const includeElements = document.querySelectorAll('[data-include]');
 
         for (const element of includeElements) {
-            const componentPath = element.getAttribute('data-include');
-            const html = await this.loadComponent(componentPath);
-
-            // Create a temporary container to parse the HTML
-            const temp = document.createElement('div');
-            temp.innerHTML = html;
-
-            // Replace the placeholder with the actual component
-            element.replaceWith(...temp.children);
-        }
-    }
-
-    // Load a specific component into an element
-    async loadComponentInto(element, path) {
-        const html = await this.loadComponent(path);
-        element.innerHTML = html;
-    }
-}
-
-// Initialize component loader
-const componentLoader = new ComponentLoader();
-
-// Load all components when DOM is ready
-document.addEventListener('DOMContentLoaded', async () => {
-    await componentLoader.loadAllComponents();
-
-    // Initialize any JavaScript functionality after components are loaded
-    initializeApp();
-});
-
-// Initialize app functionality
-function initializeApp() {
-    // Mobile Menu Functionality
-    const mobileMenuButton = document.getElementById('mobileMenuButton');
-    const mobileMenuPanel = document.getElementById('mobileMenuPanel');
-    const closeButtons = document.querySelectorAll('[data-close]');
-    const closeOverlay = document.querySelector('[data-close-overlay]');
-
-    // Toggle mobile menu
-    mobileMenuButton?.addEventListener('click', function () {
-        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-        this.setAttribute('aria-expanded', !isExpanded);
-        mobileMenuPanel.classList.toggle('hidden');
-        document.body.classList.toggle('mobile-menu-open');
-    });
-
-    // Close mobile menu
-    function closeMobileMenu() {
-        mobileMenuButton?.setAttribute('aria-expanded', 'false');
-        mobileMenuPanel?.classList.add('hidden');
-        document.body.classList.remove('mobile-menu-open');
-    }
-
-    // Close on overlay click
-    closeOverlay?.addEventListener('click', closeMobileMenu);
-
-    // Close on close button click
-    closeButtons.forEach(button => {
-        button.addEventListener('click', closeMobileMenu);
-    });
-
-    // Close on escape key
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && !mobileMenuPanel?.classList.contains('hidden')) {
-            closeMobileMenu();
-        }
-    });
-
-    // Desktop dropdown functionality
-    const dropdownTriggers = document.querySelectorAll('[data-dropdown-trigger]');
-
-    dropdownTriggers.forEach(trigger => {
-        const dropdownId = trigger.getAttribute('data-dropdown-trigger');
-        const dropdown = document.querySelector(`[data-dropdown="${dropdownId}"]`);
-        const caret = trigger.querySelector('[data-caret]');
-
-        trigger.addEventListener('click', function (e) {
-            e.preventDefault();
-            const isExpanded = this.getAttribute('aria-expanded') === 'true';
-
-            // Close all other dropdowns
-            dropdownTriggers.forEach(otherTrigger => {
-                if (otherTrigger !== this) {
-                    otherTrigger.setAttribute('aria-expanded', 'false');
-                    const otherCaret = otherTrigger.querySelector('[data-caret]');
-                    otherCaret?.classList.remove('rotate-180');
+            try {
+                const response = await fetch(element.getAttribute('data-include'));
+                if (response.ok) {
+                    const html = await response.text();
+                    element.innerHTML = html;
+                } else {
+                    console.error(`Failed to load component: ${element.getAttribute('data-include')}`);
                 }
-            });
-
-            // Toggle current dropdown
-            this.setAttribute('aria-expanded', !isExpanded);
-            caret?.classList.toggle('rotate-180');
-        });
-    });
-
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', function (e) {
-        if (!e.target.closest('.nav-group')) {
-            dropdownTriggers.forEach(trigger => {
-                trigger.setAttribute('aria-expanded', 'false');
-                const caret = trigger.querySelector('[data-caret]');
-                caret?.classList.remove('rotate-180');
-            });
+            } catch (error) {
+                console.error(`Error loading component: ${error}`);
+            }
         }
-    });
+    }
 
-    // Smooth scrolling for anchor links
-    const anchorLinks = document.querySelectorAll('a[href^="#"]');
+    initializeHeader() {
+        const header = document.getElementById('site-header');
+        const hamburger = header?.querySelector('.hamburger');
+        const mobilePanel = header?.querySelector('.mobile-panel');
+        const dropdownTriggers = header?.querySelectorAll('.dropdown-trigger');
 
-    anchorLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href === '#') return;
+        // Mobile menu toggle
+        if (hamburger && mobilePanel) {
+            hamburger.addEventListener('click', () => {
+                const isOpen = hamburger.getAttribute('data-open') === 'true';
+                hamburger.setAttribute('data-open', !isOpen);
+                mobilePanel.setAttribute('data-open', !isOpen);
+                document.body.classList.toggle('no-scroll', !isOpen);
+            });
 
-            const target = document.querySelector(href);
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+            // Close mobile menu when clicking overlay
+            const overlay = mobilePanel.querySelector('.mobile-panel-overlay');
+            if (overlay) {
+                overlay.addEventListener('click', () => {
+                    hamburger.setAttribute('data-open', 'false');
+                    mobilePanel.setAttribute('data-open', 'false');
+                    document.body.classList.remove('no-scroll');
                 });
             }
-        });
-    });
-
-    // Add scroll effect to header
-    const header = document.querySelector('[data-component="site-header"]');
-    let lastScrollY = window.scrollY;
-
-    window.addEventListener('scroll', function () {
-        const currentScrollY = window.scrollY;
-
-        if (currentScrollY > 100) {
-            header?.classList.add('bg-black/95', 'backdrop-blur-sm');
-        } else {
-            header?.classList.remove('bg-black/95', 'backdrop-blur-sm');
         }
 
-        lastScrollY = currentScrollY;
-    });
+        // Dropdown functionality
+        if (dropdownTriggers) {
+            dropdownTriggers.forEach(trigger => {
+                const panel = trigger.nextElementSibling;
+
+                trigger.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+
+                    // Close all other dropdowns
+                    dropdownTriggers.forEach(otherTrigger => {
+                        if (otherTrigger !== trigger) {
+                            otherTrigger.setAttribute('aria-expanded', 'false');
+                            otherTrigger.nextElementSibling.setAttribute('data-open', 'false');
+                        }
+                    });
+
+                    // Toggle current dropdown
+                    trigger.setAttribute('aria-expanded', !isExpanded);
+                    panel.setAttribute('data-open', !isExpanded);
+                });
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!e.target.closest('.nav-dropdown')) {
+                    dropdownTriggers.forEach(trigger => {
+                        trigger.setAttribute('aria-expanded', 'false');
+                        trigger.nextElementSibling.setAttribute('data-open', 'false');
+                    });
+                }
+            });
+        }
+
+        // Header scroll effect
+        let lastScrollY = window.scrollY;
+        let ticking = false;
+
+        const updateHeader = () => {
+            if (header) {
+                if (window.scrollY > 100) {
+                    header.classList.add('header-scrolled');
+                } else {
+                    header.classList.remove('header-scrolled');
+                }
+            }
+            ticking = false;
+        };
+
+        const requestTick = () => {
+            if (!ticking) {
+                requestAnimationFrame(updateHeader);
+                ticking = true;
+            }
+        };
+
+        window.addEventListener('scroll', requestTick);
+    }
+
+    initializeSmoothScrolling() {
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    }
+
+    initializeAnimations() {
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.hero-section, .services-section, .products-section').forEach(el => {
+            observer.observe(el);
+        });
+    }
 }
 
-// Export for use in other modules
-window.ComponentLoader = ComponentLoader;
-window.componentLoader = componentLoader;
+// Initialize when DOM is loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => new ComponentLoader());
+} else {
+    new ComponentLoader();
+}

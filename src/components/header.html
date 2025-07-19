@@ -1,130 +1,105 @@
-<header class="relative gradient-bottom-border text-white" data-component="site-header">
-    <!-- Wrapper enforces max content width 1440; scales paddings at breakpoints -->
-    <div class="flex h-20 items-center justify-between w-full mx-auto max-w-[1440px]
-                px-4 sm:px-6 lg:px-12 xl:px-[120px] 2xl:px-[240px]">
+<!-- Header Component -->
+<header class="site-header" id="site-header">
+    <!-- Bottom gradient bar -->
+    <div class="header-gradient-line"></div>
 
+    <div class="header-inner">
         <!-- Logo -->
-        <a href="/" class="flex items-center gap-2 font-heading text-[22px] leading-none tracking-tight select-none">
-            <span class="text-brand-500">SPARK</span><span class="text-yellow">TRO</span>
-        </a>
-
-        <!-- Desktop Navigation -->
-        <nav aria-label="Main" class="hidden md:flex items-center gap-10 font-sans">
-            <a href="#" class="header-nav-link">Home</a>
-
-            <div class="relative nav-group">
-                <button class="header-nav-link inline-flex items-center gap-1" aria-haspopup="true"
-                    aria-expanded="false" data-dropdown-trigger="products">
-                    Products
-                    <svg class="w-4 h-4 transition-transform duration-200" data-caret>
-                        <path d="m3 5 4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" fill="none" />
-                    </svg>
-                </button>
-                <div class="dropdown-panel" role="menu" aria-label="Products" data-dropdown="products">
-                    <a class="dropdown-item" role="menuitem" href="#">Product One</a>
-                    <a class="dropdown-item" role="menuitem" href="#">Product Two</a>
-                    <a class="dropdown-item" role="menuitem" href="#">Product Three</a>
-                </div>
-            </div>
-
-            <div class="relative nav-group">
-                <button class="header-nav-link inline-flex items-center gap-1" aria-haspopup="true"
-                    aria-expanded="false" data-dropdown-trigger="services">
-                    Services
-                    <svg class="w-4 h-4 transition-transform duration-200" data-caret>
-                        <path d="m3 5 4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" fill="none" />
-                    </svg>
-                </button>
-                <div class="dropdown-panel" role="menu" aria-label="Services" data-dropdown="services">
-                    <a class="dropdown-item" role="menuitem" href="#">Consulting</a>
-                    <a class="dropdown-item" role="menuitem" href="#">Integration</a>
-                    <a class="dropdown-item" role="menuitem" href="#">Support</a>
-                </div>
-            </div>
-
-            <a href="#" class="header-nav-link">Blog</a>
-            <a href="#" class="header-nav-link">About</a>
-        </nav>
-
-        <!-- CTA Button (Desktop) -->
-        <div class="hidden md:block">
-            <a href="#"
-                class="inline-flex items-center gap-1 rounded-full border border-yellow px-6 py-2 text-sm font-semibold text-yellow hover:bg-yellow hover:text-black transition-colors">
-                Let’s Start
-                <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path d="M7 5v10l8-5-8-5Z" />
-                </svg>
-            </a>
+        <div class="logo">
+            <img src="/src/assets/icons/sparktro-s.svg" alt="Sparktro S" class="logo-s" width="21" height="20">
+            <span class="logo-text">
+                <span class="logo-park">PARK</span>
+                <span class="logo-tro">TRO</span>
+            </span>
         </div>
 
-        <!-- Mobile Menu Toggle -->
-        <button
-            class="md:hidden inline-flex flex-col justify-center items-center h-11 w-11 rounded-md border border-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-yellow/60"
-            aria-label="Toggle menu" aria-expanded="false" id="mobileMenuButton">
-            <span class="w-5 h-0.5 bg-white mb-1.5"></span>
-            <span class="w-5 h-0.5 bg-white mb-1.5"></span>
-            <span class="w-5 h-0.5 bg-white"></span>
+        <!-- Desktop Navigation -->
+        <nav class="nav-root" role="navigation">
+            <a href="#home" class="nav-link" data-active="true">
+                Home
+            </a>
+
+            <div class="nav-dropdown">
+                <button class="nav-link dropdown-trigger" aria-expanded="false">
+                    Products
+                    <img src="/src/assets/icons/arrow-down.svg" alt="" width="16" height="16" data-caret>
+                </button>
+                <div class="dropdown-panel" data-open="false">
+                    <a href="#product1" class="dropdown-item">Product 1</a>
+                    <a href="#product2" class="dropdown-item">Product 2</a>
+                    <a href="#product3" class="dropdown-item">Product 3</a>
+                </div>
+            </div>
+
+            <div class="nav-dropdown">
+                <button class="nav-link dropdown-trigger" aria-expanded="false">
+                    Services
+                    <img src="/src/assets/icons/arrow-down.svg" alt="" width="16" height="16" data-caret>
+                </button>
+                <div class="dropdown-panel" data-open="false">
+                    <a href="#service1" class="dropdown-item">Service 1</a>
+                    <a href="#service2" class="dropdown-item">Service 2</a>
+                    <a href="#service3" class="dropdown-item">Service 3</a>
+                </div>
+            </div>
+
+            <a href="#blogs" class="nav-link">
+                Blogs
+            </a>
+
+            <a href="#about" class="nav-link">
+                About
+            </a>
+        </nav>
+
+        <!-- CTA Button -->
+        <button class="cta-btn">
+            Let's Start
+            <img src="/src/assets/icons/arrow-right.svg" alt="" width="16" height="16">
+        </button>
+
+        <!-- Mobile Menu Button -->
+        <button class="hamburger" aria-label="Toggle mobile menu" data-open="false">
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
     </div>
 
-    <!-- Mobile Panel -->
-    <div id="mobileMenuPanel" class="md:hidden fixed inset-0 z-40 hidden" role="dialog" aria-modal="true">
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" data-close-overlay></div>
-        <div
-            class="relative ml-auto h-full w-[82%] max-w-sm bg-[#121212] shadow-xl flex flex-col py-6 px-6 overflow-y-auto">
-            <div class="flex items-center justify-between mb-6">
-                <a href="/" class="flex items-center gap-2 font-heading text-lg"><span
-                        class="text-brand-500">SPARK</span><span class="text-yellow">TRO</span></a>
-                <button class="h-10 w-10 grid place-items-center rounded-md border border-white/10" data-close
-                    aria-label="Close menu">
-                    <svg width="20" height="20" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                        <line x1="4" y1="4" x2="16" y2="16" />
-                        <line x1="16" y1="4" x2="4" y2="16" />
-                    </svg>
-                </button>
-            </div>
-            <nav class="flex flex-col gap-2" aria-label="Mobile">
-                <a href="#" class="header-nav-link py-2">Home</a>
-                <details class="group">
-                    <summary class="header-nav-link py-2 flex items-center justify-between cursor-pointer">Products
-                        <svg class="w-4 h-4 transition-transform group-open:rotate-180" data-caret>
-                            <path d="m3 5 4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" fill="none" />
-                        </svg>
+    <!-- Mobile Navigation Panel -->
+    <div class="mobile-panel" data-open="false">
+        <div class="mobile-panel-overlay"></div>
+        <div class="mobile-drawer">
+            <nav class="mobile-nav">
+                <a href="#home" class="mobile-nav-link">Home</a>
+
+                <details class="nav-collapsible">
+                    <summary class="mobile-nav-link">
+                        Products
+                        <img src="/src/assets/icons/arrow-down.svg" alt="" width="16" height="16" data-caret>
                     </summary>
-                    <div class="pl-3 flex flex-col">
-                        <a class="dropdown-item py-1" href="#">Product One</a>
-                        <a class="dropdown-item py-1" href="#">Product Two</a>
-                        <a class="dropdown-item py-1" href="#">Product Three</a>
+                    <div class="mobile-sub-links">
+                        <a href="#product1">Product 1</a>
+                        <a href="#product2">Product 2</a>
+                        <a href="#product3">Product 3</a>
                     </div>
                 </details>
-                <details class="group">
-                    <summary class="header-nav-link py-2 flex items-center justify-between cursor-pointer">Services
-                        <svg class="w-4 h-4 transition-transform group-open:rotate-180" data-caret>
-                            <path d="m3 5 4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" fill="none" />
-                        </svg>
+
+                <details class="nav-collapsible">
+                    <summary class="mobile-nav-link">
+                        Services
+                        <img src="/src/assets/icons/arrow-down.svg" alt="" width="16" height="16" data-caret>
                     </summary>
-                    <div class="pl-3 flex flex-col">
-                        <a class="dropdown-item py-1" href="#">Consulting</a>
-                        <a class="dropdown-item py-1" href="#">Integration</a>
-                        <a class="dropdown-item py-1" href="#">Support</a>
+                    <div class="mobile-sub-links">
+                        <a href="#service1">Service 1</a>
+                        <a href="#service2">Service 2</a>
+                        <a href="#service3">Service 3</a>
                     </div>
                 </details>
-                <a href="#" class="header-nav-link py-2">Blog</a>
-                <a href="#" class="header-nav-link py-2">About</a>
+
+                <a href="#blogs" class="mobile-nav-link">Blogs</a>
+                <a href="#about" class="mobile-nav-link">About</a>
             </nav>
-            <div class="mt-6 pt-4 border-t border-white/10">
-                <a href="#"
-                    class="inline-flex items-center gap-1 rounded-full border border-yellow px-6 py-2 text-sm font-semibold text-yellow hover:bg-yellow hover:text-black transition-colors w-max">Let’s
-                    Start
-                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                        <path d="M7 5v10l8-5-8-5Z" />
-                    </svg>
-                </a>
-            </div>
         </div>
     </div>
 </header>
