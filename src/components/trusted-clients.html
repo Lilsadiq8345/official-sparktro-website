@@ -1,92 +1,137 @@
-<section class="w-full flex justify-center bg-white py-[40px]">
-    <div class="w-full max-w-[1440px] px-4">
-        <!-- Top Row -->
-        <div class="flex flex-row w-full mb-0 ">
-            <!-- Heading -->
-            <div class="flex-1 flex items-center">
+<section class="w-full flex justify-center bg-white py-10">
+    <div class="w-full max-w-[987px] mx-auto flex flex-col items-center justify-center px-2 sm:px-4">
+        <!-- Mobile: Stack everything vertically -->
+        <div class="block sm:hidden w-full">
+            <h2
+                class="font-['Work_Sans',sans-serif] font-normal text-[24px] leading-[32px] text-[#1E2533] text-center mb-6">
+                We Completed 500+ Projects With<br />Clints Satisfactions
+            </h2>
+            <div class="flex flex-col gap-4 w-full items-center">
+                <div
+                    class="border border-[#D6E2EF] flex flex-col items-center justify-center h-[100px] w-full bg-white">
+                    <img src="/src/assets/icons/group-10000139220.svg" class="w-8 h-8 mb-2" alt="Louis Vuitton" />
+                    <span
+                        class="font-['Work_Sans',sans-serif] font-medium text-[16px] leading-[20px] text-[#1E2533] text-center">Louis
+                        Vuitton</span>
+                </div>
+                <div
+                    class="border border-[#D6E2EF] flex flex-col items-center justify-center h-[100px] w-full bg-white">
+                    <img src="/src/assets/icons/group-10000139230.svg" class="w-8 h-8 mb-2" alt="L'Oréal" />
+                    <span
+                        class="font-['Work_Sans',sans-serif] font-medium text-[16px] leading-[20px] text-[#1E2533] text-center">L'Oréal</span>
+                </div>
+                <div
+                    class="border border-[#D6E2EF] flex flex-col items-center justify-center h-[100px] w-full bg-white">
+                    <img src="/src/assets/icons/group-10000139070.svg" class="w-8 h-8 mb-2" alt="McDonald's" />
+                    <span
+                        class="font-['Work_Sans',sans-serif] font-medium text-[16px] leading-[20px] text-[#1E2533] text-center">McDonald's</span>
+                </div>
+                <div
+                    class="border border-[#D6E2EF] flex flex-col items-center justify-center h-[100px] w-full bg-white">
+                    <img src="/src/assets/icons/group-10000139080.svg" class="w-8 h-8 mb-2" alt="Gillette" />
+                    <span
+                        class="font-['Work_Sans',sans-serif] font-medium text-[16px] leading-[20px] text-[#1E2533] text-center">Gillette</span>
+                </div>
+                <div
+                    class="border border-[#D6E2EF] flex flex-col items-center justify-center h-[100px] w-full bg-white">
+                    <img src="/src/assets/icons/group-10000139090.svg" class="w-8 h-8 mb-2" alt="Starbucks" />
+                    <span
+                        class="font-['Work_Sans',sans-serif] font-medium text-[16px] leading-[20px] text-[#1E2533] text-center">Starbucks</span>
+                </div>
+                <div
+                    class="border border-[#D6E2EF] flex flex-col items-center justify-center h-[100px] w-full bg-white">
+                    <img src="/src/assets/icons/group-10000139100.svg" class="w-8 h-8 mb-2" alt="Mitsubishi" />
+                    <span
+                        class="font-['Work_Sans',sans-serif] font-medium text-[16px] leading-[20px] text-[#1E2533] text-center">Mitsubishi</span>
+                </div>
+                <div
+                    class="border border-[#D6E2EF] flex flex-col items-center justify-center h-[100px] w-full bg-white">
+                    <img src="/src/assets/icons/group-10000139250.svg" class="w-8 h-8 mb-2" alt="Nintendo" />
+                    <span
+                        class="font-['Work_Sans',sans-serif] font-medium text-[16px] leading-[20px] text-[#1E2533] text-center">Nintendo</span>
+                </div>
+                <div
+                    class="border border-[#D6E2EF] flex flex-col items-center justify-center h-[100px] w-full bg-white">
+                    <img src="/src/assets/icons/group-10000139150.svg" class="w-8 h-8 mb-2" alt="Mitsubishi" />
+                    <span
+                        class="font-['Work_Sans',sans-serif] font-medium text-[16px] leading-[20px] text-[#1E2533] text-center">Mitsubishi</span>
+                </div>
+            </div>
+        </div>
+        <!-- Tablet and up: grid layout -->
+        <div class="hidden sm:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 grid-rows-2 w-full gap-0">
+            <!-- Heading (spans 2 cols on sm, 3 on md, 4 on lg) -->
+            <div
+                class="row-start-1 row-end-2 col-start-1 col-end-3 md:col-end-4 lg:col-end-5 flex items-center pr-0 md:pr-4 lg:pr-8 mb-4 sm:mb-0">
                 <h2
-                    class="font-['Work_Sans',sans-serif] font-normal text-[34px] leading-[40px] text-[#1E2533] text-left sm:text-center w-full">
+                    class="font-['Work_Sans',sans-serif] font-normal text-[24px] md:text-[28px] lg:text-[34px] leading-[32px] md:leading-[36px] lg:leading-[40px] text-[#1E2533] text-left md:text-center w-full">
                     We Completed 500+ Projects With<br />Clints Satisfactions
                 </h2>
             </div>
-            <!-- Two Logo Boxes -->
-            <div class="flex flex-row items-center ml-auto" style="width:540px;gap:-1px;">
-                <!-- Louis Vuitton -->
-                <div
-                    class="flex flex-col items-center justify-center border border-[#D6E2EF] w-[181px] h-[180px] px-6 bg-white">
-                    <img src="/src/assets/icons/group-10000139220.svg" class="w-10 h-10 mb-2" alt="Louis Vuitton" />
-                    <span
-                        class="font-['Work_Sans',sans-serif] font-medium text-[20px] leading-[20px] text-[#1E2533] text-center">Louis
-                        Vuitton</span>
-                </div>
-                <!-- L'Oréal -->
-                <div
-                    class="flex flex-col items-center justify-center border border-[#D6E2EF] w-[181px] h-[180px] px-6 bg-white ml-[-1px]">
-                    <img src="/src/assets/icons/group-10000139230.svg" class="w-10 h-10 mb-2" alt="L'Oréal" />
-                    <span
-                        class="font-['Work_Sans',sans-serif] font-medium text-[20px] leading-[20px] text-[#1E2533] text-center">L'Oréal</span>
-                </div>
+            <!-- Louis Vuitton (row 1, last col) -->
+            <div
+                class="row-start-1 row-end-2 col-start-3 md:col-start-4 lg:col-start-5 col-end-4 md:col-end-5 lg:col-end-6 border border-[#D6E2EF] flex flex-col items-center justify-center h-[120px] md:h-[150px] lg:h-[180px] bg-white mx-0 md:ml-0 lg:ml-4 mt-2 sm:mt-0">
+                <img src="/src/assets/icons/group-10000139220.svg" class="w-8 md:w-10 h-8 md:h-10 mb-2"
+                    alt="Louis Vuitton" />
+                <span
+                    class="font-['Work_Sans',sans-serif] font-medium text-[16px] md:text-[18px] lg:text-[20px] leading-[20px] text-[#1E2533] text-center">Louis
+                    Vuitton</span>
             </div>
-        </div>
-        <!-- Bottom Row -->
-        <div class="flex flex-row w-full mt-0" style="gap:-1px;">
+            <!-- L'Oréal (row 1, last col) -->
+            <div
+                class="row-start-1 row-end-2 col-start-4 md:col-start-5 lg:col-start-6 col-end-5 md:col-end-6 lg:col-end-7 border border-[#D6E2EF] flex flex-col items-center justify-center h-[120px] md:h-[150px] lg:h-[180px] bg-white ml-0 md:ml-[-1px] mt-2 sm:mt-0">
+                <img src="/src/assets/icons/group-10000139230.svg" class="w-8 md:w-10 h-8 md:h-10 mb-2" alt="L'Oréal" />
+                <span
+                    class="font-['Work_Sans',sans-serif] font-medium text-[16px] md:text-[18px] lg:text-[20px] leading-[20px] text-[#1E2533] text-center">L'Oréal</span>
+            </div>
             <!-- McDonald's -->
             <div
-                class="flex flex-col items-center justify-center border border-[#D6E2EF] w-[181px] h-[180px] px-6 bg-white">
-                <img src="/src/assets/icons/group-10000139070.svg" class="w-10 h-10 mb-2" alt="McDonald's" />
+                class="row-start-2 row-end-3 col-start-1 col-end-2 border border-[#D6E2EF] flex flex-col items-center justify-center h-[120px] md:h-[150px] lg:h-[180px] bg-white mt-2">
+                <img src="/src/assets/icons/group-10000139070.svg" class="w-8 md:w-10 h-8 md:h-10 mb-2"
+                    alt="McDonald's" />
                 <span
-                    class="font-['Work_Sans',sans-serif] font-medium text-[20px] leading-[20px] text-[#1E2533] text-center">McDonald's</span>
+                    class="font-['Work_Sans',sans-serif] font-medium text-[16px] md:text-[18px] lg:text-[20px] leading-[20px] text-[#1E2533] text-center">McDonald's</span>
             </div>
             <!-- Gillette -->
             <div
-                class="flex flex-col items-center justify-center border border-[#D6E2EF] w-[181px] h-[180px] px-6 bg-white ml-[-1px]">
-                <img src="/src/assets/icons/group-10000139080.svg" class="w-10 h-10 mb-2" alt="Gillette" />
+                class="row-start-2 row-end-3 col-start-2 col-end-3 border border-[#D6E2EF] flex flex-col items-center justify-center h-[120px] md:h-[150px] lg:h-[180px] bg-white ml-0 md:ml-[-1px] mt-2">
+                <img src="/src/assets/icons/group-10000139080.svg" class="w-8 md:w-10 h-8 md:h-10 mb-2"
+                    alt="Gillette" />
                 <span
-                    class="font-['Work_Sans',sans-serif] font-medium text-[20px] leading-[20px] text-[#1E2533] text-center">Gillette</span>
+                    class="font-['Work_Sans',sans-serif] font-medium text-[16px] md:text-[18px] lg:text-[20px] leading-[20px] text-[#1E2533] text-center">Gillette</span>
             </div>
             <!-- Starbucks -->
             <div
-                class="flex flex-col items-center justify-center border border-[#D6E2EF] w-[181px] h-[180px] px-6 bg-white ml-[-1px]">
-                <img src="/src/assets/icons/group-10000139090.svg" class="w-10 h-10 mb-2" alt="Starbucks" />
+                class="row-start-2 row-end-3 col-start-3 col-end-4 border border-[#D6E2EF] flex flex-col items-center justify-center h-[120px] md:h-[150px] lg:h-[180px] bg-white ml-0 md:ml-[-1px] mt-2">
+                <img src="/src/assets/icons/group-10000139090.svg" class="w-8 md:w-10 h-8 md:h-10 mb-2"
+                    alt="Starbucks" />
                 <span
-                    class="font-['Work_Sans',sans-serif] font-medium text-[20px] leading-[20px] text-[#1E2533] text-center">Starbucks</span>
+                    class="font-['Work_Sans',sans-serif] font-medium text-[16px] md:text-[18px] lg:text-[20px] leading-[20px] text-[#1E2533] text-center">Starbucks</span>
             </div>
             <!-- Mitsubishi -->
             <div
-                class="flex flex-col items-center justify-center border border-[#D6E2EF] w-[181px] h-[180px] px-6 bg-white ml-[-1px]">
-                <img src="/src/assets/icons/group-10000139100.svg" class="w-10 h-10 mb-2" alt="Mitsubishi" />
+                class="row-start-2 row-end-3 col-start-4 col-end-5 border border-[#D6E2EF] flex flex-col items-center justify-center h-[120px] md:h-[150px] lg:h-[180px] bg-white ml-0 md:ml-[-1px] mt-2">
+                <img src="/src/assets/icons/group-10000139100.svg" class="w-8 md:w-10 h-8 md:h-10 mb-2"
+                    alt="Mitsubishi" />
                 <span
-                    class="font-['Work_Sans',sans-serif] font-medium text-[20px] leading-[20px] text-[#1E2533] text-center">Mitsubishi</span>
+                    class="font-['Work_Sans',sans-serif] font-medium text-[16px] md:text-[18px] lg:text-[20px] leading-[20px] text-[#1E2533] text-center">Mitsubishi</span>
             </div>
             <!-- Nintendo -->
             <div
-                class="flex flex-col items-center justify-center border border-[#D6E2EF] w-[181px] h-[180px] px-6 bg-white ml-[-1px]">
-                <img src="/src/assets/icons/group-10000139250.svg" class="w-10 h-10 mb-2" alt="Nintendo" />
+                class="row-start-2 row-end-3 col-start-5 col-end-6 border border-[#D6E2EF] flex flex-col items-center justify-center h-[120px] md:h-[150px] lg:h-[180px] bg-white ml-0 md:ml-[-1px] mt-2">
+                <img src="/src/assets/icons/group-10000139250.svg" class="w-8 md:w-10 h-8 md:h-10 mb-2"
+                    alt="Nintendo" />
                 <span
-                    class="font-['Work_Sans',sans-serif] font-medium text-[20px] leading-[20px] text-[#1E2533] text-center">Nintendo</span>
+                    class="font-['Work_Sans',sans-serif] font-medium text-[16px] md:text-[18px] lg:text-[20px] leading-[20px] text-[#1E2533] text-center">Nintendo</span>
             </div>
             <!-- Mitsubishi -->
             <div
-                class="flex flex-col items-center justify-center border border-[#D6E2EF] w-[181px] h-[180px] px-6 bg-white ml-[-1px]">
-                <img src="/src/assets/icons/group-10000139150.svg" class="w-10 h-10 mb-2" alt="Mitsubishi" />
+                class="row-start-2 row-end-3 col-start-6 col-end-7 border border-[#D6E2EF] flex flex-col items-center justify-center h-[120px] md:h-[150px] lg:h-[180px] bg-white ml-0 md:ml-[-1px] mt-2">
+                <img src="/src/assets/icons/group-10000139150.svg" class="w-8 md:w-10 h-8 md:h-10 mb-2"
+                    alt="Mitsubishi" />
                 <span
-                    class="font-['Work_Sans',sans-serif] font-medium text-[20px] leading-[20px] text-[#1E2533] text-center">Mitsubishi</span>
-            </div>
-            <!-- Louis Vuitton -->
-            <div
-                class="flex flex-col items-center justify-center border border-[#D6E2EF] w-[181px] h-[180px] px-6 bg-white ml-[-1px]">
-                <img src="/src/assets/icons/group-10000139160.svg" class="w-10 h-10 mb-2" alt="Louis Vuitton" />
-                <span
-                    class="font-['Work_Sans',sans-serif] font-medium text-[20px] leading-[20px] text-[#1E2533] text-center">Louis
-                    Vuitton</span>
-            </div>
-            <!-- Starbucks -->
-            <div
-                class="flex flex-col items-center justify-center border border-[#D6E2EF] w-[181px] h-[180px] px-6 bg-white ml-[-1px]">
-                <img src="/src/assets/icons/group-10000139170.svg" class="w-10 h-10 mb-2" alt="Starbucks" />
-                <span
-                    class="font-['Work_Sans',sans-serif] font-medium text-[20px] leading-[20px] text-[#1E2533] text-center">Starbucks</span>
+                    class="font-['Work_Sans',sans-serif] font-medium text-[16px] md:text-[18px] lg:text-[20px] leading-[20px] text-[#1E2533] text-center">Mitsubishi</span>
             </div>
         </div>
     </div>
-</section>"
+</section>
