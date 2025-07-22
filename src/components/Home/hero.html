@@ -1,0 +1,125 @@
+<!-- Hero Section Component -->
+<section
+    class="relative w-full max-w-[1920px] h-[700px] md:h-[950px] bg-[#1E2533] overflow-hidden flex items-center mt-0 md:-mt-40 justify-center mx-auto"
+    id="hero">
+    <!-- Blurred colored circles for background -->
+    <div
+        class="absolute w-[120px] h-[120px] md:w-[350px] md:h-[350px] rounded-full bg-[#0482F9] opacity-60 blur-[80px] md:blur-[200px] left-[70%] md:left-[78%] top-[60%] pointer-events-none">
+    </div>
+    <div
+        class="absolute w-[120px] h-[120px] md:w-[350px] md:h-[350px] rounded-full bg-[#6BB54A] opacity-60 blur-[80px] md:blur-[200px] left-[5%] top-[60%] pointer-events-none">
+    </div>
+    <div
+        class="absolute w-[100px] h-[100px] md:w-[343px] md:h-[343px] rounded-full bg-[#EE2358] opacity-80 blur-[80px] md:blur-[200px] left-[-40px] md:left-[-82px] top-[-60px] md:top-[-119px] pointer-events-none">
+    </div>
+    <div
+        class="absolute w-[100px] h-[100px] md:w-[343px] md:h-[343px] rounded-full bg-[#EE23DA] opacity-80 blur-[80px] md:blur-[200px] left-[30%] md:left-[41%] top-[-90px] md:top-[-185px] pointer-events-none">
+    </div>
+    <div
+        class="absolute w-[100px] h-[100px] md:w-[343px] md:h-[343px] rounded-full bg-[#FDD40F] opacity-80 blur-[80px] md:blur-[200px] right-[-60px] md:right-[-100px] top-[-60px] md:top-[-117px] pointer-events-none">
+    </div>
+    <!-- Decorative SVGs -->
+    <img class="absolute left-[24px] top-[32px] w-[30px] h-[30px] md:left-[84px] md:top-[72px] md:w-[60px] md:h-[60px] opacity-20"
+        src="/src/assets/icons/shape-40.svg" alt="dots" />
+    <img class="absolute left-[-20px] bottom-[20px] w-[50px] h-[30px] md:left-[-40px] md:bottom-[40px] md:w-[100px] md:h-[60px] opacity-20"
+        src="/src/assets/icons/shape-50.svg" alt="dots" />
+    <img class="absolute right-[20px] top-[140px] w-[20px] h-[20px] md:right-[60px] md:top-[280px] md:w-[40px] md:h-[40px] opacity-20"
+        src="/src/assets/icons/group-10000010050.svg" alt="dots" />
+    <div
+        class="absolute left-[90%] top-[40px] w-[30px] h-[30px] md:left-[88%] md:top-[77px] md:w-[60px] md:h-[60px] rounded-full border border-[#F2D519] opacity-30">
+    </div>
+    <img class="absolute left-[120px] top-[220px] w-[15px] h-[15px] md:left-[403px] md:top-[358px] md:w-[30px] md:h-[30px]"
+        src="/src/assets/icons/star-10.svg" alt="star" />
+
+    <!-- Social Media Icons (vertical left) -->
+    <div class="hidden md:flex flex-col gap-4 items-center absolute left-8 top-1/2 -translate-y-1/2 z-10">
+        <a href="#" class="hover:scale-125 hover:-translate-y-1 transition-transform duration-300"><img
+                src="/src/assets/icons/twitter0.svg" alt="Twitter" class="w-6 h-6" /></a>
+        <a href="#" class="hover:scale-125 hover:-translate-y-1 transition-transform duration-300"><img
+                src="/src/assets/icons/facebook0.svg" alt="Facebook" class="w-6 h-6" /></a>
+        <a href="#" class="hover:scale-125 hover:-translate-y-1 transition-transform duration-300"><img
+                src="/src/assets/icons/Instrogram.svg" alt="Instagram" class="w-6 h-6" /></a>
+        <a href="#" class="hover:scale-125 hover:-translate-y-1 transition-transform duration-300"><img
+                src="/src/assets/icons/yout0.svg" alt="YouTube" class="w-6 h-6" /></a>
+    </div>
+    <!-- Social Media Icons (mobile, top left) -->
+    <div class="flex md:hidden flex-row gap-4 items-center absolute left-4 top-4 z-10">
+        <a href="#" class="hover:scale-125 hover:-translate-y-1 transition-transform duration-300"><img
+                src="/src/assets/icons/twitter0.svg" alt="Twitter" class="w-5 h-5" /></a>
+        <a href="#" class="hover:scale-125 hover:-translate-y-1 transition-transform duration-300"><img
+                src="/src/assets/icons/facebook0.svg" alt="Facebook" class="w-5 h-5" /></a>
+        <a href="#" class="hover:scale-125 hover:-translate-y-1 transition-transform duration-300"><img
+                src="/src/assets/icons/Instrogram.svg" alt="Instagram" class="w-5 h-5" /></a>
+        <a href="#" class="hover:scale-125 hover:-translate-y-1 transition-transform duration-300"><img
+                src="/src/assets/icons/yout0.svg" alt="YouTube" class="w-5 h-5" /></a>
+    </div>
+
+    <!-- Main Content: perfectly centered with animation -->
+    <div
+        class="relative w-full max-w-[1200px] mx-auto flex flex-col items-center justify-center px-4  animate-fade-in-up">
+        <!-- Pre-heading -->
+        <p
+            class="text-white text-center text-xs md:text-sm font-semibold tracking-widest mb-4 uppercase opacity-80 animate-fade-in-up delay-100">
+            "FUELING GROWTH WITH SPARKTRO APPS"</p>
+        <!-- Main Heading -->
+        <h1
+            class="text-white text-center font-['WorkSans-Bold',_sans-serif] text-3xl sm:text-4xl md:text-6xl font-bold leading-tight mb-4 animate-fade-in-up delay-200">
+            Empowering <span class="text-[#0A97B0]">Business<br class="hidden sm:block" />Growth</span> with <span
+                class="text-[#FDCB02]">Sparktro</span><br />Applications.
+        </h1>
+        <!-- Description -->
+        <p
+            class="text-white text-center text-base md:text-lg font-normal max-w-2xl mb-8 opacity-90 animate-fade-in-up delay-300">
+            Empower your business growth with Sparktro Applications—innovative solutions designed to streamline
+            operations, enhance productivity, and drive strategic success through smart technology.
+        </p>
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 items-center justify-center animate-fade-in-up delay-400">
+            <button
+                class="bg-[#0A97B0] text-white font-semibold rounded-full px-8 py-3 flex items-center gap-2 text-base md:text-lg shadow-md hover:scale-110 hover:shadow-lg transition-all duration-300">
+                Our Solutions
+                <img src="/src/assets/icons/arrow-right.svg" alt="" width="16" height="16">
+            </button>
+            <button
+                class="border border-[#0A97B0] text-[#0A97B0] font-semibold rounded-full px-8 py-3 flex items-center gap-2 text-base md:text-lg hover:bg-[#0A97B0] hover:text-white hover:scale-110 hover:shadow-lg transition-all duration-300">
+                <img src="/src/assets/icons/play-icon.svg" alt="" width="16" height="16">
+                Watch Demo
+            </button>
+        </div>
+    </div>
+
+    <!-- Animations (Tailwind custom classes) -->
+    <style>
+        @keyframes fade-in-up {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s cubic-bezier(0.23, 1, 0.32, 1) both;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        .delay-400 {
+            animation-delay: 0.4s;
+        }
+    </style>
+</section>
