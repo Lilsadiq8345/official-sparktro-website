@@ -1,31 +1,21 @@
+<!-- AboutUs.html -->
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us | Sparktro</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – Sparktro</title>
 
-    <!-- Tailwind CSS via CDN -->
+  <!-- Use relative paths from about-us folder -->
+  <link rel="stylesheet" href="../src/css/main.css" />
     <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased">
 
-    <!-- Tailwind config -->
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-          },
-        },
-      };
-    </script>
-  </head>
+  <!-- Include Header -->
+  <div data-include="../src/components/header.html"></div>
 
-  <body class="antialiased bg-white text-gray-800">
-    <!-- Include Header Dynamically -->
-    <div id="header-placeholder"></div>
-
+  <main>
     <!-- Main About Us Content -->
     <div class="bg-white">
       <!-- Hero Section -->
@@ -141,19 +131,12 @@
         </div>
       </div>
     </div>
+  </main>
 
-    <!-- Dynamic include logic -->
-    <script type="module">
-      const headerPath = "../src/components/header.html";
-      const target = document.getElementById("header-placeholder");
+  <!-- Include Footer -->
+  <div data-include="../src/components/footer.html"></div>
 
-      async function loadHTML(path, container) {
-        const res = await fetch(path);
-        const html = await res.text();
-        container.innerHTML = html;
-      }
-
-      loadHTML(headerPath, target);
-    </script>
-  </body>
+  <!-- Component loading script (relative path) -->
+  <script type="module" src="../src/js/include-partials.js"></script>
+</body>
 </html>
