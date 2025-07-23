@@ -3,7 +3,7 @@ module.exports = {
     content: [
         './index.html',
         './components/**/*.{html,js}',
-        './src/**/*.{html,js,ts,vue,jsx,tsx}'
+         "./src/**/*.html", 
     ],
     theme: {
         fontFamily: {
