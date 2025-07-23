@@ -1,91 +1,54 @@
-<header class="site-header" id="site-header" data-component="site-header">
-  <div class="header-gradient-line"></div>
+<!DOCTYPE html>
+<html lang="en">
 
-  <div class="header-inner">
-    <div class="logo">
-      <img src="/src/assets/icons/sparktro-s.svg" alt="Sparktro S" class="logo-s" width="21" height="20" />
-      <span class="logo-text">
-        <span class="logo-park">PARK</span>
-        <span class="logo-tro">TRO</span>
-      </span>
-    </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sparktro – Empowering Business Growth</title>
+   <link rel="stylesheet" href="/src/css/main.css" />
+</head>
 
-    <nav class="nav-root" role="navigation">
-      <a href="/index.html" class="nav-link">Home</a>
+<body class="antialiased">
+    <!-- Header Component -->
+    <div data-include="./src/components/header.html"></div>
 
-      <div class="nav-dropdown">
-        <button class="nav-link dropdown-trigger" data-dropdown-trigger="products" aria-expanded="false">
-          Products
-          <img src="/src/assets/icons/arrow-down.svg" alt="" width="16" height="16" data-caret />
-        </button>
-        <div class="dropdown-panel" data-dropdown="products">
-          <a href="/products.html#product1" class="dropdown-item">Product 1</a>
-          <a href="/products.html#product2" class="dropdown-item">Product 2</a>
-          <a href="/products.html#product3" class="dropdown-item">Product 3</a>
-        </div>
-      </div>
+    <main id="mainContent" class="relative">
+        <!-- Hero Component -->
+        <div data-include="./src/components/hero.html"></div>
 
-      <div class="nav-dropdown">
-        <button class="nav-link dropdown-trigger" data-dropdown-trigger="services" aria-expanded="false">
-          Services
-          <img src="/src/assets/icons/arrow-down.svg" alt="" width="16" height="16" data-caret />
-        </button>
-        <div class="dropdown-panel" data-dropdown="services">
-          <a href="/services.html#service1" class="dropdown-item">Service 1</a>
-          <a href="/services.html#service2" class="dropdown-item">Service 2</a>
-          <a href="/services.html#service3" class="dropdown-item">Service 3</a>
-        </div>
-      </div>
+        <!-- trusted/Clients Component -->
+        <div data-include="./src/components/trusted-clients.html"></div>
 
-      <a href="/blogs.html" class="nav-link">Blogs</a>
-      <a href="/about-us/AboutUs.html" class="nav-link">About Us</a>
-    </nav>
+        <!-- Services Component -->
+        <div data-include="./src/components/services.html"></div>
 
-    <button class="cta-btn">
-      Let's Start
-      <img src="/src/assets/icons/arrow-right.svg" alt="" width="16" height="16" />
-    </button>
+        <!-- Products Component -->
+        <div data-include="./src/components/products.html"></div>
 
-    <button id="mobileMenuButton" class="hamburger" aria-label="Toggle mobile menu" data-open="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
 
-  <div id="mobileMenuPanel" class="mobile-panel" data-open="false">
-    <div class="mobile-panel-overlay" data-close-overlay></div>
-    <div class="mobile-drawer">
-      <nav class="mobile-nav">
-        <a href="/index.html" class="mobile-nav-link" data-mobile-link>Home</a>
+        <!-- Working Process Component -->
+        <div data-include="./src/components/working-process.html"></div>
 
-        <details class="nav-collapsible">
-          <summary class="mobile-nav-link">
-            Products
-            <img src="/src/assets/icons/arrow-down.svg" alt="" width="16" height="16" data-caret />
-          </summary>
-          <div class="mobile-sub-links">
-            <a href="/products.html#product1" data-mobile-link>Product 1</a>
-            <a href="/products.html#product2" data-mobile-link>Product 2</a>
-            <a href="/products.html#product3" data-mobile-link>Product 3</a>
-          </div>
-        </details>
+        <!-- Technologies Component -->
+        <div data-include="./src/components/Technologies.html"></div>
 
-        <details class="nav-collapsible">
-          <summary class="mobile-nav-link">
-            Services
-            <img src="/src/assets/icons/arrow-down.svg" alt="" width="16" height="16" data-caret />
-          </summary>
-          <div class="mobile-sub-links">
-            <a href="/services.html#service1" data-mobile-link>Service 1</a>
-            <a href="/services.html#service2" data-mobile-link>Service 2</a>
-            <a href="/services.html#service3" data-mobile-link>Service 3</a>
-          </div>
-        </details>
+        <!-- What Clients Say Component -->
+        <div data-include="./src/components/testimonials.html"></div>
 
-        <a href="/blogs.html" class="mobile-nav-link" data-mobile-link>Blogs</a>
-        <a href="/about-us/AboutUs.html" class="mobile-nav-link" data-mobile-link>About Us</a>
-      </nav>
-    </div>
-  </div>
-</header>
+        <!-- Latest Blogs Component -->
+        <div data-include="./src/components/latest-blogs.html"></div>
+
+
+        <!-- Footer Component -->
+        <div data-include="./src/components/footer.html"></div>
+
+        <div data-include="./src/components/AboutUs.html"></div>
+
+
+    </main>
+
+    <!-- Component Import System -->
+    <script type="module" src="./src/js/include-partials.js"></script>
+</body>
+
+</html>
