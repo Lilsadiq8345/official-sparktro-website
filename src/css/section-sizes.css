@@ -1,0 +1,53 @@
+#hero, #services, #products, #latest-blogs, #technologies, #testimonials, #trusted-clients, #working-process {
+  width: 100%;
+  max-width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  #hero, #services, #products, #latest-blogs, #technologies, #testimonials, #trusted-clients, #working-process {
+    max-width: 640px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+#hero, #services, #products, #latest-blogs, #technologies, #testimonials, #trusted-clients, #working-process {
+    max-width: 1200px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media (min-width: 1440px) {
+  #trusted-clients,
+  #products {
+    max-width: 1440px;
+  }
+  #hero,
+  #services,
+  #latest-blogs,
+  #technologies,
+  #testimonials,
+  #working-process {
+    max-width: 1440px;
+  }
+}
+
+@media (min-width: 1920px) {
+  #hero,
+  #services,
+  #products,
+  #latest-blogs,
+  #technologies,
+  #testimonials,
+  #trusted-clients,
+  #working-process {
+    max-width: 1920px;
+  }
+}

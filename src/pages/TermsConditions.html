@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Conditions – Sparktro</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hannan-black': '#1e2533',
+            'hannan-sub-text': '#5a556e',
+            'hannan-primary-2': '#0a97b0',
+            'hannan-border-1': '#bdc7d3',
+            'hannan-border-2': '#d6e2ef',
+            'hannan-fill-color': '#8d97a3',
+            'hannan-white': '#ffffff',
+            'hannan-green': '#1d9993',
+            'hannan-active': '#0dc46e',
+            'hannan-red': '#ff4340',
+            'hannan-yellow': '#fdcb02',
+            'hannan-blue': '#0482f9',
+            'hannan-pink': '#ee2358',
+            'hannan-purple': '#ee23da',
+            'hannan-orange': '#fdd40f',
+            'hannan-light-green': '#6bb54a',
+          },
+          fontFamily: {
+            'goodtimes': ['GoodTimes-Regular', 'sans-serif'],
+            'worksans': ['WorkSans-Regular', 'sans-serif'],
+            'worksans-medium': ['WorkSans-Medium', 'sans-serif'],
+            'worksans-semibold': ['WorkSans-SemiBold', 'sans-serif'],
+            'worksans-bold': ['WorkSans-Bold', 'sans-serif'],
+            'dmsans': ['DmSans-Regular', 'sans-serif'],
+            'dmsans-bold': ['DmSans-Bold', 'sans-serif'],
+          },
+          backgroundImage: {
+            'gradient-border': 'linear-gradient(90deg, rgba(255, 99, 99, 1) 0%, rgba(4, 130, 249, 1) 23.15%, rgba(242, 213, 25, 1) 45.79%, rgba(121, 150, 184, 1) 72.19%, rgba(107, 181, 74, 1) 100%)',
+          },
+          boxShadow: {
+            'custom': '0px 4px 10px 0px rgba(10, 151, 176, 0.1)',
+            'card': '0px 0px 30px 0px rgba(0, 0, 0, 0.06)',
+          },
+          backdropBlur: {
+            'xs': '2px',
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-in-out',
+            'slide-up': 'slideUp 0.5s ease-out',
+            'scale-in': 'scaleIn 0.3s ease-out',
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            scaleIn: {
+              '0%': { transform: 'scale(0.95)', opacity: '0' },
+              '100%': { transform: 'scale(1)', opacity: '1' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="../css/custom.css">
+</head>
+
+<body class="antialiased bg-hannan-white">
+  <!-- Header -->
+  <header
+    class="bg-white border-b border-solid pt-4 pr-4 sm:pr-8 lg:pr-60 pb-4 pl-4 sm:pl-8 lg:pl-60 flex flex-row items-center justify-between w-full h-20 relative sticky top-0 z-50 bg-white/95 backdrop-blur-sm header-gradient"
+    style="box-shadow: 0px 4px 10px 0px rgba(10, 151, 176, 0.1);">
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+      <img src="../assets/icons/icon0.svg" class="w-4 h-6" alt="Sparktro Icon" />
+      <div class="text-left font-goodtimes text-2xl leading-6 font-normal uppercase">
+        <span class="text-hannan-primary-2">park</span>
+        <span class="text-hannan-black">tro</span>
+      </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="hidden md:flex flex-row gap-6 items-center">
+      <a href="../index.html"
+        class="text-hannan-black font-worksans-medium text-base leading-4 font-medium hover:text-hannan-primary-2 transition-colors">Home</a>
+      <div class="flex flex-row gap-1 items-center">
+        <a href="Products.html"
+          class="text-hannan-black font-worksans-medium text-base leading-4 font-medium hover:text-hannan-primary-2 transition-colors">Products</a>
+        <img src="../assets/icons/arrow0.svg" class="w-4 h-4" alt="Dropdown" />
+      </div>
+      <div class="flex flex-row gap-1 items-center">
+        <a href="OurServices.html"
+          class="text-hannan-black font-worksans-medium text-base leading-4 font-medium hover:text-hannan-primary-2 transition-colors">Services</a>
+        <img src="../assets/icons/arrow1.svg" class="w-4 h-4" alt="Dropdown" />
+      </div>
+      <a href="BlogPage2.html"
+        class="text-hannan-black font-worksans-medium text-base leading-4 font-medium hover:text-hannan-primary-2 transition-colors">Blog</a>
+      <a href="AboutUs.html"
+        class="text-hannan-black font-worksans-medium text-base leading-4 font-medium hover:text-hannan-primary-2 transition-colors">About</a>
+    </nav>
+    <!-- CTA Button -->
+    <button
+      class="rounded-[30px] border border-hannan-primary-2 pt-2.5 pr-4 pb-2.5 pl-4 flex flex-row gap-1 items-center justify-center h-11 hover:bg-hannan-primary-2 hover:text-white transition-all duration-300"
+      style="backdrop-filter: blur(5px)">
+      <span
+        class="text-hannan-primary-2 font-worksans-medium text-base leading-4 font-medium hover:text-white transition-colors">Let's
+        Start</span>
+      <img src="../assets/icons/arrow2.svg" class="w-4 h-4" alt="Arrow" />
+    </button>
+  </header>
+
+  <!-- Main Content Container -->
+  <div class="bg-hannan-white w-[1920px] h-auto relative overflow-hidden mx-auto">
+    <!-- Terms & Conditions Content -->
+    <div class="flex flex-col gap-9 items-start justify-start w-[1440px] mx-auto pt-[130px] pb-20">
+      <!-- Page Title -->
+      <div class="flex flex-col gap-2.5 items-start justify-start self-stretch">
+        <h1 class="text-hannan-black font-worksans-semibold text-2xl leading-6 font-semibold self-stretch">Terms &amp;
+          Conditions</h1>
+        <p class="text-hannan-sub-text font-worksans text-base leading-[30px] font-normal self-stretch max-w-[800px]">A
+          theme controls the organization, features, and style of your online store. Different themes have different
+          styles and layouts, and offer a different experience for your customers. For example, if you're selling
+          cleaning services, then you might want your online store to feel fresh and professional.</p>
+      </div>
+      <!-- Terms Section -->
+      <div class="flex flex-col gap-2.5 items-start justify-start self-stretch">
+        <h2 class="text-hannan-black font-worksans-semibold text-xl leading-5 font-semibold self-stretch">Terms</h2>
+        <p class="text-hannan-sub-text font-worksans text-base leading-[30px] font-normal self-stretch">You are
+          responsible for maintaining the confidentiality of your account details, including your user identification,
+          password, and other private information. By using this service, you agree to take all necessary steps to
+          secure your account and prevent unauthorized access.<br><br>If you suspect that someone else has gained access
+          to your account or password, or if you believe your login details are being used without your permission, you
+          must notify us immediately. You agree that any actions taken using your account—whether authorized by you or
+          not—will be considered as if performed by you, and you are fully responsible for them.<br><br>You acknowledge
+          and agree that MS24 may rely on and hold you accountable for any use of the service or access to your account,
+          even if that access was unauthorized. You are responsible for any consequences or losses that arise from the
+          use of your account, and we reserve the right to take necessary actions to protect the security of your
+          account and our services.</p>
+      </div>
+      <!-- Conditions Section -->
+      <div class="flex flex-col gap-2.5 items-start justify-start self-stretch">
+        <h2 class="text-hannan-black font-worksans-semibold text-xl leading-5 font-semibold self-stretch">Conditions
+        </h2>
+        <p class="text-hannan-sub-text font-worksans text-base leading-[30px] font-normal self-stretch">Please review
+          our Privacy Agreement, which governs your use of the Site. Any personal information or data you provide, or
+          that is collected through your use of the Site, will be treated with strict confidentiality in accordance with
+          the Privacy Agreement and applicable laws and regulations. If you do not agree with how your information will
+          be used or shared as outlined in the Privacy Agreement, please refrain from using the Site.</p>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="bg-hannan-black w-[1920px] h-[512px] relative overflow-hidden mt-20">
+      <!-- Background Gradients -->
+      <div class="bg-hannan-blue rounded-[50%] w-[350px] h-[350px] absolute left-[1505px] top-[335px]"
+        style="opacity: 0.6; filter: blur(400px)"></div>
+      <div class="bg-hannan-light-green rounded-[50%] w-[350px] h-[350px] absolute left-[81px] top-80"
+        style="opacity: 0.6; filter: blur(400px)"></div>
+      <div class="bg-hannan-pink rounded-[50%] w-[343px] h-[343px] absolute left-[-82px] top-[-119px]"
+        style="filter: blur(400px)"></div>
+      <div class="bg-hannan-purple rounded-[50%] w-[343px] h-[343px] absolute left-[788px] top-[-185px]"
+        style="filter: blur(400px)"></div>
+      <div class="bg-hannan-orange rounded-[50%] w-[343px] h-[343px] absolute left-[1643px] top-[-117px]"
+        style="filter: blur(400px)"></div>
+      <!-- Decorative Elements -->
+      <img class="w-[5.37%] h-[14.84%] absolute right-[90.26%] left-[4.37%] bottom-[71.09%] top-[14.06%] opacity-20"
+        src="../assets/icons/shape-40.svg" alt="Decoration" />
+      <img class="w-[8.65%] h-[14.84%] absolute right-[95.16%] left-[-3.8%] bottom-[-3.52%] top-[88.67%] opacity-20"
+        src="../assets/icons/shape-50.svg" alt="Decoration" />
+      <img class="w-[2.1%] h-[14.84%] absolute right-[6.86%] left-[91.04%] bottom-[30.86%] top-[54.3%] opacity-20"
+        src="../assets/icons/group-10000010050.svg" alt="Decoration" />
+      <!-- Social Media Links -->
+      <div class="flex flex-row gap-4 items-center justify-start w-[1440px] absolute left-60 top-[50px]">
+        <div class="border-t-2 border-hannan-sub-text flex-1"></div>
+        <div class="flex flex-row gap-2.5 items-center justify-start">
+          <div class="flex flex-row gap-1 items-center justify-start">
+            <img src="../assets/icons/facebook0.svg" class="w-6 h-6" alt="Facebook" />
+            <span class="text-white font-worksans text-base leading-4 font-normal">Facebook</span>
+          </div>
+          <div class="border-l border-hannan-sub-text h-4"></div>
+          <div class="flex flex-row gap-1 items-center justify-start">
+            <img src="../assets/icons/twitter0.svg" class="w-6 h-6" alt="Twitter" />
+            <span class="text-white font-worksans text-base leading-4 font-normal">Twitter</span>
+          </div>
+          <div class="border-l border-hannan-sub-text h-4"></div>
+          <div class="flex flex-row gap-1 items-center justify-start">
+            <div class="w-6 h-6 relative overflow-hidden">
+              <img class="w-[66.46%] h-[63.43%] absolute right-[16.77%] left-[16.77%] bottom-[17.5%] top-[19.07%]"
+                src="../assets/icons/group0.svg" alt="Instagram" />
+            </div>
+            <span class="text-white font-worksans text-base leading-4 font-normal">Instagram</span>
+          </div>
+          <div class="border-l border-hannan-sub-text h-4"></div>
+          <div class="flex flex-row gap-1 items-center justify-start">
+            <img src="../assets/icons/linkedin0.svg" class="w-6 h-6" alt="LinkedIn" />
+            <span class="text-white font-worksans text-base leading-4 font-normal">LinkedIn</span>
+          </div>
+        </div>
+        <div class="border-t-2 border-hannan-sub-text flex-1"></div>
+      </div>
+      <!-- Footer Content -->
+      <div class="flex flex-row gap-[105px] items-start justify-start w-[1440px] absolute left-60 top-[154px]">
+        <!-- Office Address -->
+        <div class="flex flex-col gap-9 items-start justify-start w-[342px]">
+          <h3 class="text-white font-worksans-semibold text-xl leading-5 font-semibold">Office Address</h3>
+          <div class="flex flex-col gap-6">
+            <div class="flex flex-row gap-2.5 items-center">
+              <div class="border border-hannan-sub-text w-[34px] h-[34px] flex items-center justify-center">
+                <img src="../assets/icons/call1.svg" class="w-5 h-5" alt="Phone" />
+              </div>
+              <span class="text-white font-worksans text-base leading-4 font-normal">+9903652497</span>
+            </div>
+            <div class="flex flex-row gap-2.5 items-center">
+              <div class="border border-hannan-sub-text w-[34px] h-[34px] flex items-center justify-center">
+                <img src="../assets/icons/frame0.svg" class="w-5 h-5" alt="Email" />
+              </div>
+              <span class="text-white font-worksans text-base leading-4 font-normal">info@sparktro.com</span>
+            </div>
+            <div class="flex flex-row gap-2.5 items-center">
+              <div class="border border-hannan-sub-text w-[34px] h-[34px] flex items-center justify-center">
+                <img src="../assets/icons/frame1.svg" class="w-5 h-5" alt="Location" />
+              </div>
+              <span class="text-white font-worksans text-base leading-4 font-normal">3891 Ranchview Dr. Richardson,
+                California 62639</span>
+            </div>
+          </div>
+        </div>
+        <!-- Company Info -->
+        <div class="flex flex-col gap-9 items-start justify-start w-[220px]">
+          <h3 class="text-white font-worksans-semibold text-xl leading-5 font-semibold">Company Info</h3>
+          <div class="flex flex-col gap-6">
+            <a href="#"
+              class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">About
+              us</a>
+            <a href="ContactUs.html"
+              class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Contact
+              us</a>
+            <a href="TermsConditions.html"
+              class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Terms
+              & Conditions</a>
+            <a href="PrivacyPolicy.html"
+              class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Privacy
+              Policy</a>
+          </div>
+        </div>
+        <!-- Quick Links -->
+        <div class="flex flex-col gap-9 items-start justify-start w-[220px]">
+          <h3 class="text-white font-worksans-semibold text-xl leading-5 font-semibold">Quick Links</h3>
+          <div class="flex flex-col gap-6">
+            <a href="OurServices.html"
+              class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Services</a>
+            <a href="Products.html"
+              class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Products</a>
+            <a href="BlogPage2.html"
+              class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Blogs</a>
+            <a href="#"
+              class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">FAQs</a>
+          </div>
+        </div>
+        <!-- Newsletter -->
+        <div class="flex flex-col gap-9 items-start justify-start w-[342px]">
+          <h3 class="text-white font-worksans-semibold text-xl leading-5 font-semibold">Subscribe Newsletter</h3>
+          <div class="flex flex-col gap-6">
+            <p class="text-white font-worksans text-base leading-5 font-normal">
+              Subscribe for Social Media Growth Hacks & Marketing Insights
+            </p>
+            <div class="flex flex-row gap-1.5 items-center">
+              <div
+                class="border border-hannan-sub-text p-4 flex flex-row gap-2.5 items-center flex-1 h-12 bg-transparent">
+                <img src="../assets/icons/email1.svg" class="w-5 h-5" alt="Email" />
+                <input type="email" placeholder="Your Email"
+                  class="text-hannan-fill-color font-worksans text-base leading-4 font-normal bg-transparent border-none outline-none flex-1">
+              </div>
+              <button
+                class="bg-hannan-primary-2 p-4 flex items-center justify-center w-12 h-12 hover:bg-opacity-80 transition-colors">
+                <img src="../assets/icons/frame2.svg" class="w-5 h-5" alt="Send" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Footer Bottom -->
+      <div class="flex flex-col gap-6 items-start justify-start w-[1440px] absolute left-60 top-[440px]">
+        <div class="border-t-2 border-hannan-sub-text self-stretch"></div>
+        <div class="flex flex-row items-center justify-between self-stretch">
+          <div class="flex items-center gap-2">
+            <img src="../assets/icons/icon1.svg" class="w-4 h-6" alt="Sparktro Icon" />
+            <div class="text-left font-goodtimes text-2xl leading-6 font-normal uppercase">
+              <span class="text-hannan-primary-2">park</span>
+              <span class="text-white">tro</span>
+            </div>
+          </div>
+          <span class="text-white font-worksans text-base leading-4 font-normal">
+            © 2025 Sparktro. All rights reserved
+          </span>
+        </div>
+      </div>
+      <!-- Decorative Circle -->
+      <div
+        class="rounded-[50%] border border-hannan-yellow w-[60px] h-[60px] absolute left-[1688px] top-[77px] opacity-30">
+      </div>
+    </div>
+  </div>
+  <!-- JavaScript -->
+  <script src="../js/utils.js"></script>
+</body>
+
+</html>

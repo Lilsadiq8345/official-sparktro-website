@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to create business website for web flow – Sparktro</title>
+  <link rel="stylesheet" href="../css/main.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'hannan-black': '#1e2533',
+            'hannan-sub-text': '#5a556e',
+            'hannan-primary-2': '#0a97b0',
+            'hannan-border-1': '#bdc7d3',
+            'hannan-border-2': '#d6e2ef',
+            'hannan-fill-color': '#8d97a3',
+            'hannan-white': '#ffffff',
+            'hannan-green': '#1d9993',
+            'hannan-active': '#0dc46e',
+            'hannan-red': '#ff4340',
+            'hannan-yellow': '#fdcb02',
+            'hannan-blue': '#0482f9',
+            'hannan-pink': '#ee2358',
+            'hannan-purple': '#ee23da',
+            'hannan-orange': '#fdd40f',
+            'hannan-light-green': '#6bb54a',
+          },
+          fontFamily: {
+            'goodtimes': ['GoodTimes-Regular', 'sans-serif'],
+            'worksans': ['WorkSans-Regular', 'sans-serif'],
+            'worksans-medium': ['WorkSans-Medium', 'sans-serif'],
+            'worksans-semibold': ['WorkSans-SemiBold', 'sans-serif'],
+            'worksans-bold': ['WorkSans-Bold', 'sans-serif'],
+            'dmsans': ['DmSans-Regular', 'sans-serif'],
+            'dmsans-bold': ['DmSans-Bold', 'sans-serif'],
+          },
+          backgroundImage: {
+            'gradient-border': 'linear-gradient(90deg, rgba(255, 99, 99, 1) 0%, rgba(4, 130, 249, 1) 23.15%, rgba(242, 213, 25, 1) 45.79%, rgba(121, 150, 184, 1) 72.19%, rgba(107, 181, 74, 1) 100%)',
+          },
+          boxShadow: {
+            'custom': '0px 4px 10px 0px rgba(10, 151, 176, 0.1)',
+            'card': '0px 0px 30px 0px rgba(0, 0, 0, 0.06)',
+          },
+          backdropBlur: {
+            'xs': '2px',
+          },
+          animation: {
+            'fade-in': 'fadeIn 0.5s ease-in-out',
+            'slide-up': 'slideUp 0.5s ease-out',
+            'scale-in': 'scaleIn 0.3s ease-out',
+            'float': 'float 6s ease-in-out infinite',
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' },
+            },
+            scaleIn: {
+              '0%': { transform: 'scale(0.95)', opacity: '0' },
+              '100%': { transform: 'scale(1)', opacity: '1' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-10px)' },
+            },
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="stylesheet" href="../css/custom.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
+
+    .blog-content {
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
+    }
+
+    .blog-content:hover {
+      transform: translateY(-2px);
+    }
+
+    .share-btn {
+      transition: all 0.3s ease;
+    }
+
+    .share-btn:hover {
+      transform: scale(1.1);
+      background-color: #0a97b0;
+      color: white;
+    }
+
+    .quote-block {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border-left: 4px solid #0a97b0;
+    }
+
+    .blog-image {
+      transition: all 0.3s ease;
+    }
+
+    .blog-image:hover {
+      transform: scale(1.02);
+    }
+
+    .reading-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 3px;
+      background: linear-gradient(90deg, #0a97b0, #1d9993);
+      z-index: 1000;
+      transition: width 0.1s ease;
+    }
+
+    @media (max-width: 768px) {
+      .blog-container {
+        padding: 1rem;
+      }
+
+      .blog-title {
+        font-size: 1.875rem;
+        line-height: 2.25rem;
+      }
+
+      .blog-meta {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      .blog-container {
+        max-width: 100%;
+        padding: 2rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="antialiased bg-hannan-white">
+  <!-- Reading Progress Bar -->
+  <div class="reading-progress" id="readingProgress"></div>
+
+  <!-- Header -->
+  <header
+    class="bg-white border-b border-solid pt-4 pr-4 sm:pr-8 lg:pr-60 pb-4 pl-4 sm:pl-8 lg:pl-60 flex flex-row items-center justify-between w-full h-20 relative sticky top-0 z-50 bg-white/95 backdrop-blur-sm"
+    style="border-image: linear-gradient(90deg, rgba(255, 99, 99, 1) 0%, rgba(4, 130, 249, 1) 23.15%, rgba(242, 213, 25, 1) 45.79%, rgba(121, 150, 184, 1) 72.19%, rgba(107, 181, 74, 1) 100%); border-image-slice: 1; box-shadow: 0px 4px 10px 0px rgba(10, 151, 176, 0.1);">
+
+    <!-- Logo -->
+    <div class="flex items-center gap-2">
+      <img src="../assets/icons/icon0.svg" class="w-4 h-6" alt="Sparktro Icon" />
+      <div class="text-left font-goodtimes text-2xl leading-6 font-normal uppercase">
+        <span class="text-hannan-primary-2">park</span>
+        <span class="text-hannan-black">tro</span>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="hidden md:flex flex-row gap-6 items-center">
+      <a href="#"
+        class="text-hannan-black font-worksans-medium text-base leading-4 font-medium hover:text-hannan-primary-2 transition-colors">Home</a>
+      <div class="flex flex-row gap-1 items-center">
+        <a href="#"
+          class="text-hannan-black font-worksans-medium text-base leading-4 font-medium hover:text-hannan-primary-2 transition-colors">Products</a>
+        <img src="../assets/icons/arrow0.svg" class="w-4 h-4" alt="Dropdown" />
+      </div>
+      <div class="flex flex-row gap-1 items-center">
+        <a href="#"
+          class="text-hannan-black font-worksans-medium text-base leading-4 font-medium hover:text-hannan-primary-2 transition-colors">Services</a>
+        <img src="../assets/icons/arrow1.svg" class="w-4 h-4" alt="Dropdown" />
+      </div>
+      <a href="#"
+        class="text-hannan-black font-worksans-medium text-base leading-4 font-medium hover:text-hannan-primary-2 transition-colors">Blog</a>
+      <a href="#"
+        class="text-hannan-black font-worksans-medium text-base leading-4 font-medium hover:text-hannan-primary-2 transition-colors">About</a>
+    </nav>
+
+    <!-- CTA Button -->
+    <button
+      class="rounded-[30px] border border-hannan-primary-2 pt-2.5 pr-4 pb-2.5 pl-4 flex flex-row gap-1 items-center justify-center h-11 hover:bg-hannan-primary-2 hover:text-white transition-all duration-300"
+      style="backdrop-filter: blur(5px)">
+      <span
+        class="text-hannan-primary-2 font-worksans-medium text-base leading-4 font-medium hover:text-white transition-colors">Let's
+        Start</span>
+      <img src="../assets/icons/arrow2.svg" class="w-4 h-4" alt="Arrow" />
+    </button>
+  </header>
+
+  <!-- Main Content -->
+  <main
+    class="blog-container flex flex-col gap-6 items-start justify-start w-full max-w-[952px] mx-auto px-4 sm:px-8 lg:px-0 pt-8 sm:pt-12 lg:pt-[130px] animate-fade-in">
+
+    <!-- Blog Header -->
+    <div class="flex flex-col gap-4 items-start justify-start self-stretch animate-slide-up">
+      <!-- Meta Information -->
+      <div class="flex flex-row gap-6 items-center justify-start w-full flex-wrap">
+        <div class="flex flex-row gap-1.5 items-center justify-start">
+          <img src="../assets/icons/frame3.svg" class="w-5 h-5" alt="Admin" />
+          <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">By Admin</span>
+        </div>
+        <div class="flex flex-row gap-1.5 items-center justify-start">
+          <img src="../assets/icons/calender0.svg" class="w-5 h-5" alt="Calendar" />
+          <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">30 May 2025</span>
+        </div>
+        <div class="flex flex-row gap-2 items-center justify-start">
+          <img src="../assets/icons/frame4.svg" class="w-5 h-5" alt="Category" />
+          <span class="text-hannan-sub-text font-dmsans text-sm leading-[14px] font-normal">Trend Design</span>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <h1
+        class="text-hannan-black font-worksans-medium text-3xl sm:text-4xl lg:text-[40px] leading-10 font-medium self-stretch blog-title">
+        How to create business website for web flow
+      </h1>
+    </div>
+
+    <!-- Featured Image -->
+    <img src="../assets/images/_10.png"
+      class="self-stretch w-full h-[300px] sm:h-[400px] object-cover rounded-lg blog-image" alt="Blog Featured Image" />
+
+    <!-- Blog Content -->
+    <div class="flex flex-col gap-6 items-start justify-start self-stretch">
+      <div class="flex flex-col gap-10 items-start justify-start self-stretch">
+
+        <!-- Introduction -->
+        <div class="text-hannan-sub-text font-worksans text-base leading-[30px] font-normal self-stretch blog-content">
+          Creating a business website with Webflow is a streamlined process that combines design freedom with powerful
+          development tools, making it ideal for designers who want full control without coding.
+        </div>
+
+        <!-- Section 1: Design Idea -->
+        <div class="flex flex-col gap-4 items-start justify-start self-stretch blog-content">
+          <h2 class="text-hannan-black font-worksans-bold text-lg leading-[18px] font-bold self-stretch">
+            1. Design Idea
+          </h2>
+          <div class="text-hannan-sub-text font-worksans text-base leading-9 font-normal self-stretch">
+            <p class="mb-4">Before you start, make sure you have the following supplies:</p>
+            <ul class="list-disc list-inside space-y-2 ml-4">
+              <li>Creating a business website with Webflow is a streamlined process</li>
+              <li>That combines design freedom with powerful development tools,</li>
+              <li>Making it ideal for designers who want full control without coding.</li>
+              <li>Start by planning your content structure—</li>
+              <li>Typically including pages like Home, About, Services, and Contact—then choose a</li>
+              <li>Blank canvas or a business-oriented template.</li>
+              <li>Using the Webflow Designer, you can visually build each section</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Section 2: Design Concept -->
+        <div class="flex flex-col gap-4 items-start justify-start self-stretch blog-content">
+          <h2 class="text-hannan-black font-worksans-bold text-lg leading-[18px] font-bold self-stretch">
+            2. Design Concept
+          </h2>
+          <div class="text-hannan-sub-text font-worksans text-base leading-[30px] font-normal self-stretch">
+            You can also use Webflow's CMS for dynamic content like blogs or portfolios. Once the design is complete,
+            optimize for SEO, connect your custom domain, and publish your site live with Webflow's hosting.
+          </div>
+        </div>
+
+        <!-- Quote Block -->
+        <div
+          class="quote-block p-4 flex flex-row gap-2.5 items-center justify-center self-stretch rounded-lg blog-content">
+          <div class="text-hannan-black font-worksans-medium text-base leading-7 font-medium self-stretch italic">
+            "Add animations and interactions to enhance user engagement, and ensure responsiveness across devices. You
+            can also use Webflow's CMS for dynamic content like blogs or portfolios. Once the design is complete,
+            optimize for SEO, connect your custom domain, and publish your site live with Webflow's hosting."
+          </div>
+        </div>
+
+        <!-- Section 3: Complete Requirements List -->
+        <div class="flex flex-col gap-4 items-start justify-start self-stretch blog-content">
+          <h2 class="text-hannan-black font-worksans-bold text-lg leading-[18px] font-bold self-stretch">
+            3. Complete Requirements List
+          </h2>
+          <div class="text-hannan-sub-text font-worksans text-base leading-9 font-normal self-stretch">
+            <ul class="list-disc list-inside space-y-2 ml-4">
+              <li>Creating a business website with Webflow is a streamlined process that combines design freedom with
+                powerful development tools, making it ideal for designers who want full control without coding.</li>
+              <li>Start by planning your content structure—typically including pages like Home, About, Services, and
+                Contact—then choose a blank canvas or a business-oriented template.</li>
+              <li>Using the Webflow Designer, you can visually build each section, such as a bold hero area, service
+                highlights, testimonials, and a contact form.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Image Gallery -->
+        <div class="flex flex-row gap-6 items-center justify-start w-full flex-wrap blog-content">
+          <img src="../assets/images/_80.png"
+            class="w-full sm:w-[464px] h-[300px] sm:h-[400px] object-cover rounded-lg blog-image"
+            alt="Webflow Design Example 1" />
+          <img src="../assets/images/_70.png"
+            class="w-full sm:w-[464px] h-[300px] sm:h-[400px] object-cover rounded-lg blog-image"
+            alt="Webflow Design Example 2" />
+        </div>
+
+        <!-- Section 4: Set Up Webflow Project -->
+        <div class="flex flex-col gap-4 items-start justify-start self-stretch blog-content">
+          <h2 class="text-hannan-black font-dmsans-bold text-lg leading-[18px] font-bold self-stretch">
+            4. Set Up Webflow Project
+          </h2>
+          <div class="text-hannan-sub-text font-worksans text-base leading-9 font-normal self-stretch">
+            <ul class="list-disc list-inside space-y-2 ml-4">
+              <li>Creating a business website with Webflow is a streamlined process that combines design freedom with
+                powerful development tools, making it ideal for designers who want full control without coding.</li>
+              <li>Start by planning your content structure—typically including pages like Home, About, Services, and
+                Contact—then choose a blank canvas or a business-oriented template.</li>
+              <li>Using the Webflow Designer, you can visually build each section, such as a bold hero area, service
+                highlights, testimonials, and a contact form.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Section 5: Design Pages -->
+        <div class="flex flex-col gap-4 items-start justify-start self-stretch blog-content">
+          <h2 class="text-hannan-black font-worksans-bold text-lg leading-[18px] font-bold self-stretch">
+            5. Design Pages (Using Webflow Designer)
+          </h2>
+          <div class="text-hannan-sub-text font-worksans text-base leading-9 font-normal self-stretch">
+            <ul class="list-disc list-inside space-y-2 ml-4">
+              <li>Creating a business website with Webflow is a streamlined process that combines design freedom with
+                powerful development tools, making it ideal for designers who want full control without coding.</li>
+              <li>Start by planning your content structure—typically including pages like Home, About, Services, and
+                Contact—then choose a blank canvas or a business-oriented template.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Share Section -->
+        <div class="flex flex-col gap-4 items-start justify-start w-[150px] blog-content">
+          <h3 class="text-hannan-black font-worksans-bold text-lg leading-[18px] font-bold self-stretch">
+            Share
+          </h3>
+          <div class="flex flex-row gap-2.5 items-center justify-start self-stretch">
+            <button
+              class="share-btn border border-hannan-border-2 w-[30px] h-[30px] rounded flex items-center justify-center text-hannan-black hover:text-white transition-all duration-300">
+              <span class="text-sm">f</span>
+            </button>
+            <button
+              class="share-btn border border-hannan-border-2 w-[30px] h-[30px] rounded flex items-center justify-center text-hannan-black hover:text-white transition-all duration-300">
+              <span class="text-sm">t</span>
+            </button>
+            <button
+              class="share-btn border border-hannan-border-2 w-[30px] h-[30px] rounded flex items-center justify-center text-hannan-black hover:text-white transition-all duration-300">
+              <span class="text-sm">in</span>
+            </button>
+            <button
+              class="share-btn border border-hannan-border-2 w-[30px] h-[30px] rounded flex items-center justify-center text-hannan-black hover:text-white transition-all duration-300">
+              <span class="text-sm">yt</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-hannan-black w-full py-12 sm:py-16 relative overflow-hidden mt-20">
+    <!-- Background Gradients -->
+    <div class="absolute inset-0">
+      <div
+        class="bg-hannan-blue rounded-full w-[350px] h-[350px] absolute right-4 top-1/2 transform -translate-y-1/2 opacity-60"
+        style="filter: blur(400px)"></div>
+      <div
+        class="bg-hannan-light-green rounded-full w-[350px] h-[350px] absolute left-4 top-1/2 transform -translate-y-1/2 opacity-60"
+        style="filter: blur(400px)"></div>
+      <div class="bg-hannan-pink rounded-full w-[343px] h-[343px] absolute -left-20 -top-20"
+        style="filter: blur(400px)"></div>
+      <div class="bg-hannan-purple rounded-full w-[343px] h-[343px] absolute left-1/2 top-0 transform -translate-x-1/2"
+        style="filter: blur(400px)"></div>
+      <div class="bg-hannan-orange rounded-full w-[343px] h-[343px] absolute right-4 -top-20"
+        style="filter: blur(400px)"></div>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-60 mb-12">
+      <div class="flex flex-row gap-4 items-center justify-center">
+        <div class="border-t-2 border-hannan-sub-text flex-1"></div>
+        <div class="flex flex-row gap-4 items-center">
+          <a href="#" class="flex flex-row gap-1 items-center text-white hover:text-hannan-primary-2 transition-colors">
+            <img src="../assets/icons/facebook0.svg" class="w-6 h-6" alt="Facebook" />
+            <span class="font-worksans text-base leading-4 font-normal">Facebook</span>
+          </a>
+          <div class="border-l border-hannan-sub-text h-4"></div>
+          <a href="#" class="flex flex-row gap-1 items-center text-white hover:text-hannan-primary-2 transition-colors">
+            <img src="../assets/icons/twitter0.svg" class="w-6 h-6" alt="Twitter" />
+            <span class="font-worksans text-base leading-4 font-normal">Twitter</span>
+          </a>
+          <div class="border-l border-hannan-sub-text h-4"></div>
+          <a href="#" class="flex flex-row gap-1 items-center text-white hover:text-hannan-primary-2 transition-colors">
+            <img src="../assets/icons/group0.svg" class="w-6 h-6" alt="Instagram" />
+            <span class="font-worksans text-base leading-4 font-normal">Instagram</span>
+          </a>
+          <div class="border-l border-hannan-sub-text h-4"></div>
+          <a href="#" class="flex flex-row gap-1 items-center text-white hover:text-hannan-primary-2 transition-colors">
+            <img src="../assets/icons/linkedin0.svg" class="w-6 h-6" alt="LinkedIn" />
+            <span class="font-worksans text-base leading-4 font-normal">LinkedIn</span>
+          </a>
+        </div>
+        <div class="border-t-2 border-hannan-sub-text flex-1"></div>
+      </div>
+    </div>
+
+    <!-- Footer Content -->
+    <div class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-60">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-[105px] mb-12">
+
+        <!-- Office Address -->
+        <div class="flex flex-col gap-6">
+          <h3 class="text-white font-worksans-semibold text-xl leading-5 font-semibold">Office Address</h3>
+          <div class="flex flex-col gap-6">
+            <div class="flex flex-row gap-2 items-center">
+              <div class="border border-hannan-sub-text w-[34px] h-[34px] flex items-center justify-center">
+                <img src="../assets/icons/call1.svg" class="w-5 h-5" alt="Phone" />
+              </div>
+              <span class="text-white font-worksans text-base leading-4 font-normal">+9903652497</span>
+            </div>
+            <div class="flex flex-row gap-2 items-center">
+              <div class="border border-hannan-sub-text w-[34px] h-[34px] flex items-center justify-center">
+                <img src="../assets/icons/frame0.svg" class="w-5 h-5" alt="Email" />
+              </div>
+              <span class="text-white font-worksans text-base leading-4 font-normal">info@sparktro.com</span>
+            </div>
+            <div class="flex flex-row gap-2 items-center">
+              <div class="border border-hannan-sub-text w-[34px] h-[34px] flex items-center justify-center">
+                <img src="../assets/icons/frame1.svg" class="w-5 h-5" alt="Location" />
+              </div>
+              <span class="text-white font-worksans text-base leading-4 font-normal">3891 Ranchview Dr. Richardson,
+                California 62639</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Company Info -->
+        <div class="flex flex-col gap-6">
+          <h3 class="text-white font-worksans-semibold text-xl leading-5 font-semibold">Company Info</h3>
+          <div class="flex flex-col gap-6">
+            <a href="#"
+              class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">About
+              us</a>
+            <a href="#"
+              class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Contact
+              us</a>
+            <a href="#"
+              class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Terms
+              & Conditions</a>
+            <a href="#"
+              class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Privacy
+              Policy</a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-col gap-6">
+          <h3 class="text-white font-worksans-semibold text-xl leading-5 font-semibold">Quick Links</h3>
+          <div class="flex flex-col gap-6">
+            <a href="#"
+              class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Services</a>
+            <a href="#"
+              class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Products</a>
+            <a href="#"
+              class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Blogs</a>
+            <a href="#"
+              class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">FAQs</a>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="flex flex-col gap-6">
+          <h3 class="text-white font-worksans-semibold text-xl leading-5 font-semibold">Subscribe Newsletter</h3>
+          <div class="flex flex-col gap-6">
+            <p class="text-white font-worksans text-base leading-5 font-normal">
+              Subscribe for Social Media Growth Hacks & Marketing Insights
+            </p>
+            <div class="flex flex-row gap-2 items-center">
+              <div
+                class="border border-hannan-sub-text p-4 flex flex-row gap-2 items-center flex-1 h-12 bg-transparent">
+                <img src="../assets/icons/email1.svg" class="w-5 h-5" alt="Email" />
+                <input type="email" placeholder="Your Email"
+                  class="text-hannan-fill-color font-worksans text-base leading-4 font-normal bg-transparent border-none outline-none flex-1" />
+              </div>
+              <button
+                class="bg-hannan-primary-2 p-4 flex items-center justify-center w-12 h-12 hover:bg-opacity-80 transition-colors">
+                <img src="../assets/icons/frame2.svg" class="w-5 h-5" alt="Send" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <div class="border-t-2 border-hannan-sub-text pt-6">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-2">
+            <img src="../assets/icons/icon1.svg" class="w-4 h-6" alt="Sparktro Icon" />
+            <div class="text-left font-goodtimes text-2xl leading-6 font-normal uppercase">
+              <span class="text-hannan-primary-2">park</span>
+              <span class="text-white">tro</span>
+            </div>
+          </div>
+          <span class="text-white font-worksans text-base leading-4 font-normal">
+            © 2025 Sparktro. All rights reserved
+          </span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Blog Page Specific JavaScript -->
+  <script src="../js/utils.js"></script>
+</body>
+
+</html>

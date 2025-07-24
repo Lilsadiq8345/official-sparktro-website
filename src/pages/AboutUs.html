@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./vars.css">
+  <link rel="stylesheet" href="./style.css">
+  <script src='https://cdn.tailwindcss.com/3.2.0'></script>
+  <script src="./tailwind.config.js"></script>
+  <style>
+    a,
+    button,
+    input,
+    select,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      background: none;
+
+      -webkit-font-smoothing: antialiased;
+    }
+
+    menu,
+    ol,
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body class="antialiased bg-hannan-white">
+  <!-- Header -->
+  <header
+    class="bg-white border-b border-solid pt-4 pr-4 sm:pr-8 lg:pr-60 pb-4 pl-4 sm:pl-8 lg:pl-60 flex flex-row items-center justify-between w-full h-20 relative sticky top-0 z-50 bg-white/95 backdrop-blur-sm header-gradient"
+    style="box-shadow: 0px 4px 10px 0px rgba(10, 151, 176, 0.1);">
+    <div class="shrink-0 w-[172px] h-6 static">
+      <div
+        class="text-left font-['GoodTimes-Regular',_sans-serif] text-2xl leading-6 font-normal uppercase absolute left-[264px] top-7">
+        <span>
+          <span class="parktro-span">park</span>
+          <span class="parktro-span2">tro</span>
+        </span>
+      </div>
+      <img
+        class="w-[1.09%] h-[24.71%] absolute right-[86.41%] left-[12.5%] bottom-[36.54%] top-[38.75%] overflow-visible"
+        src="../assets/icons/icon0.svg" />
+    </div>
+    <div class="flex flex-row gap-6 items-center justify-start shrink-0 relative">
+      <div
+        class="text-hannan-black text-left font-['WorkSans-Medium',_sans-serif] text-base leading-4 font-medium relative">
+        Home
+      </div>
+      <div class="flex flex-row gap-0.5 items-center justify-start shrink-0 relative">
+        <div
+          class="text-hannan-black text-left font-['WorkSans-Medium',_sans-serif] text-base leading-4 font-medium relative">
+          Products
+        </div>
+        <img class="shrink-0 w-4 h-4 relative overflow-visible" src="../assets/icons/arrow0.svg" />
+      </div>
+      <div class="flex flex-row gap-0.5 items-center justify-start shrink-0 relative">
+        <div
+          class="text-hannan-black text-left font-['WorkSans-Medium',_sans-serif] text-base leading-4 font-medium relative">
+          Services
+        </div>
+        <img class="shrink-0 w-4 h-4 relative overflow-visible" src="../assets/icons/arrow1.svg" />
+      </div>
+      <div
+        class="text-hannan-black text-left font-['WorkSans-Medium',_sans-serif] text-base leading-4 font-medium relative">
+        Blog
+      </div>
+      <div
+        class="text-hannan-black text-left font-['WorkSans-Medium',_sans-serif] text-base leading-4 font-medium relative">
+        About
+      </div>
+    </div>
+    <div
+      class="rounded-[30px] border-solid border-hannan-primary-2 border pt-2.5 pr-4 pb-2.5 pl-4 flex flex-row gap-1 items-center justify-center shrink-0 h-11 relative"
+      style="backdrop-filter: blur(5px)">
+      <div
+        class="text-hannan-primary-2 text-center font-['WorkSans-Medium',_sans-serif] text-base leading-4 font-medium relative flex items-center justify-center">
+        Let’s Start
+      </div>
+      <img class="shrink-0 w-4 h-4 relative overflow-visible" src="../assets/icons/arrow2.svg" />
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main
+    class="bg-hannan-white w-full max-w-[1440px] mx-auto flex flex-col gap-16 pt-10 pb-20 px-4 sm:px-8 animate-fade-in">
+    <!-- Section: Company Description & Stats -->
+    <section class="flex flex-col lg:flex-row gap-10 items-center justify-between w-full">
+      <div class="flex-1 flex flex-col gap-6">
+        <h1 class="text-hannan-black font-worksans-bold text-3xl sm:text-4xl lg:text-[40px] leading-tight font-bold">We
+          believe smart design drives business and product growth.</h1>
+        <p class="text-hannan-sub-text font-worksans text-lg leading-7 font-normal">A company description is a concise
+          overview of a business, summarizing its purpose, offerings, and distinguishing factors. It's a crucial part of
+          a business plan, used to communicate the brand's identity to stakeholders like customers, investors, and
+          partners.<br><br>A well-crafted company description should be clear, compelling, and informative, highlighting
+          the company's vision, mission, values, products, services, target market, and competitive advantages.</p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-4">
+          <div class="flex flex-col items-center">
+            <span class="text-hannan-black font-worksans-bold text-3xl sm:text-4xl font-bold">10+</span>
+            <span class="text-hannan-sub-text font-worksans text-base leading-6">Years of Codecanyon Experience</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="text-hannan-black font-worksans-bold text-3xl sm:text-4xl font-bold">250+</span>
+            <span class="text-hannan-sub-text font-worksans text-base leading-6">Successfully Projects Done</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="text-hannan-black font-worksans-bold text-3xl sm:text-4xl font-bold">15+</span>
+            <span class="text-hannan-sub-text font-worksans text-base leading-6">Company or Clients Achievement</span>
+          </div>
+          <div class="flex flex-col items-center">
+            <span class="text-hannan-black font-worksans-bold text-3xl sm:text-4xl font-bold">98%</span>
+            <span class="text-hannan-sub-text font-worksans text-base leading-6">Clients Satisfied & Retention</span>
+          </div>
+        </div>
+      </div>
+      <img class="w-full max-w-[586px] h-auto rounded-xl shadow-card animate-float"
+        style="object-fit: cover; aspect-ratio: 586/468"
+        src="../assets/images/group-business-people-looking-his-female-colleague-standing-desk-office0.png"
+        alt="Business Team" />
+    </section>
+
+    <!-- Section: Mission & Vision -->
+    <section class="flex flex-col lg:flex-row gap-10 items-center justify-between w-full">
+      <img class="w-full max-w-[586px] h-auto rounded-xl shadow-card animate-float" style="object-fit: cover"
+        src="../assets/images/male-real-estate-agent-doing-business-showing-house-potential-buying-couple0.png"
+        alt="Mission" />
+      <div class="flex-1 flex flex-col gap-4">
+        <h2 class="text-hannan-black font-worksans-bold text-2xl leading-6 font-bold">Our Mission & Vision</h2>
+        <p class="text-hannan-sub-text font-worksans text-base leading-7 font-normal">This includes the company's legal
+          name, location (headquarters and other relevant locations), business structure and founding date. This section
+          provides a summary of what the company does, including its products or services, mission, vision, and
+          values.<br><br>Hotel booking is the process of reserving accommodation in advance at a hotel, typically
+          through a website, app, travel agency, or directly with the hotel. It ensures that guests have a confirmed
+          place to stay upon arrival, with options to choose room types, amenities, and payment methods.</p>
+        <ul class="flex flex-col gap-2 mt-2">
+          <li class="flex items-center gap-2 text-hannan-sub-text font-worksans text-base"><img
+              src="../assets/icons/check0.svg" class="w-5 h-5" alt="Check" />Instant Booking Confirmation</li>
+          <li class="flex items-center gap-2 text-hannan-sub-text font-worksans text-base"><img
+              src="../assets/icons/check1.svg" class="w-5 h-5" alt="Check" />Room Type Selection</li>
+          <li class="flex items-center gap-2 text-hannan-sub-text font-worksans text-base"><img
+              src="../assets/icons/check2.svg" class="w-5 h-5" alt="Check" />Filter & Search Options</li>
+          <li class="flex items-center gap-2 text-hannan-sub-text font-worksans text-base"><img
+              src="../assets/icons/check3.svg" class="w-5 h-5" alt="Check" />Guest Reviews & Ratings</li>
+          <li class="flex items-center gap-2 text-hannan-sub-text font-worksans text-base"><img
+              src="../assets/icons/check4.svg" class="w-5 h-5" alt="Check" />Photos & Virtual Tours</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Section: Gallery -->
+    <section class="flex flex-col gap-8 items-center w-full">
+      <div class="flex flex-col gap-2.5 items-center w-full">
+        <h2
+          class="text-hannan-black text-center font-worksans-bold text-3xl sm:text-4xl lg:text-[40px] leading-10 font-bold">
+          Our Gallery</h2>
+        <p class="text-hannan-sub-text text-center font-worksans text-lg leading-7 font-normal max-w-2xl">With our
+          innovative tools and solutions tailored to empower your business, you just need to sit back and see your
+          problems solved, business operations.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+        <img class="w-full h-[300px] object-cover rounded-xl shadow-card animate-float"
+          src="../assets/images/_182690.png" alt="Gallery 1" />
+        <div class="flex flex-col gap-6">
+          <img class="w-full h-[140px] object-cover rounded-xl shadow-card animate-float"
+            src="../assets/images/woman-hanging-painting-wall-art-gallery-back-view0.png" alt="Gallery 2" />
+          <div class="w-full h-[140px] bg-hannan-border-2 rounded-xl"></div>
+        </div>
+        <img class="w-full h-[300px] object-cover rounded-xl shadow-card animate-float"
+          src="../assets/images/_182660.png" alt="Gallery 3" />
+      </div>
+    </section>
+
+    <!-- Section: What Client Say -->
+    <section class="flex flex-col gap-8 items-center w-full">
+      <h2
+        class="text-hannan-black text-center font-worksans-bold text-3xl sm:text-4xl lg:text-[40px] leading-10 font-bold">
+        What Client Say</h2>
+      <img class="w-12 h-12" src="../assets/icons/quote0.svg" alt="Quote" />
+      <p class="text-hannan-sub-text text-center font-worksans text-lg leading-8 font-normal max-w-2xl">A client review
+        is a statement or evaluation written by a customer or client about their experience with a product, service, or
+        company. It can be positive or negative and often includes specific details about their interaction. These
+        reviews are valuable for businesses as they can provide insights into customer satisfaction and help them
+        improve their offerings.</p>
+      <div class="flex flex-col items-center gap-2">
+        <span class="text-hannan-black font-worksans-semibold text-xl font-semibold">Alamin Hossion</span>
+        <span class="text-hannan-sub-text font-worksans text-base">Laravel Developer</span>
+        <img class="w-24 h-2" src="../assets/icons/line0.svg" alt="Line" />
+        <div class="flex flex-row gap-4 items-center mt-2">
+          <img class="rounded-full border-4 border-white w-16 h-16 object-cover opacity-30"
+            src="../assets/images/_173440.png" alt="Client 1" />
+          <img class="rounded-full border-4 border-white w-24 h-24 object-cover" src="../assets/images/_56770.png"
+            alt="Client 2" />
+          <img class="rounded-full border-4 border-white w-16 h-16 object-cover opacity-30"
+            src="../assets/images/_189890.png" alt="Client 3" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-hannan-black w-full min-h-[512px] relative overflow-hidden mt-20">
+    <div class="bg-[#0482f9] rounded-[50%] w-[350px] h-[350px] absolute left-[1505px] top-[335px]"
+      style="opacity: 0.6; filter: blur(400px)"></div>
+    <div class="bg-[#6bb54a] rounded-[50%] w-[350px] h-[350px] absolute left-[81px] top-80"
+      style="opacity: 0.6; filter: blur(400px)"></div>
+    <div class="bg-[#ee2358] rounded-[50%] w-[343px] h-[343px] absolute left-[-82px] top-[-119px]"
+      style="filter: blur(400px)"></div>
+    <div class="bg-[#ee23da] rounded-[50%] w-[343px] h-[343px] absolute left-[788px] top-[-185px]"
+      style="filter: blur(400px)"></div>
+    <div class="bg-[#fdd40f] rounded-[50%] w-[343px] h-[343px] absolute left-[1643px] top-[-117px]"
+      style="filter: blur(400px)"></div>
+    <img class="w-[5.37%] h-[14.84%] absolute right-[90.26%] left-[4.37%] bottom-[71.09%] top-[14.06%] overflow-visible"
+      style="opacity: 0.2" src="../assets/icons/shape-40.svg" />
+    <img class="w-[8.65%] h-[14.84%] absolute right-[95.16%] left-[-3.8%] bottom-[-3.52%] top-[88.67%] overflow-visible"
+      style="opacity: 0.2" src="../assets/icons/shape-50.svg" />
+    <img class="w-[2.1%] h-[14.84%] absolute right-[6.86%] left-[91.04%] bottom-[30.86%] top-[54.3%] overflow-visible"
+      style="opacity: 0.2" src="../assets/icons/group-10000010050.svg" />
+    <div class="flex flex-row gap-[105px] items-start justify-start w-[1440px] absolute left-60 top-[154px]">
+      <div class="flex flex-col gap-9 items-start justify-start shrink-0 w-[342px] relative">
+        <div
+          class="text-[#ffffff] text-left font-['WorkSans-SemiBold',_sans-serif] text-xl leading-5 font-semibold relative self-stretch">
+          Office Address
+        </div>
+        <div class="flex flex-col gap-6 items-start justify-center self-stretch shrink-0 relative">
+          <div class="flex flex-row gap-2.5 items-center justify-start self-stretch shrink-0 relative">
+            <div class="border-solid border-hannan-sub-text border shrink-0 w-[34px] h-[34px] relative overflow-hidden">
+              <img class="w-5 h-5 absolute left-[7px] top-[7px] overflow-visible" src="../assets/icons/call1.svg" />
+            </div>
+            <div
+              class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
+              +9903652497
+            </div>
+          </div>
+          <div class="flex flex-row gap-2.5 items-center justify-start self-stretch shrink-0 relative">
+            <div class="border-solid border-hannan-sub-text border shrink-0 w-[34px] h-[34px] relative overflow-hidden">
+              <img class="w-5 h-5 absolute left-[7px] top-[7px] overflow-visible" src="../assets/icons/frame0.svg" />
+            </div>
+            <div
+              class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
+              info@sparktro.com
+            </div>
+          </div>
+          <div class="flex flex-row gap-2.5 items-center justify-start self-stretch shrink-0 relative">
+            <div class="border-solid border-hannan-sub-text border shrink-0 w-[34px] h-[34px] relative overflow-hidden">
+              <img class="w-5 h-5 absolute left-[7px] top-[7px] overflow-visible" src="../assets/icons/frame1.svg" />
+            </div>
+            <div
+              class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
+              3891 Ranchview Dr. Richardson, California 62639
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-9 items-start justify-start shrink-0 w-[220px] relative">
+        <div
+          class="text-[#ffffff] text-left font-['WorkSans-SemiBold',_sans-serif] text-xl leading-5 font-semibold relative self-stretch">
+          Company Info
+        </div>
+        <div class="flex flex-col gap-6 items-start justify-center self-stretch shrink-0 relative">
+          <div
+            class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative self-stretch">
+            About us
+          </div>
+          <div
+            class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative self-stretch">
+            Contact us
+          </div>
+          <div
+            class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative self-stretch">
+            Terms &amp; Conditions
+          </div>
+          <div
+            class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative self-stretch">
+            Privacy Policy
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-9 items-start justify-start shrink-0 w-[220px] relative">
+        <div
+          class="text-[#ffffff] text-left font-['WorkSans-SemiBold',_sans-serif] text-xl leading-5 font-semibold relative self-stretch">
+          Quick Links
+        </div>
+        <div class="flex flex-col gap-6 items-start justify-center self-stretch shrink-0 relative">
+          <div
+            class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative self-stretch">
+            Services
+          </div>
+          <div
+            class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative self-stretch">
+            Products
+          </div>
+          <div
+            class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative self-stretch">
+            Blogs
+          </div>
+          <div
+            class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative self-stretch">
+            FAQs
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-9 items-start justify-start shrink-0 w-[342px] relative">
+        <div
+          class="text-[#ffffff] text-left font-['WorkSans-SemiBold',_sans-serif] text-xl leading-5 font-semibold relative self-stretch">
+          Subscribe Newsletter
+        </div>
+        <div class="flex flex-col gap-6 items-start justify-center self-stretch shrink-0 relative">
+          <div
+            class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-5 font-normal relative self-stretch">
+            Subscribe for Social Media Growth Hacks &amp; Marketing Insights
+          </div>
+          <div class="flex flex-row gap-1.5 items-center justify-start self-stretch shrink-0 relative">
+            <div
+              class="border-solid border-hannan-sub-text border p-4 flex flex-row gap-2.5 items-center justify-start flex-1 h-12 relative">
+              <img class="shrink-0 w-5 h-5 relative overflow-visible" src="../assets/icons/email1.svg" />
+              <div
+                class="text-hannan-fill-color text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
+                Your Email
+              </div>
+            </div>
+            <div
+              class="bg-hannan-primary-2 p-4 flex flex-row gap-2.5 items-center justify-center shrink-0 w-12 h-12 relative">
+              <img class="shrink-0 w-5 h-5 relative overflow-visible" src="../assets/icons/frame2.svg" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="rounded-[50%] border-solid border-[#f2d519] border w-[60px] h-[60px] absolute left-[1688px] top-[77px]"
+      style="opacity: 0.3"></div>
+    <div class="flex flex-row gap-4 items-center justify-start w-[1440px] absolute left-60 top-[50px]">
+      <div
+        class="border-solid border-hannan-sub-text border-t-2 border-r-[0] border-b-[0] border-l-[0] flex-1 h-0 relative"
+        style="margin-top: -2px"></div>
+      <div class="flex flex-row gap-2.5 items-center justify-start shrink-0 relative">
+        <div class="flex flex-row gap-1 items-center justify-start shrink-0 relative">
+          <img class="shrink-0 w-6 h-6 relative overflow-visible" src="../assets/icons/facebook0.svg" />
+          <div
+            class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative">
+            Facebook
+          </div>
+        </div>
+        <div
+          class="border-solid border-hannan-sub-text border-t border-r-[0] border-b-[0] border-l-[0] shrink-0 w-4 h-0 relative"
+          style="
+            margin-top: -1px;
+            transform-origin: 0 0;
+            transform: rotate(90deg) scale(1, 1);
+          "></div>
+        <div class="flex flex-row gap-1 items-center justify-start shrink-0 relative">
+          <img class="shrink-0 w-6 h-6 relative overflow-visible" src="../assets/icons/twitter0.svg" />
+          <div
+            class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative">
+            Twitter
+          </div>
+        </div>
+        <div
+          class="border-solid border-hannan-sub-text border-t border-r-[0] border-b-[0] border-l-[0] shrink-0 w-4 h-0 relative"
+          style="
+            margin-top: -1px;
+            transform-origin: 0 0;
+            transform: rotate(90deg) scale(1, 1);
+          "></div>
+        <div class="flex flex-row gap-1 items-center justify-start shrink-0 relative">
+          <div class="shrink-0 w-6 h-6 relative overflow-hidden">
+            <img
+              class="w-[66.46%] h-[63.43%] absolute right-[16.77%] left-[16.77%] bottom-[17.5%] top-[19.07%] overflow-visible"
+              src="../assets/icons/group0.svg" />
+          </div>
+          <div
+            class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative">
+            Instagram
+          </div>
+        </div>
+        <div
+          class="border-solid border-hannan-sub-text border-t border-r-[0] border-b-[0] border-l-[0] shrink-0 w-4 h-0 relative"
+          style="
+            margin-top: -1px;
+            transform-origin: 0 0;
+            transform: rotate(90deg) scale(1, 1);
+          "></div>
+        <div class="flex flex-row gap-1 items-center justify-start shrink-0 relative">
+          <img class="shrink-0 w-6 h-6 relative overflow-visible" src="../assets/icons/linkedin0.svg" />
+          <div
+            class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative">
+            LinkedIn
+          </div>
+        </div>
+      </div>
+      <div
+        class="border-solid border-hannan-sub-text border-t-2 border-r-[0] border-b-[0] border-l-[0] flex-1 h-0 relative"
+        style="margin-top: -2px"></div>
+    </div>
+    <div class="flex flex-col gap-6 items-start justify-start w-[1440px] absolute left-60 top-[440px]">
+      <div
+        class="border-solid border-hannan-sub-text border-t-2 border-r-[0] border-b-[0] border-l-[0] self-stretch shrink-0 h-0 relative"
+        style="margin-top: -2px"></div>
+      <div class="flex flex-row items-center justify-between self-stretch shrink-0 relative">
+        <div class="shrink-0 w-[172px] h-6 static">
+          <div
+            class="text-left font-['GoodTimes-Regular',_sans-serif] text-2xl leading-6 font-normal uppercase absolute left-6 top-0">
+            <span>
+              <span class="parktro-2-span">park</span>
+              <span class="parktro-2-span2">tro</span>
+            </span>
+          </div>
+          <img
+            class="w-[1.46%] h-[82.35%] absolute right-[98.54%] left-[0%] bottom-[5.15%] top-[12.5%] overflow-visible"
+            src="../assets/icons/icon1.svg" />
+        </div>
+        <div
+          class="text-[#ffffff] text-right font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative">
+          © 2025 Sparktro. All rights reserved
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../js/utils.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latest Blog – Sparktro</title>
+    <link rel="stylesheet" href="/src/css/main.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'hannan-black': '#1e2533',
+                        'hannan-sub-text': '#5a556e',
+                        'hannan-primary-2': '#0a97b0',
+                        'hannan-border-1': '#bdc7d3',
+                        'hannan-border-2': '#d6e2ef',
+                        'hannan-fill-color': '#8d97a3',
+                        'hannan-white': '#ffffff',
+                        'hannan-green': '#1d9993',
+                        'hannan-active': '#0dc46e',
+                        'hannan-red': '#ff4340',
+                        'hannan-yellow': '#fdcb02',
+                        'hannan-blue': '#0482f9',
+                        'hannan-pink': '#ee2358',
+                        'hannan-purple': '#ee23da',
+                        'hannan-orange': '#fdd40f',
+                        'hannan-light-green': '#6bb54a',
+                    },
+                    fontFamily: {
+                        'goodtimes': ['GoodTimes-Regular', 'sans-serif'],
+                        'worksans': ['WorkSans-Regular', 'sans-serif'],
+                        'worksans-medium': ['WorkSans-Medium', 'sans-serif'],
+                        'worksans-semibold': ['WorkSans-SemiBold', 'sans-serif'],
+                        'worksans-bold': ['WorkSans-Bold', 'sans-serif'],
+                        'dmsans': ['DmSans-Regular', 'sans-serif'],
+                        'dmsans-bold': ['DmSans-Bold', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-border': 'linear-gradient(90deg, rgba(255, 99, 99, 1) 0%, rgba(4, 130, 249, 1) 23.15%, rgba(242, 213, 25, 1) 45.79%, rgba(121, 150, 184, 1) 72.19%, rgba(107, 181, 74, 1) 100%)',
+                    },
+                    boxShadow: {
+                        'custom': '0px 4px 10px 0px rgba(10, 151, 176, 0.1)',
+                        'card': '0px 0px 30px 0px rgba(0, 0, 0, 0.06)',
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'scale-in': 'scaleIn 0.3s ease-out',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                        scaleIn: {
+                            '0%': { transform: 'scale(0.95)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
+
+        .blog-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .featured-card {
+            background: linear-gradient(135deg, #1e2533 0%, #2a3441 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .featured-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(238, 35, 88, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(253, 212, 15, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(4, 130, 249, 0.2) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .featured-card:hover::before {
+            opacity: 1;
+        }
+
+        .search-bar {
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(214, 226, 239, 0.5);
+        }
+
+        .search-bar:focus-within {
+            border-color: #0a97b0;
+            box-shadow: 0 0 0 3px rgba(10, 151, 176, 0.1);
+        }
+
+        .load-more-btn {
+            background: linear-gradient(135deg, #0a97b0 0%, #0889a0 100%);
+            transition: all 0.3s ease;
+        }
+
+        .load-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(10, 151, 176, 0.3);
+        }
+
+        .mouse-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body class="antialiased bg-hannan-white">
+    <!-- Header Component -->
+    <div data-include="./src/components/header.html"></div>
+
+    <!-- Main Content -->
+    <main class="w-full max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-60 py-8 sm:py-12 lg:py-16 animate-fade-in">
+
+        <!-- Hero Section -->
+        <section class="flex flex-col gap-8 sm:gap-12 items-center justify-start mb-12 sm:mb-16 animate-slide-up">
+
+            <!-- Title & Description -->
+            <div class="flex flex-col gap-4 items-center justify-start text-center max-w-4xl">
+                <h1
+                    class="text-hannan-black font-worksans-bold text-3xl sm:text-4xl lg:text-[40px] leading-tight font-bold">
+                    Latest Blog Post
+                </h1>
+                <p class="text-hannan-sub-text font-worksans text-base sm:text-lg leading-7 font-normal max-w-3xl">
+                    With our innovative tools and solutions tailored to empower your business, you just need to sit back
+                    and see your problems solved, business operations.
+                </p>
+            </div>
+
+            <!-- Search Bar -->
+            <div
+                class="search-bar rounded-[30px] pt-2.5 pr-4 pb-2.5 pl-4 flex flex-row items-center justify-between w-full max-w-[708px] h-11 bg-white transition-all duration-300">
+                <div class="flex flex-row gap-2 items-center justify-start">
+                    <img src="/src/assets/icons/search1.svg" class="w-6 h-6" alt="Search" />
+                    <input type="text" placeholder="Search Blog"
+                        class="text-hannan-fill-color font-worksans text-base leading-4 font-normal bg-transparent border-none outline-none flex-1 placeholder-hannan-fill-color" />
+                </div>
+                <img src="/src/assets/icons/arrow3.svg" class="w-4 h-4" alt="Search" />
+            </div>
+        </section>
+
+        <!-- Blog Grid -->
+        <section class="flex flex-col gap-6 items-start justify-start mb-12">
+
+            <!-- Featured Blog Post (First Row) -->
+            <div class="featured-section grid grid-cols-1 lg:grid-cols-3 gap-6 w-full">
+
+                <!-- Featured Post -->
+                <div class="featured-card rounded-lg overflow-hidden relative h-[282px] lg:col-span-1 blog-card">
+                    <!-- Content -->
+                    <div class="relative z-10 p-9 flex flex-col gap-4 items-start justify-start h-full">
+                        <div class="flex flex-row gap-2 items-center justify-start">
+                            <img src="/src/assets/icons/calender0.svg" class="w-5 h-5" alt="Calendar" />
+                            <span class="text-white font-worksans text-base leading-4 font-normal">30 May 2025</span>
+                        </div>
+
+                        <div class="flex flex-col gap-4 items-start justify-start flex-1">
+                            <h2 class="text-white font-worksans text-xl sm:text-2xl leading-[30px] font-normal">
+                                How to create business website for web flow
+                            </h2>
+                            <div class="border-t-2 border-hannan-primary-2 w-[100px]"></div>
+                            <p class="text-white font-worksans text-base leading-[26px] font-normal">
+                                To create a business website, start by choosing a user-friendly website builder,
+                                selecting a domain name, and picking a reliable web host. Then, desi.
+                            </p>
+                        </div>
+
+                        <!-- Mouse Icon -->
+                        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 mouse-icon">
+                            <img src="/src/assets/icons/group1.svg" class="w-6 h-6" alt="Mouse" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Regular Posts -->
+                <div
+                    class="bg-white border border-hannan-border-2 rounded-lg p-9 flex flex-col gap-4 items-start justify-start blog-card">
+                    <div class="flex flex-row gap-2 items-center justify-start">
+                        <img src="/src/assets/icons/calender1.svg" class="w-5 h-5" alt="Calendar" />
+                        <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">30 May
+                            2025</span>
+                    </div>
+
+                    <div class="flex flex-col gap-4 items-start justify-start">
+                        <h3 class="text-hannan-black font-worksans text-xl sm:text-2xl leading-[30px] font-normal">
+                            How to create business website for web flow
+                        </h3>
+                        <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+                        <p class="text-hannan-sub-text font-worksans text-base leading-[26px] font-normal">
+                            To create a business website, start by choosing a user-friendly website builder, selecting a
+                            domain name, and picking a reliable web host. Then, desi.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white border border-hannan-border-2 rounded-lg p-9 flex flex-col gap-4 items-start justify-start blog-card">
+                    <div class="flex flex-row gap-2 items-center justify-start">
+                        <img src="/src/assets/icons/calender2.svg" class="w-5 h-5" alt="Calendar" />
+                        <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">30 May
+                            2025</span>
+                    </div>
+
+                    <div class="flex flex-col gap-4 items-start justify-start">
+                        <h3 class="text-hannan-black font-worksans text-xl sm:text-2xl leading-[30px] font-normal">
+                            How to create business website for web flow
+                        </h3>
+                        <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+                        <p class="text-hannan-sub-text font-worksans text-base leading-[26px] font-normal">
+                            To create a business website, start by choosing a user-friendly website builder, selecting a
+                            domain name, and picking a reliable web host. Then, desi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Regular Blog Posts Grid -->
+            <div class="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+
+                <!-- Blog Post Cards -->
+                <div
+                    class="bg-white border border-hannan-border-2 rounded-lg p-9 flex flex-col gap-4 items-start justify-start blog-card">
+                    <div class="flex flex-row gap-2 items-center justify-start">
+                        <img src="/src/assets/icons/calender3.svg" class="w-5 h-5" alt="Calendar" />
+                        <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">30 May
+                            2025</span>
+                    </div>
+
+                    <div class="flex flex-col gap-4 items-start justify-start">
+                        <h3 class="text-hannan-black font-worksans text-xl sm:text-2xl leading-[30px] font-normal">
+                            How to create business website for web flow
+                        </h3>
+                        <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+                        <p class="text-hannan-sub-text font-worksans text-base leading-[26px] font-normal">
+                            To create a business website, start by choosing a user-friendly website builder, selecting a
+                            domain name, and picking a reliable web host. Then, desi.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white border border-hannan-border-2 rounded-lg p-9 flex flex-col gap-4 items-start justify-start blog-card">
+                    <div class="flex flex-row gap-2 items-center justify-start">
+                        <img src="/src/assets/icons/calender4.svg" class="w-5 h-5" alt="Calendar" />
+                        <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">30 May
+                            2025</span>
+                    </div>
+
+                    <div class="flex flex-col gap-4 items-start justify-start">
+                        <h3 class="text-hannan-black font-worksans text-xl sm:text-2xl leading-[30px] font-normal">
+                            How to create business website for web flow
+                        </h3>
+                        <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+                        <p class="text-hannan-sub-text font-worksans text-base leading-[26px] font-normal">
+                            To create a business website, start by choosing a user-friendly website builder, selecting a
+                            domain name, and picking a reliable web host. Then, desi.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white border border-hannan-border-2 rounded-lg p-9 flex flex-col gap-4 items-start justify-start blog-card">
+                    <div class="flex flex-row gap-2 items-center justify-start">
+                        <img src="/src/assets/icons/calender5.svg" class="w-5 h-5" alt="Calendar" />
+                        <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">30 May
+                            2025</span>
+                    </div>
+
+                    <div class="flex flex-col gap-4 items-start justify-start">
+                        <h3 class="text-hannan-black font-worksans text-xl sm:text-2xl leading-[30px] font-normal">
+                            How to create business website for web flow
+                        </h3>
+                        <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+                        <p class="text-hannan-sub-text font-worksans text-base leading-[26px] font-normal">
+                            To create a business website, start by choosing a user-friendly website builder, selecting a
+                            domain name, and picking a reliable web host. Then, desi.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white border border-hannan-border-2 rounded-lg p-9 flex flex-col gap-4 items-start justify-start blog-card">
+                    <div class="flex flex-row gap-2 items-center justify-start">
+                        <img src="/src/assets/icons/calender6.svg" class="w-5 h-5" alt="Calendar" />
+                        <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">30 May
+                            2025</span>
+                    </div>
+
+                    <div class="flex flex-col gap-4 items-start justify-start">
+                        <h3 class="text-hannan-black font-worksans text-xl sm:text-2xl leading-[30px] font-normal">
+                            How to create business website for web flow
+                        </h3>
+                        <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+                        <p class="text-hannan-sub-text font-worksans text-base leading-[26px] font-normal">
+                            To create a business website, start by choosing a user-friendly website builder, selecting a
+                            domain name, and picking a reliable web host. Then, desi.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white border border-hannan-border-2 rounded-lg p-9 flex flex-col gap-4 items-start justify-start blog-card">
+                    <div class="flex flex-row gap-2 items-center justify-start">
+                        <img src="/src/assets/icons/calender7.svg" class="w-5 h-5" alt="Calendar" />
+                        <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">30 May
+                            2025</span>
+                    </div>
+
+                    <div class="flex flex-col gap-4 items-start justify-start">
+                        <h3 class="text-hannan-black font-worksans text-xl sm:text-2xl leading-[30px] font-normal">
+                            How to create business website for web flow
+                        </h3>
+                        <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+                        <p class="text-hannan-sub-text font-worksans text-base leading-[26px] font-normal">
+                            To create a business website, start by choosing a user-friendly website builder, selecting a
+                            domain name, and picking a reliable web host. Then, desi.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white border border-hannan-border-2 rounded-lg p-9 flex flex-col gap-4 items-start justify-start blog-card">
+                    <div class="flex flex-row gap-2 items-center justify-start">
+                        <img src="/src/assets/icons/calender8.svg" class="w-5 h-5" alt="Calendar" />
+                        <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">30 May
+                            2025</span>
+                    </div>
+
+                    <div class="flex flex-col gap-4 items-start justify-start">
+                        <h3 class="text-hannan-black font-worksans text-xl sm:text-2xl leading-[30px] font-normal">
+                            How to create business website for web flow
+                        </h3>
+                        <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+                        <p class="text-hannan-sub-text font-worksans text-base leading-[26px] font-normal">
+                            To create a business website, start by choosing a user-friendly website builder, selecting a
+                            domain name, and picking a reliable web host. Then, desi.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white border border-hannan-border-2 rounded-lg p-9 flex flex-col gap-4 items-start justify-start blog-card">
+                    <div class="flex flex-row gap-2 items-center justify-start">
+                        <img src="/src/assets/icons/calender9.svg" class="w-5 h-5" alt="Calendar" />
+                        <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">30 May
+                            2025</span>
+                    </div>
+
+                    <div class="flex flex-col gap-4 items-start justify-start">
+                        <h3 class="text-hannan-black font-worksans text-xl sm:text-2xl leading-[30px] font-normal">
+                            How to create business website for web flow
+                        </h3>
+                        <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+                        <p class="text-hannan-sub-text font-worksans text-base leading-[26px] font-normal">
+                            To create a business website, start by choosing a user-friendly website builder, selecting a
+                            domain name, and picking a reliable web host. Then, desi.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white border border-hannan-border-2 rounded-lg p-9 flex flex-col gap-4 items-start justify-start blog-card">
+                    <div class="flex flex-row gap-2 items-center justify-start">
+                        <img src="/src/assets/icons/calender10.svg" class="w-5 h-5" alt="Calendar" />
+                        <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">30 May
+                            2025</span>
+                    </div>
+
+                    <div class="flex flex-col gap-4 items-start justify-start">
+                        <h3 class="text-hannan-black font-worksans text-xl sm:text-2xl leading-[30px] font-normal">
+                            How to create business website for web flow
+                        </h3>
+                        <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+                        <p class="text-hannan-sub-text font-worksans text-base leading-[26px] font-normal">
+                            To create a business website, start by choosing a user-friendly website builder, selecting a
+                            domain name, and picking a reliable web host. Then, desi.
+                        </p>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white border border-hannan-border-2 rounded-lg p-9 flex flex-col gap-4 items-start justify-start blog-card">
+                    <div class="flex flex-row gap-2 items-center justify-start">
+                        <img src="/src/assets/icons/calender11.svg" class="w-5 h-5" alt="Calendar" />
+                        <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">30 May
+                            2025</span>
+                    </div>
+
+                    <div class="flex flex-col gap-4 items-start justify-start">
+                        <h3 class="text-hannan-black font-worksans text-xl sm:text-2xl leading-[30px] font-normal">
+                            How to create business website for web flow
+                        </h3>
+                        <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+                        <p class="text-hannan-sub-text font-worksans text-base leading-[26px] font-normal">
+                            To create a business website, start by choosing a user-friendly website builder, selecting a
+                            domain name, and picking a reliable web host. Then, desi.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Load More Button -->
+        <div class="flex justify-center">
+            <button
+                class="load-more-btn rounded-[30px] pt-5 pr-[30px] pb-5 pl-[30px] flex flex-row gap-2 items-center justify-center w-[200px] h-[58px]">
+                <span class="text-white font-worksans-semibold text-base leading-4 font-semibold">Load More</span>
+                <img src="/src/assets/icons/arrow4.svg" class="w-4 h-4" alt="Arrow" />
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer Component -->
+    <div data-include="./src/components/footer.html"></div>
+
+    <!-- Component Import System -->
+    <script type="module" src="./src/js/include-partials.js"></script>
+
+    <!-- Blog Page Specific JavaScript -->
+    <script>
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all blog cards
+        document.querySelectorAll('.blog-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('input[placeholder="Search Blog"]');
+        const blogCards = document.querySelectorAll('.blog-card');
+
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+
+            blogCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const content = card.querySelector('p').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || content.includes(searchTerm)) {
+                    card.style.display = 'flex';
+                    card.style.animation = 'scaleIn 0.3s ease-out';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Load more functionality
+        const loadMoreBtn = document.querySelector('.load-more-btn');
+        let currentPage = 1;
+        const postsPerPage = 6;
+
+        loadMoreBtn.addEventListener('click', () => {
+            // Simulate loading more posts
+            loadMoreBtn.innerHTML = '<span class="text-white font-worksans-semibold text-base leading-4 font-semibold">Loading...</span>';
+
+            setTimeout(() => {
+                // Add more blog cards here
+                loadMoreBtn.innerHTML = '<span class="text-white font-worksans-semibold text-base leading-4 font-semibold">Load More</span><img src="/src/assets/icons/arrow4.svg" class="w-4 h-4" alt="Arrow" />';
+            }, 1000);
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

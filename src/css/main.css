@@ -438,7 +438,7 @@ body {
 
 /* --------------- Logo --------------- */
 .logo {
-  @apply font-display font-bold tracking-[.5px] text-base md:text-lg flex items-center gap-1 text-white select-none;
+  @apply font-worksans font-bold tracking-[.5px] text-base md:text-lg flex items-center gap-1 text-white select-none;
 }
 .logo .text-yellow { color: #F2D519; }
 
