@@ -385,684 +385,386 @@
   <title>Blog - Sparktro</title>
 </head>
 
-<body>
-  <div class="bg-[#ffffff] h-[2260px] relative overflow-hidden">
-    <div
-      class="bg-[#ffffff] border-b border-solid pt-4 pr-60 pb-4 pl-60 flex flex-row items-center justify-between w-[1920px] h-20 absolute left-0 top-0"
-      style="
-        border-image: linear-gradient(
-          90deg,
-          rgba(255, 99, 99, 1) 0%,
-          rgba(4, 130, 249, 1) 23.153847455978394%,
-          rgba(242, 213, 25, 1) 45.78845798969269%,
-          rgba(121, 150, 184, 1) 72.19230532646179%,
-          rgba(107, 181, 74, 1) 100%
-        );
-        border-image-slice: 1;
-        box-shadow: 0px 4px 10px 0px rgba(10, 151, 176, 0.1);
-      ">
-      <div class="shrink-0 w-[172px] h-6 static">
-        <div
-          class="text-left font-['GoodTimes-Regular',_sans-serif] text-2xl leading-6 font-normal uppercase absolute left-[264px] top-7">
-          <span>
-            <span class="parktro-span">park</span>
-            <span class="parktro-span2">tro</span>
-          </span>
-        </div>
-        <img
-          class="w-[1.09%] h-[24.71%] absolute right-[86.41%] left-[12.5%] bottom-[36.54%] top-[38.75%] overflow-visible"
-          src="/src/assets/icons/icon0.svg" />
-      </div>
-      <div class="flex flex-row gap-6 items-center justify-start shrink-0 relative">
-        <div
-          class="text-hannan-black text-left font-['WorkSans-Medium',_sans-serif] text-base leading-4 font-medium relative">
-          Home
-        </div>
-        <div class="flex flex-row gap-0.5 items-center justify-start shrink-0 relative">
+<body class="bg-white min-h-screen">
+  <!-- Header -->
+  <header>
+    <div id="header-placeholder"></div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="w-full min-h-screen flex flex-col items-center pt-16 md:pt-24 lg:pt-32 px-4 sm:px-6 lg:px-8">
+
+    <!-- Page Header Section -->
+    <div class="flex flex-col gap-6 md:gap-8 items-center justify-start w-full max-w-7xl mx-auto">
+      <div class="flex flex-col gap-4 md:gap-6 items-center justify-start self-stretch">
+        <h1
+          class="text-hannan-black text-center font-worksans-bold text-3xl sm:text-4xl md:text-5xl lg:text-[40px] leading-tight font-bold relative self-stretch">
+          Latest Blog Post
+        </h1>
+        <p
+          class="text-hannan-sub-text text-center font-worksans text-base sm:text-lg leading-relaxed font-normal relative self-stretch max-w-4xl px-4">
+          With our innovative tools and solutions tailored to empower your business, you just need
+          to sit back and see your problems solved, business operations.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="search-container w-full max-w-2xl mx-auto">
           <div
-            class="text-hannan-black text-left font-['WorkSans-Medium',_sans-serif] text-base leading-4 font-medium relative">
-            Products
+            class="rounded-[30px] border border-hannan-border-2 p-3 md:p-4 flex flex-row items-center justify-between w-full h-12 md:h-14 relative bg-white shadow-sm">
+            <div class="flex flex-row gap-2 md:gap-3 items-center justify-start flex-1">
+              <img class="w-5 h-5 md:w-6 md:h-6" src="../assets/icons/search1.svg" alt="Search" />
+              <input type="text" placeholder="Search Blog"
+                class="text-hannan-fill-color font-worksans text-sm md:text-base leading-4 font-normal bg-transparent border-none outline-none flex-1 placeholder-hannan-fill-color">
+            </div>
+            <img class="w-4 h-4 md:w-5 md:h-5" src="../assets/icons/arrow3.svg" alt="Search" />
           </div>
-          <img class="shrink-0 w-4 h-4 relative overflow-visible" src="/src/assets/icons/arrow0.svg" />
-        </div>
-        <div class="flex flex-row gap-0.5 items-center justify-start shrink-0 relative">
-          <div
-            class="text-hannan-black text-left font-['WorkSans-Medium',_sans-serif] text-base leading-4 font-medium relative">
-            Services
-          </div>
-          <img class="shrink-0 w-4 h-4 relative overflow-visible" src="/src/assets/icons/arrow1.svg" />
-        </div>
-        <div
-          class="text-hannan-black text-left font-['WorkSans-Medium',_sans-serif] text-base leading-4 font-medium relative">
-          Blog
-        </div>
-        <div
-          class="text-hannan-black text-left font-['WorkSans-Medium',_sans-serif] text-base leading-4 font-medium relative">
-          About
         </div>
       </div>
+
+      <!-- Blog Posts Grid -->
       <div
-        class="rounded-[30px] border-solid border-hannan-primary-2 border pt-2.5 pr-4 pb-2.5 pl-4 flex flex-row gap-1 items-center justify-center shrink-0 h-11 relative"
-        style="backdrop-filter: blur(5px)">
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 items-start justify-start w-full max-w-7xl mx-auto mt-8 md:mt-12">
+
+        <!-- Featured Blog Post (First Card) -->
         <div
-          class="text-hannan-primary-2 text-center font-['WorkSans-Medium',_sans-serif] text-base leading-4 font-medium relative flex items-center justify-center">
-          Let’s Start
-        </div>
-        <img class="shrink-0 w-4 h-4 relative overflow-visible" src="/src/assets/icons/arrow2.svg" />
-      </div>
-    </div>
-    <div class="bg-hannan-black w-[1920px] h-[512px] absolute left-0 top-[1748px] overflow-hidden">
-      <div class="bg-[#0482f9] rounded-[50%] w-[350px] h-[350px] absolute left-[1505px] top-[335px]"
-        style="opacity: 0.6; filter: blur(400px)"></div>
-      <div class="bg-[#6bb54a] rounded-[50%] w-[350px] h-[350px] absolute left-[81px] top-80"
-        style="opacity: 0.6; filter: blur(400px)"></div>
-      <div class="bg-[#ee2358] rounded-[50%] w-[343px] h-[343px] absolute left-[-82px] top-[-119px]"
-        style="filter: blur(400px)"></div>
-      <div class="bg-[#ee23da] rounded-[50%] w-[343px] h-[343px] absolute left-[788px] top-[-185px]"
-        style="filter: blur(400px)"></div>
-      <div class="bg-[#fdd40f] rounded-[50%] w-[343px] h-[343px] absolute left-[1643px] top-[-117px]"
-        style="filter: blur(400px)"></div>
-      <img
-        class="w-[5.37%] h-[14.84%] absolute right-[90.26%] left-[4.37%] bottom-[71.09%] top-[14.06%] overflow-visible"
-        style="opacity: 0.2" src="/src/assets/icons/shape-40.svg" />
-      <img
-        class="w-[8.65%] h-[14.84%] absolute right-[95.16%] left-[-3.8%] bottom-[-3.52%] top-[88.67%] overflow-visible"
-        style="opacity: 0.2" src="/src/assets/icons/shape-50.svg" />
-      <img class="w-[2.1%] h-[14.84%] absolute right-[6.86%] left-[91.04%] bottom-[30.86%] top-[54.3%] overflow-visible"
-        style="opacity: 0.2" src="/src/assets/icons/group-10000010050.svg" />
-      <div class="flex flex-row gap-[105px] items-start justify-start w-[1440px] absolute left-60 top-[154px]">
-        <div class="flex flex-col gap-9 items-start justify-start shrink-0 w-[342px] relative">
+          class="bg-hannan-black w-full h-auto min-h-[300px] md:min-h-[350px] relative overflow-hidden rounded-lg group hover:scale-105 transition-transform duration-300">
+          <!-- Background Gradients -->
+          <div class="bg-[#ee2358] rounded-[50%] w-[200px] h-[200px] absolute left-[-32px] top-[-33px] opacity-60"
+            style="filter: blur(200px)"></div>
+          <div class="bg-[#fdd40f] rounded-[50%] w-[200px] h-[200px] absolute right-[-32px] top-[-59px] opacity-60"
+            style="filter: blur(200px)"></div>
+          <div class="bg-[#0482f9] rounded-[50%] w-[200px] h-[200px] absolute left-[50%] top-[50%] opacity-60"
+            style="filter: blur(200px); transform: translate(-50%, -50%)"></div>
+
+          <!-- Content -->
           <div
-            class="text-[#ffffff] text-left font-['WorkSans-SemiBold',_sans-serif] text-xl leading-5 font-semibold relative self-stretch">
-            Office Address
-          </div>
-          <div class="flex flex-col gap-6 items-start justify-center self-stretch shrink-0 relative">
-            <div class="flex flex-row gap-2.5 items-center justify-start self-stretch shrink-0 relative">
-              <div
-                class="border-solid border-hannan-sub-text border shrink-0 w-[34px] h-[34px] relative overflow-hidden">
-                <img class="w-5 h-5 absolute left-[7px] top-[7px] overflow-visible" src="/src/assets/icons/call1.svg" />
+            class="p-6 md:p-8 lg:p-9 flex flex-col gap-4 md:gap-5 items-start justify-start w-full h-full relative z-10">
+            <div class="flex flex-col gap-4 md:gap-5 items-start justify-start self-stretch">
+              <div class="flex flex-row gap-2 items-center justify-start self-stretch">
+                <img class="w-4 h-4 md:w-5 md:h-5" src="../assets/icons/calender0.svg" alt="Calendar" />
+                <span class="text-hannan-white font-worksans text-sm md:text-base leading-4 font-normal">
+                  30 May 2025
+                </span>
               </div>
-              <div
-                class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
-                +9903652497
-              </div>
-            </div>
-            <div class="flex flex-row gap-2.5 items-center justify-start self-stretch shrink-0 relative">
-              <div
-                class="border-solid border-hannan-sub-text border shrink-0 w-[34px] h-[34px] relative overflow-hidden">
-                <img class="w-5 h-5 absolute left-[7px] top-[7px] overflow-visible"
-                  src="/src/assets/icons/frame0.svg" />
-              </div>
-              <div
-                class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
-                info@sparktro.com
+              <div class="flex flex-col gap-3 md:gap-4 items-start justify-start self-stretch">
+                <h3
+                  class="text-hannan-white font-worksans text-lg md:text-xl lg:text-2xl leading-tight font-normal self-stretch">
+                  How to create business website for web flow
+                </h3>
+                <div class="border-t-2 border-hannan-primary-2 w-[100px]"></div>
+                <p
+                  class="text-hannan-white font-worksans text-sm md:text-base leading-relaxed font-normal self-stretch">
+                  To create a business website, start by choosing a user-friendly website builder, selecting a domain
+                  name, and picking a reliable web host. Then, design your site with clear navigation and compelling
+                  content.
+                </p>
               </div>
             </div>
-            <div class="flex flex-row gap-2.5 items-center justify-start self-stretch shrink-0 relative">
-              <div
-                class="border-solid border-hannan-sub-text border shrink-0 w-[34px] h-[34px] relative overflow-hidden">
-                <img class="w-5 h-5 absolute left-[7px] top-[7px] overflow-visible"
-                  src="/src/assets/icons/frame1.svg" />
-              </div>
-              <div
-                class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
-                3891 Ranchview Dr. Richardson, California 62639
-              </div>
+            <div class="absolute bottom-4 right-4 w-6 h-6">
+              <img class="w-full h-full" src="../assets/icons/group1.svg" alt="Arrow" />
             </div>
           </div>
         </div>
-        <div class="flex flex-col gap-9 items-start justify-start shrink-0 w-[220px] relative">
-          <div
-            class="text-[#ffffff] text-left font-['WorkSans-SemiBold',_sans-serif] text-xl leading-5 font-semibold relative self-stretch">
-            Company Info
-          </div>
-          <div class="flex flex-col gap-6 items-start justify-center self-stretch shrink-0 relative">
-            <div
-              class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative self-stretch">
-              About us
-            </div>
-            <div
-              class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative self-stretch">
-              Contact us
-            </div>
-            <div
-              class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative self-stretch">
-              Terms &amp; Conditions
-            </div>
-            <div
-              class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative self-stretch">
-              Privacy Policy
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-col gap-9 items-start justify-start shrink-0 w-[220px] relative">
-          <div
-            class="text-[#ffffff] text-left font-['WorkSans-SemiBold',_sans-serif] text-xl leading-5 font-semibold relative self-stretch">
-            Quick Links
-          </div>
-          <div class="flex flex-col gap-6 items-start justify-center self-stretch shrink-0 relative">
-            <div
-              class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative self-stretch">
-              Services
-            </div>
-            <div
-              class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative self-stretch">
-              Products
-            </div>
-            <div
-              class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative self-stretch">
-              Blogs
-            </div>
-            <div
-              class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative self-stretch">
-              FAQs
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-col gap-9 items-start justify-start shrink-0 w-[342px] relative">
-          <div
-            class="text-[#ffffff] text-left font-['WorkSans-SemiBold',_sans-serif] text-xl leading-5 font-semibold relative self-stretch">
-            Subscribe Newsletter
-          </div>
-          <div class="flex flex-col gap-6 items-start justify-center self-stretch shrink-0 relative">
-            <div
-              class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-5 font-normal relative self-stretch">
-              Subscribe for Social Media Growth Hacks &amp; Marketing Insights
-            </div>
-            <div class="flex flex-row gap-1.5 items-center justify-start self-stretch shrink-0 relative">
-              <div
-                class="border-solid border-hannan-sub-text border p-4 flex flex-row gap-2.5 items-center justify-start flex-1 h-12 relative">
-                <img class="shrink-0 w-5 h-5 relative overflow-visible" src="/src/assets/icons/email1.svg" />
-                <div
-                  class="text-hannan-fill-color text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
-                  Your Email
-                </div>
-              </div>
-              <div
-                class="bg-hannan-primary-2 p-4 flex flex-row gap-2.5 items-center justify-center shrink-0 w-12 h-12 relative">
-                <img class="shrink-0 w-5 h-5 relative overflow-visible" src="/src/assets/icons/frame2.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div
-        class="rounded-[50%] border-solid border-[#f2d519] border w-[60px] h-[60px] absolute left-[1688px] top-[77px]"
-        style="opacity: 0.3"></div>
-      <div class="flex flex-row gap-4 items-center justify-start w-[1440px] absolute left-60 top-[50px]">
+
+        <!-- Regular Blog Posts -->
         <div
-          class="border-solid border-hannan-sub-text border-t-2 border-r-[0] border-b-[0] border-l-[0] flex-1 h-0 relative"
-          style="margin-top: -2px"></div>
-        <div class="flex flex-row gap-2.5 items-center justify-start shrink-0 relative">
-          <div class="flex flex-row gap-1 items-center justify-start shrink-0 relative">
-            <img class="shrink-0 w-6 h-6 relative overflow-visible" src="/src/assets/icons/facebook0.svg" />
-            <div
-              class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative">
-              Facebook
-            </div>
-          </div>
-          <div
-            class="border-solid border-hannan-sub-text border-t border-r-[0] border-b-[0] border-l-[0] shrink-0 w-4 h-0 relative"
-            style="
-              margin-top: -1px;
-              transform-origin: 0 0;
-              transform: rotate(90deg) scale(1, 1);
-            "></div>
-          <div class="flex flex-row gap-1 items-center justify-start shrink-0 relative">
-            <img class="shrink-0 w-6 h-6 relative overflow-visible" src="/src/assets/icons/twitter0.svg" />
-            <div
-              class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative">
-              Twitter
-            </div>
-          </div>
-          <div
-            class="border-solid border-hannan-sub-text border-t border-r-[0] border-b-[0] border-l-[0] shrink-0 w-4 h-0 relative"
-            style="
-              margin-top: -1px;
-              transform-origin: 0 0;
-              transform: rotate(90deg) scale(1, 1);
-            "></div>
-          <div class="flex flex-row gap-1 items-center justify-start shrink-0 relative">
-            <div class="shrink-0 w-6 h-6 relative overflow-hidden">
-              <img
-                class="w-[66.46%] h-[63.43%] absolute right-[16.77%] left-[16.77%] bottom-[17.5%] top-[19.07%] overflow-visible"
-                src="/src/assets/icons/group0.svg" />
-            </div>
-            <div
-              class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative">
-              Instagram
-            </div>
-          </div>
-          <div
-            class="border-solid border-hannan-sub-text border-t border-r-[0] border-b-[0] border-l-[0] shrink-0 w-4 h-0 relative"
-            style="
-              margin-top: -1px;
-              transform-origin: 0 0;
-              transform: rotate(90deg) scale(1, 1);
-            "></div>
-          <div class="flex flex-row gap-1 items-center justify-start shrink-0 relative">
-            <img class="shrink-0 w-6 h-6 relative overflow-visible" src="/src/assets/icons/linkedin0.svg" />
-            <div
-              class="text-[#ffffff] text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative">
-              LinkedIn
-            </div>
-          </div>
-        </div>
-        <div
-          class="border-solid border-hannan-sub-text border-t-2 border-r-[0] border-b-[0] border-l-[0] flex-1 h-0 relative"
-          style="margin-top: -2px"></div>
-      </div>
-      <div class="flex flex-col gap-6 items-start justify-start w-[1440px] absolute left-60 top-[440px]">
-        <div
-          class="border-solid border-hannan-sub-text border-t-2 border-r-[0] border-b-[0] border-l-[0] self-stretch shrink-0 h-0 relative"
-          style="margin-top: -2px"></div>
-        <div class="flex flex-row items-center justify-between self-stretch shrink-0 relative">
-          <div class="shrink-0 w-[172px] h-6 static">
-            <div
-              class="text-left font-['GoodTimes-Regular',_sans-serif] text-2xl leading-6 font-normal uppercase absolute left-6 top-0">
-              <span>
-                <span class="parktro-2-span">park</span>
-                <span class="parktro-2-span2">tro</span>
+          class="bg-white border border-hannan-border-2 p-6 md:p-8 lg:p-9 flex flex-col gap-4 md:gap-5 items-start justify-start w-full h-auto min-h-[300px] md:min-h-[350px] rounded-lg group hover:shadow-lg transition-shadow duration-300">
+          <div class="flex flex-col gap-4 md:gap-5 items-start justify-start self-stretch">
+            <div class="flex flex-row gap-2 items-center justify-start self-stretch">
+              <img class="w-4 h-4 md:w-5 md:h-5" src="../assets/icons/calender1.svg" alt="Calendar" />
+              <span class="text-hannan-sub-text font-worksans text-sm md:text-base leading-4 font-normal">
+                30 May 2025
               </span>
             </div>
-            <img
-              class="w-[1.46%] h-[82.35%] absolute right-[98.54%] left-[0%] bottom-[5.15%] top-[12.5%] overflow-visible"
-              src="/src/assets/icons/icon1.svg" />
-          </div>
-          <div
-            class="text-[#ffffff] text-right font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative">
-            © 2025 Sparktro. All rights reserved
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="flex flex-col gap-[50px] items-center justify-start w-[1440px] absolute left-60 top-[130px]">
-      <div class="flex flex-col gap-2.5 items-center justify-start self-stretch shrink-0 relative">
-        <div
-          class="text-hannan-black text-center font-['WorkSans-Bold',_sans-serif] text-[40px] leading-10 font-bold relative self-stretch">
-          Latest Blog Post
-        </div>
-        <div
-          class="text-hannan-sub-text text-center font-['WorkSans-Regular',_sans-serif] text-lg leading-7 font-normal relative self-stretch">
-          With our innovative tools and solutions tailored to empower your
-          business, you just need
-          <br />
-          to sit back and see your problems solved, business operations .
-        </div>
-        <div
-          class="rounded-[30px] border-solid border-hannan-border-2 border pt-2.5 pr-4 pb-2.5 pl-4 flex flex-row items-center justify-between shrink-0 w-[708px] h-11 relative"
-          style="backdrop-filter: blur(5px)">
-          <div class="flex flex-row gap-1 items-center justify-start shrink-0 relative">
-            <img class="shrink-0 w-6 h-6 relative overflow-visible" src="/src/assets/icons/search1.svg" />
-            <div
-              class="text-hannan-fill-color text-center font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex items-center justify-center">
-              Search Blog
-            </div>
-          </div>
-          <img class="shrink-0 w-4 h-4 relative overflow-visible" src="/src/assets/icons/arrow3.svg" />
-        </div>
-      </div>
-      <div class="flex flex-col gap-6 items-start justify-start self-stretch shrink-0 relative">
-        <div class="flex flex-row gap-6 items-center justify-start self-stretch shrink-0 relative">
-          <div class="bg-hannan-black shrink-0 w-[464px] h-[282px] relative overflow-hidden">
-            <div class="bg-[#ee2358] rounded-[50%] w-[200px] h-[200px] absolute left-[-32px] top-[-33px]"
-              style="filter: blur(200px)"></div>
-            <div class="bg-[#fdd40f] rounded-[50%] w-[200px] h-[200px] absolute left-[324px] top-[-59px]"
-              style="filter: blur(200px)"></div>
-            <div class="bg-[#0482f9] rounded-[50%] w-[200px] h-[200px] absolute left-[184px] top-[182px]"
-              style="opacity: 0.6; filter: blur(200px)"></div>
-            <div class="p-9 flex flex-col gap-2.5 items-start justify-start w-[464px] absolute left-0 top-0">
-              <div class="flex flex-col gap-5 items-start justify-start self-stretch shrink-0 relative">
-                <div class="flex flex-row gap-1.5 items-center justify-start self-stretch shrink-0 relative">
-                  <img class="shrink-0 w-5 h-5 relative overflow-visible" src="/src/assets/icons/calender0.svg" />
-                  <div
-                    class="text-hannan-white text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
-                    30 May 2025
-                  </div>
-                </div>
-                <div class="flex flex-col gap-4 items-start justify-start self-stretch shrink-0 relative">
-                  <div
-                    class="text-hannan-white text-left font-['WorkSans-Regular',_sans-serif] text-2xl leading-[30px] font-normal relative self-stretch">
-                    How to create business website for web flow
-                  </div>
-                  <div
-                    class="border-solid border-hannan-primary-2 border-t-2 border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[100px] h-0 relative"
-                    style="margin-top: -2px"></div>
-                  <div
-                    class="text-hannan-white text-left font-['WorkSans-Regular',_sans-serif] text-base leading-[26px] font-normal relative self-stretch">
-                    To create a business website, start by choosing a
-                    user-friendly website builder, selecting a domain name, and
-                    picking a reliable web host. Then, desi.
-                  </div>
-                </div>
-              </div>
-              <div class="shrink-0 w-6 h-6 absolute left-[107px] top-[250px] overflow-hidden">
-                <img class="w-[99.99%] h-[100%] absolute right-[0%] left-[0%] bottom-[0%] top-[0%] overflow-visible"
-                  src="/src/assets/icons/group1.svg" />
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-[#ffffff] border-solid border-hannan-border-2 border p-9 flex flex-col gap-2.5 items-start justify-start flex-1 relative">
-            <div class="flex flex-col gap-5 items-start justify-start self-stretch shrink-0 relative">
-              <div class="flex flex-row gap-1.5 items-center justify-start self-stretch shrink-0 relative">
-                <img class="shrink-0 w-5 h-5 relative overflow-visible" src="/src/assets/icons/calender1.svg" />
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
-                  30 May 2025
-                </div>
-              </div>
-              <div class="flex flex-col gap-4 items-start justify-start self-stretch shrink-0 relative">
-                <div
-                  class="text-hannan-black text-left font-['WorkSans-Regular',_sans-serif] text-2xl leading-[30px] font-normal relative self-stretch">
-                  How to create business website for web flow
-                </div>
-                <div
-                  class="border-solid border-hannan-border-2 border-t-2 border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[100px] h-0 relative"
-                  style="margin-top: -2px"></div>
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-[26px] font-normal relative self-stretch">
-                  To create a business website, start by choosing a user-friendly
-                  website builder, selecting a domain name, and picking a reliable
-                  web host. Then, desi.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-[#ffffff] border-solid border-hannan-border-2 border p-9 flex flex-col gap-2.5 items-start justify-start flex-1 relative">
-            <div class="flex flex-col gap-5 items-start justify-start self-stretch shrink-0 relative">
-              <div class="flex flex-row gap-1.5 items-center justify-start self-stretch shrink-0 relative">
-                <img class="shrink-0 w-5 h-5 relative overflow-visible" src="/src/assets/icons/calender2.svg" />
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
-                  30 May 2025
-                </div>
-              </div>
-              <div class="flex flex-col gap-4 items-start justify-start self-stretch shrink-0 relative">
-                <div
-                  class="text-hannan-black text-left font-['WorkSans-Regular',_sans-serif] text-2xl leading-[30px] font-normal relative self-stretch">
-                  How to create business website for web flow
-                </div>
-                <div
-                  class="border-solid border-hannan-border-2 border-t-2 border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[100px] h-0 relative"
-                  style="margin-top: -2px"></div>
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-[26px] font-normal relative self-stretch">
-                  To create a business website, start by choosing a user-friendly
-                  website builder, selecting a domain name, and picking a reliable
-                  web host. Then, desi.
-                </div>
-              </div>
+            <div class="flex flex-col gap-3 md:gap-4 items-start justify-start self-stretch">
+              <h3
+                class="text-hannan-black font-worksans text-lg md:text-xl lg:text-2xl leading-tight font-normal self-stretch">
+                How to create business website for web flow
+              </h3>
+              <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+              <p
+                class="text-hannan-sub-text font-worksans text-sm md:text-base leading-relaxed font-normal self-stretch">
+                To create a business website, start by choosing a user-friendly website builder, selecting a domain
+                name, and picking a reliable web host. Then, design your site with clear navigation and compelling
+                content.
+              </p>
             </div>
           </div>
         </div>
-        <div class="flex flex-row gap-6 items-center justify-start self-stretch shrink-0 relative">
-          <div
-            class="bg-[#ffffff] border-solid border-hannan-border-2 border p-9 flex flex-col gap-2.5 items-start justify-start flex-1 relative">
-            <div class="flex flex-col gap-5 items-start justify-start self-stretch shrink-0 relative">
-              <div class="flex flex-row gap-1.5 items-center justify-start self-stretch shrink-0 relative">
-                <img class="shrink-0 w-5 h-5 relative overflow-visible" src="/src/assets/icons/calender3.svg" />
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
-                  30 May 2025
-                </div>
-              </div>
-              <div class="flex flex-col gap-4 items-start justify-start self-stretch shrink-0 relative">
-                <div
-                  class="text-hannan-black text-left font-['WorkSans-Regular',_sans-serif] text-2xl leading-[30px] font-normal relative self-stretch">
-                  How to create business website for web flow
-                </div>
-                <div
-                  class="border-solid border-hannan-border-2 border-t-2 border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[100px] h-0 relative"
-                  style="margin-top: -2px"></div>
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-[26px] font-normal relative self-stretch">
-                  To create a business website, start by choosing a user-friendly
-                  website builder, selecting a domain name, and picking a reliable
-                  web host. Then, desi.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-[#ffffff] border-solid border-hannan-border-2 border p-9 flex flex-col gap-2.5 items-start justify-start flex-1 relative">
-            <div class="flex flex-col gap-5 items-start justify-start self-stretch shrink-0 relative">
-              <div class="flex flex-row gap-1.5 items-center justify-start self-stretch shrink-0 relative">
-                <img class="shrink-0 w-5 h-5 relative overflow-visible" src="/src/assets/icons/calender4.svg" />
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
-                  30 May 2025
-                </div>
-              </div>
-              <div class="flex flex-col gap-4 items-start justify-start self-stretch shrink-0 relative">
-                <div
-                  class="text-hannan-black text-left font-['WorkSans-Regular',_sans-serif] text-2xl leading-[30px] font-normal relative self-stretch">
-                  How to create business website for web flow
-                </div>
-                <div
-                  class="border-solid border-hannan-border-2 border-t-2 border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[100px] h-0 relative"
-                  style="margin-top: -2px"></div>
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-[26px] font-normal relative self-stretch">
-                  To create a business website, start by choosing a user-friendly
-                  website builder, selecting a domain name, and picking a reliable
-                  web host. Then, desi.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-[#ffffff] border-solid border-hannan-border-2 border p-9 flex flex-col gap-2.5 items-start justify-start flex-1 relative">
-            <div class="flex flex-col gap-5 items-start justify-start self-stretch shrink-0 relative">
-              <div class="flex flex-row gap-1.5 items-center justify-start self-stretch shrink-0 relative">
-                <img class="shrink-0 w-5 h-5 relative overflow-visible" src="/src/assets/icons/calender5.svg" />
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
-                  30 May 2025
-                </div>
-              </div>
-              <div class="flex flex-col gap-4 items-start justify-start self-stretch shrink-0 relative">
-                <div
-                  class="text-hannan-black text-left font-['WorkSans-Regular',_sans-serif] text-2xl leading-[30px] font-normal relative self-stretch">
-                  How to create business website for web flow
-                </div>
-                <div
-                  class="border-solid border-hannan-border-2 border-t-2 border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[100px] h-0 relative"
-                  style="margin-top: -2px"></div>
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-[26px] font-normal relative self-stretch">
-                  To create a business website, start by choosing a user-friendly
-                  website builder, selecting a domain name, and picking a reliable
-                  web host. Then, desi.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-row gap-6 items-center justify-start self-stretch shrink-0 relative">
-          <div
-            class="bg-[#ffffff] border-solid border-hannan-border-2 border p-9 flex flex-col gap-2.5 items-start justify-start flex-1 relative">
-            <div class="flex flex-col gap-5 items-start justify-start self-stretch shrink-0 relative">
-              <div class="flex flex-row gap-1.5 items-center justify-start self-stretch shrink-0 relative">
-                <img class="shrink-0 w-5 h-5 relative overflow-visible" src="/src/assets/icons/calender6.svg" />
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
-                  30 May 2025
-                </div>
-              </div>
-              <div class="flex flex-col gap-4 items-start justify-start self-stretch shrink-0 relative">
-                <div
-                  class="text-hannan-black text-left font-['WorkSans-Regular',_sans-serif] text-2xl leading-[30px] font-normal relative self-stretch">
-                  How to create business website for web flow
-                </div>
-                <div
-                  class="border-solid border-hannan-border-2 border-t-2 border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[100px] h-0 relative"
-                  style="margin-top: -2px"></div>
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-[26px] font-normal relative self-stretch">
-                  To create a business website, start by choosing a user-friendly
-                  website builder, selecting a domain name, and picking a reliable
-                  web host. Then, desi.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-[#ffffff] border-solid border-hannan-border-2 border p-9 flex flex-col gap-2.5 items-start justify-start flex-1 relative">
-            <div class="flex flex-col gap-5 items-start justify-start self-stretch shrink-0 relative">
-              <div class="flex flex-row gap-1.5 items-center justify-start self-stretch shrink-0 relative">
-                <img class="shrink-0 w-5 h-5 relative overflow-visible" src="/src/assets/icons/calender7.svg" />
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
-                  30 May 2025
-                </div>
-              </div>
-              <div class="flex flex-col gap-4 items-start justify-start self-stretch shrink-0 relative">
-                <div
-                  class="text-hannan-black text-left font-['WorkSans-Regular',_sans-serif] text-2xl leading-[30px] font-normal relative self-stretch">
-                  How to create business website for web flow
-                </div>
-                <div
-                  class="border-solid border-hannan-border-2 border-t-2 border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[100px] h-0 relative"
-                  style="margin-top: -2px"></div>
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-[26px] font-normal relative self-stretch">
-                  To create a business website, start by choosing a user-friendly
-                  website builder, selecting a domain name, and picking a reliable
-                  web host. Then, desi.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-[#ffffff] border-solid border-hannan-border-2 border p-9 flex flex-col gap-2.5 items-start justify-start flex-1 relative">
-            <div class="flex flex-col gap-5 items-start justify-start self-stretch shrink-0 relative">
-              <div class="flex flex-row gap-1.5 items-center justify-start self-stretch shrink-0 relative">
-                <img class="shrink-0 w-5 h-5 relative overflow-visible" src="/src/assets/icons/calender8.svg" />
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
-                  30 May 2025
-                </div>
-              </div>
-              <div class="flex flex-col gap-4 items-start justify-start self-stretch shrink-0 relative">
-                <div
-                  class="text-hannan-black text-left font-['WorkSans-Regular',_sans-serif] text-2xl leading-[30px] font-normal relative self-stretch">
-                  How to create business website for web flow
-                </div>
-                <div
-                  class="border-solid border-hannan-border-2 border-t-2 border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[100px] h-0 relative"
-                  style="margin-top: -2px"></div>
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-[26px] font-normal relative self-stretch">
-                  To create a business website, start by choosing a user-friendly
-                  website builder, selecting a domain name, and picking a reliable
-                  web host. Then, desi.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-row gap-6 items-center justify-start self-stretch shrink-0 relative">
-          <div
-            class="bg-[#ffffff] border-solid border-hannan-border-2 border p-9 flex flex-col gap-2.5 items-start justify-start flex-1 relative">
-            <div class="flex flex-col gap-5 items-start justify-start self-stretch shrink-0 relative">
-              <div class="flex flex-row gap-1.5 items-center justify-start self-stretch shrink-0 relative">
-                <img class="shrink-0 w-5 h-5 relative overflow-visible" src="/src/assets/icons/calender9.svg" />
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
-                  30 May 2025
-                </div>
-              </div>
-              <div class="flex flex-col gap-4 items-start justify-start self-stretch shrink-0 relative">
-                <div
-                  class="text-hannan-black text-left font-['WorkSans-Regular',_sans-serif] text-2xl leading-[30px] font-normal relative self-stretch">
-                  How to create business website for web flow
-                </div>
-                <div
-                  class="border-solid border-hannan-border-2 border-t-2 border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[100px] h-0 relative"
-                  style="margin-top: -2px"></div>
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-[26px] font-normal relative self-stretch">
-                  To create a business website, start by choosing a user-friendly
-                  website builder, selecting a domain name, and picking a reliable
-                  web host. Then, desi.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-[#ffffff] border-solid border-hannan-border-2 border p-9 flex flex-col gap-2.5 items-start justify-start flex-1 relative">
-            <div class="flex flex-col gap-5 items-start justify-start self-stretch shrink-0 relative">
-              <div class="flex flex-row gap-1.5 items-center justify-start self-stretch shrink-0 relative">
-                <img class="shrink-0 w-5 h-5 relative overflow-visible" src="/src/assets/icons/calender10.svg" />
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
-                  30 May 2025
-                </div>
-              </div>
-              <div class="flex flex-col gap-4 items-start justify-start self-stretch shrink-0 relative">
-                <div
-                  class="text-hannan-black text-left font-['WorkSans-Regular',_sans-serif] text-2xl leading-[30px] font-normal relative self-stretch">
-                  How to create business website for web flow
-                </div>
-                <div
-                  class="border-solid border-hannan-border-2 border-t-2 border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[100px] h-0 relative"
-                  style="margin-top: -2px"></div>
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-[26px] font-normal relative self-stretch">
-                  To create a business website, start by choosing a user-friendly
-                  website builder, selecting a domain name, and picking a reliable
-                  web host. Then, desi.
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            class="bg-[#ffffff] border-solid border-hannan-border-2 border p-9 flex flex-col gap-2.5 items-start justify-start flex-1 relative">
-            <div class="flex flex-col gap-5 items-start justify-start self-stretch shrink-0 relative">
-              <div class="flex flex-row gap-1.5 items-center justify-start self-stretch shrink-0 relative">
-                <img class="shrink-0 w-5 h-5 relative overflow-visible" src="/src/assets/icons/calender11.svg" />
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-4 font-normal relative flex-1">
-                  30 May 2025
-                </div>
-              </div>
-              <div class="flex flex-col gap-4 items-start justify-start self-stretch shrink-0 relative">
-                <div
-                  class="text-hannan-black text-left font-['WorkSans-Regular',_sans-serif] text-2xl leading-[30px] font-normal relative self-stretch">
-                  How to create business website for web flow
-                </div>
-                <div
-                  class="border-solid border-hannan-border-2 border-t-2 border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[100px] h-0 relative"
-                  style="margin-top: -2px"></div>
-                <div
-                  class="text-hannan-sub-text text-left font-['WorkSans-Regular',_sans-serif] text-base leading-[26px] font-normal relative self-stretch">
-                  To create a business website, start by choosing a user-friendly
-                  website builder, selecting a domain name, and picking a reliable
-                  web host. Then, desi.
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <img class="shrink-0 w-[250px] h-[250px] absolute left-[428px] top-4" style="
-            transform-origin: 0 0;
-            transform: rotate(0deg) scale(1, 1);
-            object-fit: cover;
-          " src="/src/assets/images/_20.png" />
-      </div>
-      <div
-        class="bg-hannan-primary-2 rounded-[30px] pt-5 pr-[30px] pb-5 pl-[30px] flex flex-row gap-2 items-center justify-center shrink-0 w-[200px] h-[58px] relative">
-        <div
-          class="text-[#ffffff] text-center font-['WorkSans-SemiBold',_sans-serif] text-base leading-4 font-semibold relative">
-          Load More
-        </div>
-        <img class="shrink-0 w-4 h-4 relative overflow-visible" src="/src/assets/icons/arrow4.svg" />
-      </div>
-    </div>
-  </div>
 
+        <div
+          class="bg-white border border-hannan-border-2 p-6 md:p-8 lg:p-9 flex flex-col gap-4 md:gap-5 items-start justify-start w-full h-auto min-h-[300px] md:min-h-[350px] rounded-lg group hover:shadow-lg transition-shadow duration-300">
+          <div class="flex flex-col gap-4 md:gap-5 items-start justify-start self-stretch">
+            <div class="flex flex-row gap-2 items-center justify-start self-stretch">
+              <img class="w-4 h-4 md:w-5 md:h-5" src="../assets/icons/calender2.svg" alt="Calendar" />
+              <span class="text-hannan-sub-text font-worksans text-sm md:text-base leading-4 font-normal">
+                30 May 2025
+              </span>
+            </div>
+            <div class="flex flex-col gap-3 md:gap-4 items-start justify-start self-stretch">
+              <h3
+                class="text-hannan-black font-worksans text-lg md:text-xl lg:text-2xl leading-tight font-normal self-stretch">
+                How to create business website for web flow
+              </h3>
+              <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+              <p
+                class="text-hannan-sub-text font-worksans text-sm md:text-base leading-relaxed font-normal self-stretch">
+                To create a business website, start by choosing a user-friendly website builder, selecting a domain
+                name, and picking a reliable web host. Then, design your site with clear navigation and compelling
+                content.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white border border-hannan-border-2 p-6 md:p-8 lg:p-9 flex flex-col gap-4 md:gap-5 items-start justify-start w-full h-auto min-h-[300px] md:min-h-[350px] rounded-lg group hover:shadow-lg transition-shadow duration-300">
+          <div class="flex flex-col gap-4 md:gap-5 items-start justify-start self-stretch">
+            <div class="flex flex-row gap-2 items-center justify-start self-stretch">
+              <img class="w-4 h-4 md:w-5 md:h-5" src="../assets/icons/calender3.svg" alt="Calendar" />
+              <span class="text-hannan-sub-text font-worksans text-sm md:text-base leading-4 font-normal">
+                30 May 2025
+              </span>
+            </div>
+            <div class="flex flex-col gap-3 md:gap-4 items-start justify-start self-stretch">
+              <h3
+                class="text-hannan-black font-worksans text-lg md:text-xl lg:text-2xl leading-tight font-normal self-stretch">
+                How to create business website for web flow
+              </h3>
+              <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+              <p
+                class="text-hannan-sub-text font-worksans text-sm md:text-base leading-relaxed font-normal self-stretch">
+                To create a business website, start by choosing a user-friendly website builder, selecting a domain
+                name, and picking a reliable web host. Then, design your site with clear navigation and compelling
+                content.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white border border-hannan-border-2 p-6 md:p-8 lg:p-9 flex flex-col gap-4 md:gap-5 items-start justify-start w-full h-auto min-h-[300px] md:min-h-[350px] rounded-lg group hover:shadow-lg transition-shadow duration-300">
+          <div class="flex flex-col gap-4 md:gap-5 items-start justify-start self-stretch">
+            <div class="flex flex-row gap-2 items-center justify-start self-stretch">
+              <img class="w-4 h-4 md:w-5 md:h-5" src="../assets/icons/calender4.svg" alt="Calendar" />
+              <span class="text-hannan-sub-text font-worksans text-sm md:text-base leading-4 font-normal">
+                30 May 2025
+              </span>
+            </div>
+            <div class="flex flex-col gap-3 md:gap-4 items-start justify-start self-stretch">
+              <h3
+                class="text-hannan-black font-worksans text-lg md:text-xl lg:text-2xl leading-tight font-normal self-stretch">
+                How to create business website for web flow
+              </h3>
+              <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+              <p
+                class="text-hannan-sub-text font-worksans text-sm md:text-base leading-relaxed font-normal self-stretch">
+                To create a business website, start by choosing a user-friendly website builder, selecting a domain
+                name, and picking a reliable web host. Then, design your site with clear navigation and compelling
+                content.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white border border-hannan-border-2 p-6 md:p-8 lg:p-9 flex flex-col gap-4 md:gap-5 items-start justify-start w-full h-auto min-h-[300px] md:min-h-[350px] rounded-lg group hover:shadow-lg transition-shadow duration-300">
+          <div class="flex flex-col gap-4 md:gap-5 items-start justify-start self-stretch">
+            <div class="flex flex-row gap-2 items-center justify-start self-stretch">
+              <img class="w-4 h-4 md:w-5 md:h-5" src="../assets/icons/calender5.svg" alt="Calendar" />
+              <span class="text-hannan-sub-text font-worksans text-sm md:text-base leading-4 font-normal">
+                30 May 2025
+              </span>
+            </div>
+            <div class="flex flex-col gap-3 md:gap-4 items-start justify-start self-stretch">
+              <h3
+                class="text-hannan-black font-worksans text-lg md:text-xl lg:text-2xl leading-tight font-normal self-stretch">
+                How to create business website for web flow
+              </h3>
+              <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+              <p
+                class="text-hannan-sub-text font-worksans text-sm md:text-base leading-relaxed font-normal self-stretch">
+                To create a business website, start by choosing a user-friendly website builder, selecting a domain
+                name, and picking a reliable web host. Then, design your site with clear navigation and compelling
+                content.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white border border-hannan-border-2 p-6 md:p-8 lg:p-9 flex flex-col gap-4 md:gap-5 items-start justify-start w-full h-auto min-h-[300px] md:min-h-[350px] rounded-lg group hover:shadow-lg transition-shadow duration-300">
+          <div class="flex flex-col gap-4 md:gap-5 items-start justify-start self-stretch">
+            <div class="flex flex-row gap-2 items-center justify-start self-stretch">
+              <img class="w-4 h-4 md:w-5 md:h-5" src="../assets/icons/calender6.svg" alt="Calendar" />
+              <span class="text-hannan-sub-text font-worksans text-sm md:text-base leading-4 font-normal">
+                30 May 2025
+              </span>
+            </div>
+            <div class="flex flex-col gap-3 md:gap-4 items-start justify-start self-stretch">
+              <h3
+                class="text-hannan-black font-worksans text-lg md:text-xl lg:text-2xl leading-tight font-normal self-stretch">
+                How to create business website for web flow
+              </h3>
+              <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+              <p
+                class="text-hannan-sub-text font-worksans text-sm md:text-base leading-relaxed font-normal self-stretch">
+                To create a business website, start by choosing a user-friendly website builder, selecting a domain
+                name, and picking a reliable web host. Then, design your site with clear navigation and compelling
+                content.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white border border-hannan-border-2 p-6 md:p-8 lg:p-9 flex flex-col gap-4 md:gap-5 items-start justify-start w-full h-auto min-h-[300px] md:min-h-[350px] rounded-lg group hover:shadow-lg transition-shadow duration-300">
+          <div class="flex flex-col gap-4 md:gap-5 items-start justify-start self-stretch">
+            <div class="flex flex-row gap-2 items-center justify-start self-stretch">
+              <img class="w-4 h-4 md:w-5 md:h-5" src="../assets/icons/calender7.svg" alt="Calendar" />
+              <span class="text-hannan-sub-text font-worksans text-sm md:text-base leading-4 font-normal">
+                30 May 2025
+              </span>
+            </div>
+            <div class="flex flex-col gap-3 md:gap-4 items-start justify-start self-stretch">
+              <h3
+                class="text-hannan-black font-worksans text-lg md:text-xl lg:text-2xl leading-tight font-normal self-stretch">
+                How to create business website for web flow
+              </h3>
+              <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+              <p
+                class="text-hannan-sub-text font-worksans text-sm md:text-base leading-relaxed font-normal self-stretch">
+                To create a business website, start by choosing a user-friendly website builder, selecting a domain
+                name, and picking a reliable web host. Then, design your site with clear navigation and compelling
+                content.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white border border-hannan-border-2 p-6 md:p-8 lg:p-9 flex flex-col gap-4 md:gap-5 items-start justify-start w-full h-auto min-h-[300px] md:min-h-[350px] rounded-lg group hover:shadow-lg transition-shadow duration-300">
+          <div class="flex flex-col gap-4 md:gap-5 items-start justify-start self-stretch">
+            <div class="flex flex-row gap-2 items-center justify-start self-stretch">
+              <img class="w-4 h-4 md:w-5 md:h-5" src="../assets/icons/calender8.svg" alt="Calendar" />
+              <span class="text-hannan-sub-text font-worksans text-sm md:text-base leading-4 font-normal">
+                30 May 2025
+              </span>
+            </div>
+            <div class="flex flex-col gap-3 md:gap-4 items-start justify-start self-stretch">
+              <h3
+                class="text-hannan-black font-worksans text-lg md:text-xl lg:text-2xl leading-tight font-normal self-stretch">
+                How to create business website for web flow
+              </h3>
+              <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+              <p
+                class="text-hannan-sub-text font-worksans text-sm md:text-base leading-relaxed font-normal self-stretch">
+                To create a business website, start by choosing a user-friendly website builder, selecting a domain
+                name, and picking a reliable web host. Then, design your site with clear navigation and compelling
+                content.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white border border-hannan-border-2 p-6 md:p-8 lg:p-9 flex flex-col gap-4 md:gap-5 items-start justify-start w-full h-auto min-h-[300px] md:min-h-[350px] rounded-lg group hover:shadow-lg transition-shadow duration-300">
+          <div class="flex flex-col gap-4 md:gap-5 items-start justify-start self-stretch">
+            <div class="flex flex-row gap-2 items-center justify-start self-stretch">
+              <img class="w-4 h-4 md:w-5 md:h-5" src="../assets/icons/calender9.svg" alt="Calendar" />
+              <span class="text-hannan-sub-text font-worksans text-sm md:text-base leading-4 font-normal">
+                30 May 2025
+              </span>
+            </div>
+            <div class="flex flex-col gap-3 md:gap-4 items-start justify-start self-stretch">
+              <h3
+                class="text-hannan-black font-worksans text-lg md:text-xl lg:text-2xl leading-tight font-normal self-stretch">
+                How to create business website for web flow
+              </h3>
+              <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+              <p
+                class="text-hannan-sub-text font-worksans text-sm md:text-base leading-relaxed font-normal self-stretch">
+                To create a business website, start by choosing a user-friendly website builder, selecting a domain
+                name, and picking a reliable web host. Then, design your site with clear navigation and compelling
+                content.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white border border-hannan-border-2 p-6 md:p-8 lg:p-9 flex flex-col gap-4 md:gap-5 items-start justify-start w-full h-auto min-h-[300px] md:min-h-[350px] rounded-lg group hover:shadow-lg transition-shadow duration-300">
+          <div class="flex flex-col gap-4 md:gap-5 items-start justify-start self-stretch">
+            <div class="flex flex-row gap-2 items-center justify-start self-stretch">
+              <img class="w-4 h-4 md:w-5 md:h-5" src="../assets/icons/calender10.svg" alt="Calendar" />
+              <span class="text-hannan-sub-text font-worksans text-sm md:text-base leading-4 font-normal">
+                30 May 2025
+              </span>
+            </div>
+            <div class="flex flex-col gap-3 md:gap-4 items-start justify-start self-stretch">
+              <h3
+                class="text-hannan-black font-worksans text-lg md:text-xl lg:text-2xl leading-tight font-normal self-stretch">
+                How to create business website for web flow
+              </h3>
+              <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+              <p
+                class="text-hannan-sub-text font-worksans text-sm md:text-base leading-relaxed font-normal self-stretch">
+                To create a business website, start by choosing a user-friendly website builder, selecting a domain
+                name, and picking a reliable web host. Then, design your site with clear navigation and compelling
+                content.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-white border border-hannan-border-2 p-6 md:p-8 lg:p-9 flex flex-col gap-4 md:gap-5 items-start justify-start w-full h-auto min-h-[300px] md:min-h-[350px] rounded-lg group hover:shadow-lg transition-shadow duration-300">
+          <div class="flex flex-col gap-4 md:gap-5 items-start justify-start self-stretch">
+            <div class="flex flex-row gap-2 items-center justify-start self-stretch">
+              <img class="w-4 h-4 md:w-5 md:h-5" src="../assets/icons/calender11.svg" alt="Calendar" />
+              <span class="text-hannan-sub-text font-worksans text-sm md:text-base leading-4 font-normal">
+                30 May 2025
+              </span>
+            </div>
+            <div class="flex flex-col gap-3 md:gap-4 items-start justify-start self-stretch">
+              <h3
+                class="text-hannan-black font-worksans text-lg md:text-xl lg:text-2xl leading-tight font-normal self-stretch">
+                How to create business website for web flow
+              </h3>
+              <div class="border-t-2 border-hannan-border-2 w-[100px]"></div>
+              <p
+                class="text-hannan-sub-text font-worksans text-sm md:text-base leading-relaxed font-normal self-stretch">
+                To create a business website, start by choosing a user-friendly website builder, selecting a domain
+                name, and picking a reliable web host. Then, design your site with clear navigation and compelling
+                content.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Load More Button -->
+      <div class="flex justify-center w-full mt-8 md:mt-12">
+        <button
+          class="bg-hannan-primary-2 rounded-[30px] px-6 md:px-8 py-3 md:py-4 flex flex-row gap-2 items-center justify-center w-auto min-w-[200px] h-auto min-h-[58px] hover:bg-opacity-90 transition-colors">
+          <span class="text-white font-worksans-semibold text-base leading-4 font-semibold">
+            Load More
+          </span>
+          <img class="w-4 h-4" src="../assets/icons/arrow4.svg" alt="Arrow" />
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div id="footer-placeholder"></div>
+  </footer>
+
+  <script src="../js/scripts.js"></script>
+  <script src="../js/footer.js"></script>
 </body>
 
 </html>
