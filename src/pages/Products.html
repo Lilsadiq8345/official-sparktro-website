@@ -2,451 +2,1296 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products – Sparktro</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'hannan-black': '#1e2533',
-            'hannan-sub-text': '#5a556e',
-            'hannan-primary-2': '#0a97b0',
-            'hannan-border-1': '#bdc7d3',
-            'hannan-border-2': '#d6e2ef',
-            'hannan-fill-color': '#8d97a3',
-            'hannan-white': '#ffffff',
-            'hannan-green': '#1d9993',
-            'hannan-active': '#0dc46e',
-            'hannan-red': '#ff4340',
-            'hannan-yellow': '#fdcb02',
-            'hannan-blue': '#0482f9',
-            'hannan-pink': '#ee2358',
-            'hannan-purple': '#ee23da',
-            'hannan-orange': '#fdd40f',
-            'hannan-light-green': '#6bb54a',
-          },
-          fontFamily: {
-            'goodtimes': ['GoodTimes-Regular', 'sans-serif'],
-            'worksans': ['WorkSans-Regular', 'sans-serif'],
-            'worksans-medium': ['WorkSans-Medium', 'sans-serif'],
-            'worksans-semibold': ['WorkSans-SemiBold', 'sans-serif'],
-            'worksans-bold': ['WorkSans-Bold', 'sans-serif'],
-            'dmsans': ['DmSans-Regular', 'sans-serif'],
-            'dmsans-bold': ['DmSans-Bold', 'sans-serif'],
-          },
-          backgroundImage: {
-            'gradient-border': 'linear-gradient(90deg, rgba(255, 99, 99, 1) 0%, rgba(4, 130, 249, 1) 23.15%, rgba(242, 213, 25, 1) 45.79%, rgba(121, 150, 184, 1) 72.19%, rgba(107, 181, 74, 1) 100%)',
-          },
-          boxShadow: {
-            'custom': '0px 4px 10px 0px rgba(10, 151, 176, 0.1)',
-            'card': '0px 0px 30px 0px rgba(0, 0, 0, 0.06)',
-          },
-          backdropBlur: {
-            'xs': '2px',
-          },
-          animation: {
-            'fade-in': 'fadeIn 0.5s ease-in-out',
-            'slide-up': 'slideUp 0.5s ease-out',
-            'scale-in': 'scaleIn 0.3s ease-out',
-            'float': 'float 6s ease-in-out infinite',
-            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-          },
-          keyframes: {
-            fadeIn: {
-              '0%': { opacity: '0' },
-              '100%': { opacity: '1' },
-            },
-            slideUp: {
-              '0%': { transform: 'translateY(20px)', opacity: '0' },
-              '100%': { transform: 'translateY(0)', opacity: '1' },
-            },
-            scaleIn: {
-              '0%': { transform: 'scale(0.95)', opacity: '0' },
-              '100%': { transform: 'scale(1)', opacity: '1' },
-            },
-            float: {
-              '0%, 100%': { transform: 'translateY(0px)' },
-              '50%': { transform: 'translateY(-10px)' },
-            },
-          },
-        },
-      },
-    }
-  </script>
-  <link rel="stylesheet" href="../css/custom.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='https://cdn.tailwindcss.com/3.2.0'></script>
+    <script src="./tailwind.config.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border: none;
+            text-decoration: none;
+            background: none;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        menu,
+        ol,
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        .work-sans {
+            font-family: 'WorkSans-Regular', sans-serif;
+        }
+
+        .work-sans-medium {
+            font-family: 'WorkSans-Medium', sans-serif;
+        }
+
+        .work-sans-semibold {
+            font-family: 'WorkSans-SemiBold', sans-serif;
+        }
+
+        .work-sans-bold {
+            font-family: 'WorkSans-Bold', sans-serif;
+        }
+
+        .hannan-primary-2 {
+            color: #0A97B0;
+        }
+
+        .hannan-black {
+            color: #000000;
+        }
+
+        .hannan-white {
+            color: #FFFFFF;
+        }
+
+        .hannan-sub-text {
+            color: #666666;
+        }
+
+        .hannan-border-2 {
+            border-color: #E5E5E5;
+        }
+
+        .hannan-fill-color {
+            color: #999999;
+        }
+
+        .bg-hannan-primary-2 {
+            background-color: #0A97B0;
+        }
+
+        .bg-hannan-black {
+            background-color: #000000;
+        }
+
+        .border-hannan-primary-2 {
+            border-color: #0A97B0;
+        }
+
+        .border-hannan-border-2 {
+            border-color: #E5E5E5;
+        }
+
+        .border-hannan-sub-text {
+            border-color: #666666;
+        }
+
+        /* Animation Classes */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .fade-in-up.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s ease-out;
+        }
+
+        .scale-in.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .slide-in-left.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .slide-in-right.animate {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .bounce-in {
+            opacity: 0;
+            transform: scale(0.3);
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .bounce-in.animate {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .product-card {
+            transition: all 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(10, 151, 176, 0.15);
+        }
+
+        .search-container {
+            position: relative;
+        }
+
+        .search-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-top: none;
+            border-radius: 0 0 15px 15px;
+            max-height: 300px;
+            overflow-y: auto;
+            z-index: 1000;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .search-results.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: all;
+        }
+
+        .search-result-item {
+            padding: 12px 16px;
+            border-bottom: 1px solid #f3f4f6;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .search-result-item:hover {
+            background-color: #f8fafc;
+        }
+
+        .search-result-item:last-child {
+            border-bottom: none;
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #0A97B0;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes pulse-glow {
+            from {
+                box-shadow: 0 0 20px rgba(10, 151, 176, 0.3);
+            }
+
+            to {
+                box-shadow: 0 0 30px rgba(10, 151, 176, 0.6);
+            }
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Dynamic color effects for product cards */
+        .dynamic-color-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .dynamic-color-card .color-effects {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        .dynamic-color-card:hover .color-effects {
+            opacity: 1;
+        }
+
+        .dynamic-color-card .color-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(200px);
+            transition: all 0.5s ease;
+        }
+
+        .dynamic-color-card .color-orb:nth-child(1) {
+            background: #ee2358;
+            width: 200px;
+            height: 200px;
+            left: -8px;
+            top: -8px;
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        .dynamic-color-card .color-orb:nth-child(2) {
+            background: #fdd40f;
+            width: 200px;
+            height: 200px;
+            right: 8px;
+            top: -14px;
+            animation: floating 3s ease-in-out infinite 1s;
+        }
+
+        .dynamic-color-card .color-orb:nth-child(3) {
+            background: #0482f9;
+            width: 200px;
+            height: 200px;
+            left: -20px;
+            bottom: 20px;
+            opacity: 0.6;
+            animation: floating 3s ease-in-out infinite 2s;
+        }
+
+        .dynamic-color-card .color-orb:nth-child(4) {
+            background: #0482f9;
+            width: 200px;
+            height: 200px;
+            right: 20px;
+            top: 16px;
+            opacity: 0.6;
+            animation: floating 3s ease-in-out infinite 0.5s;
+        }
+
+        .dynamic-color-card .color-orb:nth-child(5) {
+            background: #ee23da;
+            width: 200px;
+            height: 200px;
+            left: 8px;
+            bottom: 20px;
+            animation: floating 3s ease-in-out infinite 1.5s;
+        }
+
+        /* Featured card always has colors */
+        .featured-card .color-effects {
+            opacity: 0;
+            /* Changed from 1 to 0 */
+        }
+
+        /* Normal card styling when not hovered */
+        .product-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            transition: all 0.3s ease;
+        }
+
+        /* Hovered card styling */
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(10, 151, 176, 0.15);
+            border-color: transparent;
+        }
+
+        /* Featured card specific styling - removed black background */
+        .featured-card {
+            background: white;
+            /* Changed from black to white */
+            border: 2px solid #e5e7eb;
+            /* Added border back */
+        }
+
+        /* Text color adjustments for dynamic cards */
+        .dynamic-color-card:hover .product-title,
+        .featured-card .product-title {
+            color: white;
+        }
+
+        .dynamic-color-card:hover .product-sales,
+        .featured-card .product-sales {
+            color: white;
+        }
+
+        .dynamic-color-card:hover .product-price {
+            color: #0A97B0;
+        }
+
+        .featured-card .product-price {
+            color: #0A97B0;
+        }
+
+        /* Default text colors for non-hovered state */
+        .product-title {
+            color: black;
+        }
+
+        .product-sales {
+            color: #666666;
+        }
+    </style>
+    <title>Products - Sparktro</title>
 </head>
 
-<body class="antialiased bg-hannan-white">
-  <!-- Header -->
-  <header
-    class="bg-white border-b border-solid pt-4 pr-4 sm:pr-8 lg:pr-60 pb-4 pl-4 sm:pl-8 lg:pl-60 flex flex-row items-center justify-between w-full h-20 relative sticky top-0 z-50 bg-white/95 backdrop-blur-sm header-gradient"
-    style="box-shadow: 0px 4px 10px 0px rgba(10, 151, 176, 0.1);">
-    <!-- Logo -->
-    <div class="flex items-center gap-2">
-      <img src="../assets/icons/icon0.svg" class="w-4 h-6" alt="Sparktro Icon" />
-      <div class="text-left font-goodtimes text-2xl leading-6 font-normal uppercase">
-        <span class="text-hannan-primary-2">park</span>
-        <span class="text-hannan-black">tro</span>
-      </div>
-    </div>
-    <!-- Navigation -->
-    <nav class="hidden md:flex flex-row gap-6 items-center">
-      <a href="../index.html"
-        class="text-hannan-black font-worksans-medium text-base leading-4 font-medium hover:text-hannan-primary-2 transition-colors">Home</a>
-      <div class="flex flex-row gap-1 items-center">
-        <a href="Products.html"
-          class="text-hannan-black font-worksans-medium text-base leading-4 font-medium hover:text-hannan-primary-2 transition-colors">Products</a>
-        <img src="../assets/icons/arrow0.svg" class="w-4 h-4" alt="Dropdown" />
-      </div>
-      <div class="flex flex-row gap-1 items-center">
-        <a href="OurServices.html"
-          class="text-hannan-black font-worksans-medium text-base leading-4 font-medium hover:text-hannan-primary-2 transition-colors">Services</a>
-        <img src="../assets/icons/arrow1.svg" class="w-4 h-4" alt="Dropdown" />
-      </div>
-      <a href="BlogPage2.html"
-        class="text-hannan-black font-worksans-medium text-base leading-4 font-medium hover:text-hannan-primary-2 transition-colors">Blog</a>
-      <a href="AboutUs.html"
-        class="text-hannan-black font-worksans-medium text-base leading-4 font-medium hover:text-hannan-primary-2 transition-colors">About</a>
-    </nav>
-    <!-- CTA Button -->
-    <button
-      class="rounded-[30px] border border-hannan-primary-2 pt-2.5 pr-4 pb-2.5 pl-4 flex flex-row gap-1 items-center justify-center h-11 hover:bg-hannan-primary-2 hover:text-white transition-all duration-300"
-      style="backdrop-filter: blur(5px)">
-      <span
-        class="text-hannan-primary-2 font-worksans-medium text-base leading-4 font-medium hover:text-white transition-colors">Let's
-        Start</span>
-      <img src="../assets/icons/arrow2.svg" class="w-4 h-4" alt="Arrow" />
-    </button>
-  </header>
+<body class="bg-white min-h-screen">
+    <div class="max-w-[1920px] mx-auto relative overflow-hidden">
+        <!-- Header -->
+        <header
+            class="bg-white border-b-2 border-solid parktro-gradient pt-4 pb-4 px-4 lg:px-16 xl:px-60 flex flex-col lg:flex-row items-center justify-between w-full h-auto lg:h-20 shadow-lg"
+            style="box-shadow: 0px 4px 10px 0px rgba(10, 151, 176, 0.1);">
+            <!-- Logo -->
+            <div class="flex items-center mb-4 lg:mb-0">
+                <div class="relative">
+                    <img class="w-6 h-6 mr-2" src="/src/assets/icons/icon0.svg" alt="Sparktro Icon" />
+                    <div class="parktro-text text-2xl lg:text-2xl font-normal uppercase text-black">
+                        <span class="text-[#0A97B0]">park</span>
+                        <span class="text-[#0A97B0]">tro</span>
+                    </div>
+                </div>
+            </div>
 
-  <!-- Main Content Container -->
-  <div class="bg-hannan-white w-[1920px] min-h-[2072px] relative overflow-hidden mx-auto">
-    <!-- Hero Section -->
-    <div class="flex flex-col gap-2.5 items-center justify-start w-full pt-[130px] pb-10">
-      <h1 class="text-hannan-black text-center font-worksans-bold text-[40px] leading-10 font-bold self-stretch">
-        Discover Our Products</h1>
-      <p
-        class="text-hannan-sub-text text-center font-worksans text-lg leading-7 font-normal self-stretch max-w-[700px] mx-auto">
-        With our innovative tools and solutions tailored to empower your business, you just need to sit back and see
-        your problems solved, business operations.</p>
-      <div
-        class="rounded-[30px] border border-hannan-border-2 pt-2.5 pr-4 pb-2.5 pl-4 flex flex-row items-center justify-between w-[708px] h-11 mt-4"
-        style="backdrop-filter: blur(5px)">
-        <div class="flex flex-row gap-1 items-center">
-          <img src="../assets/icons/search1.svg" class="w-6 h-6" alt="Search" />
-          <input type="text" placeholder="Search Products"
-            class="text-hannan-fill-color font-worksans text-base leading-4 font-normal bg-transparent border-none outline-none flex-1" />
-        </div>
-        <img src="../assets/icons/arrow3.svg" class="w-4 h-4" alt="Arrow" />
-      </div>
-    </div>
-    <!-- Products Grid -->
-    <div class="flex flex-col gap-10 items-center justify-start w-full max-w-[1440px] mx-auto">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
-        <!-- Product Card 1 -->
-        <div class="bg-white border border-hannan-border-2 rounded-[16px] shadow-card overflow-hidden flex flex-col">
-          <img src="../assets/images/product1.png" alt="Product 1" class="w-full h-[220px] object-cover" />
-          <div class="p-6 flex flex-col gap-4 flex-1">
-            <div class="flex flex-row gap-2 mb-2">
-              <span
-                class="bg-hannan-primary-2/10 text-hannan-primary-2 text-xs font-worksans-medium rounded-[30px] px-3 py-1 border border-hannan-primary-2/20">Full
-                Applications</span>
-              <span
-                class="bg-hannan-primary-2/10 text-hannan-primary-2 text-xs font-worksans-medium rounded-[30px] px-3 py-1 border border-hannan-primary-2/20">Version
-                5.1</span>
-            </div>
-            <div class="text-hannan-black font-worksans-semibold text-lg leading-6 font-semibold">Multi-Vendor eCommerce
-              CMS - Mobile App, Website and Admin Panel</div>
-            <div class="text-hannan-primary-2 font-worksans-semibold text-lg leading-6 font-semibold">$29.50</div>
-            <div class="flex flex-row items-center justify-between mt-2">
-              <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">250 Sales</span>
-              <a href="#"
-                class="bg-hannan-primary-2 text-white font-worksans-medium rounded-[30px] px-6 py-2 flex items-center gap-2 hover:bg-hannan-green transition-colors">Live
-                Preview <img src="../assets/icons/arrow4.svg" class="w-4 h-4" alt="Arrow" /></a>
-            </div>
-          </div>
-        </div>
-        <!-- Product Card 2 -->
-        <div class="bg-white border border-hannan-border-2 rounded-[16px] shadow-card overflow-hidden flex flex-col">
-          <img src="../assets/images/product2.png" alt="Product 2" class="w-full h-[220px] object-cover" />
-          <div class="p-6 flex flex-col gap-4 flex-1">
-            <div class="flex flex-row gap-2 mb-2">
-              <span
-                class="bg-hannan-primary-2/10 text-hannan-primary-2 text-xs font-worksans-medium rounded-[30px] px-3 py-1 border border-hannan-primary-2/20">Full
-                Applications</span>
-              <span
-                class="bg-hannan-primary-2/10 text-hannan-primary-2 text-xs font-worksans-medium rounded-[30px] px-3 py-1 border border-hannan-primary-2/20">Version
-                5.1</span>
-            </div>
-            <div class="text-hannan-black font-worksans-semibold text-lg leading-6 font-semibold">Multi-Vendor eCommerce
-              CMS - Mobile App, Website and Admin Panel</div>
-            <div class="text-hannan-primary-2 font-worksans-semibold text-lg leading-6 font-semibold">$29.50</div>
-            <div class="flex flex-row items-center justify-between mt-2">
-              <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">250 Sales</span>
-              <a href="#"
-                class="bg-hannan-primary-2 text-white font-worksans-medium rounded-[30px] px-6 py-2 flex items-center gap-2 hover:bg-hannan-green transition-colors">Live
-                Preview <img src="../assets/icons/arrow4.svg" class="w-4 h-4" alt="Arrow" /></a>
-            </div>
-          </div>
-        </div>
-        <!-- Product Card 3 -->
-        <div class="bg-white border border-hannan-border-2 rounded-[16px] shadow-card overflow-hidden flex flex-col">
-          <img src="../assets/images/product3.png" alt="Product 3" class="w-full h-[220px] object-cover" />
-          <div class="p-6 flex flex-col gap-4 flex-1">
-            <div class="flex flex-row gap-2 mb-2">
-              <span
-                class="bg-hannan-primary-2/10 text-hannan-primary-2 text-xs font-worksans-medium rounded-[30px] px-3 py-1 border border-hannan-primary-2/20">Full
-                Applications</span>
-              <span
-                class="bg-hannan-primary-2/10 text-hannan-primary-2 text-xs font-worksans-medium rounded-[30px] px-3 py-1 border border-hannan-primary-2/20">Version
-                5.1</span>
-            </div>
-            <div class="text-hannan-black font-worksans-semibold text-lg leading-6 font-semibold">Multi-Vendor eCommerce
-              CMS - Mobile App, Website and Admin Panel</div>
-            <div class="text-hannan-primary-2 font-worksans-semibold text-lg leading-6 font-semibold">$29.50</div>
-            <div class="flex flex-row items-center justify-between mt-2">
-              <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">250 Sales</span>
-              <a href="#"
-                class="bg-hannan-primary-2 text-white font-worksans-medium rounded-[30px] px-6 py-2 flex items-center gap-2 hover:bg-hannan-green transition-colors">Live
-                Preview <img src="../assets/icons/arrow4.svg" class="w-4 h-4" alt="Arrow" /></a>
-            </div>
-          </div>
-        </div>
-        <!-- Product Card 4 -->
-        <div class="bg-white border border-hannan-border-2 rounded-[16px] shadow-card overflow-hidden flex flex-col">
-          <img src="../assets/images/product4.png" alt="Product 4" class="w-full h-[220px] object-cover" />
-          <div class="p-6 flex flex-col gap-4 flex-1">
-            <div class="flex flex-row gap-2 mb-2">
-              <span
-                class="bg-hannan-primary-2/10 text-hannan-primary-2 text-xs font-worksans-medium rounded-[30px] px-3 py-1 border border-hannan-primary-2/20">Full
-                Applications</span>
-              <span
-                class="bg-hannan-primary-2/10 text-hannan-primary-2 text-xs font-worksans-medium rounded-[30px] px-3 py-1 border border-hannan-primary-2/20">Version
-                5.1</span>
-            </div>
-            <div class="text-hannan-black font-worksans-semibold text-lg leading-6 font-semibold">Multi-Vendor eCommerce
-              CMS - Mobile App, Website and Admin Panel</div>
-            <div class="text-hannan-primary-2 font-worksans-semibold text-lg leading-6 font-semibold">$29.50</div>
-            <div class="flex flex-row items-center justify-between mt-2">
-              <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">250 Sales</span>
-              <a href="#"
-                class="bg-hannan-primary-2 text-white font-worksans-medium rounded-[30px] px-6 py-2 flex items-center gap-2 hover:bg-hannan-green transition-colors">Live
-                Preview <img src="../assets/icons/arrow4.svg" class="w-4 h-4" alt="Arrow" /></a>
-            </div>
-          </div>
-        </div>
-        <!-- Product Card 5 -->
-        <div class="bg-white border border-hannan-border-2 rounded-[16px] shadow-card overflow-hidden flex flex-col">
-          <img src="../assets/images/product5.png" alt="Product 5" class="w-full h-[220px] object-cover" />
-          <div class="p-6 flex flex-col gap-4 flex-1">
-            <div class="flex flex-row gap-2 mb-2">
-              <span
-                class="bg-hannan-primary-2/10 text-hannan-primary-2 text-xs font-worksans-medium rounded-[30px] px-3 py-1 border border-hannan-primary-2/20">Full
-                Applications</span>
-              <span
-                class="bg-hannan-primary-2/10 text-hannan-primary-2 text-xs font-worksans-medium rounded-[30px] px-3 py-1 border border-hannan-primary-2/20">Version
-                5.1</span>
-            </div>
-            <div class="text-hannan-black font-worksans-semibold text-lg leading-6 font-semibold">Multi-Vendor eCommerce
-              CMS - Mobile App, Website and Admin Panel</div>
-            <div class="text-hannan-primary-2 font-worksans-semibold text-lg leading-6 font-semibold">$29.50</div>
-            <div class="flex flex-row items-center justify-between mt-2">
-              <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">250 Sales</span>
-              <a href="#"
-                class="bg-hannan-primary-2 text-white font-worksans-medium rounded-[30px] px-6 py-2 flex items-center gap-2 hover:bg-hannan-green transition-colors">Live
-                Preview <img src="../assets/icons/arrow4.svg" class="w-4 h-4" alt="Arrow" /></a>
-            </div>
-          </div>
-        </div>
-        <!-- Product Card 6 -->
-        <div class="bg-white border border-hannan-border-2 rounded-[16px] shadow-card overflow-hidden flex flex-col">
-          <img src="../assets/images/product6.png" alt="Product 6" class="w-full h-[220px] object-cover" />
-          <div class="p-6 flex flex-col gap-4 flex-1">
-            <div class="flex flex-row gap-2 mb-2">
-              <span
-                class="bg-hannan-primary-2/10 text-hannan-primary-2 text-xs font-worksans-medium rounded-[30px] px-3 py-1 border border-hannan-primary-2/20">Full
-                Applications</span>
-              <span
-                class="bg-hannan-primary-2/10 text-hannan-primary-2 text-xs font-worksans-medium rounded-[30px] px-3 py-1 border border-hannan-primary-2/20">Version
-                5.1</span>
-            </div>
-            <div class="text-hannan-black font-worksans-semibold text-lg leading-6 font-semibold">Multi-Vendor eCommerce
-              CMS - Mobile App, Website and Admin Panel</div>
-            <div class="text-hannan-primary-2 font-worksans-semibold text-lg leading-6 font-semibold">$29.50</div>
-            <div class="flex flex-row items-center justify-between mt-2">
-              <span class="text-hannan-sub-text font-worksans text-base leading-4 font-normal">250 Sales</span>
-              <a href="#"
-                class="bg-hannan-primary-2 text-white font-worksans-medium rounded-[30px] px-6 py-2 flex items-center gap-2 hover:bg-hannan-green transition-colors">Live
-                Preview <img src="../assets/icons/arrow4.svg" class="w-4 h-4" alt="Arrow" /></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <button
-        class="bg-hannan-primary-2 rounded-[30px] pt-5 pr-[30px] pb-5 pl-[30px] flex flex-row gap-2 items-center justify-center w-[200px] h-[58px] hover:bg-hannan-green transition-colors mt-8">
-        <span class="text-hannan-white font-worksans-semibold text-base leading-4 font-semibold">Load More</span>
-        <img src="../assets/icons/arrow10.svg" class="w-4 h-4" alt="Arrow" />
-      </button>
-    </div>
-  </div>
+            <!-- Navigation -->
+            <nav class="flex flex-col lg:flex-row gap-4 lg:gap-6 items-center mb-4 lg:mb-0">
+                <a href="#"
+                    class="work-sans-medium text-base font-medium text-black hover:text-[#0A97B0] transition-colors">Home</a>
+                <div class="flex items-center gap-1">
+                    <a href="#"
+                        class="work-sans-medium text-base font-medium text-black hover:text-[#0A97B0] transition-colors">Products</a>
+                    <img class="w-4 h-4" src="/src/assets/icons/arrow0.svg" alt="Dropdown" />
+                </div>
+                <div class="flex items-center gap-1">
+                    <a href="#"
+                        class="work-sans-medium text-base font-medium text-black hover:text-[#0A97B0] transition-colors">Services</a>
+                    <img class="w-4 h-4" src="/src/assets/icons/arrow1.svg" alt="Dropdown" />
+                </div>
+                <a href="#"
+                    class="work-sans-medium text-base font-medium text-black hover:text-[#0A97B0] transition-colors">Blog</a>
+                <a href="#"
+                    class="work-sans-medium text-base font-medium text-black hover:text-[#0A97B0] transition-colors">About</a>
+            </nav>
 
-  <!-- Footer -->
-  <div class="bg-hannan-black w-[1920px] h-[512px] relative overflow-hidden mt-20">
-    <!-- Background Gradients -->
-    <div class="bg-hannan-blue rounded-[50%] w-[350px] h-[350px] absolute left-[1505px] top-[335px]"
-      style="opacity: 0.6; filter: blur(400px)"></div>
-    <div class="bg-hannan-light-green rounded-[50%] w-[350px] h-[350px] absolute left-[81px] top-80"
-      style="opacity: 0.6; filter: blur(400px)"></div>
-    <div class="bg-hannan-pink rounded-[50%] w-[343px] h-[343px] absolute left-[-82px] top-[-119px]"
-      style="filter: blur(400px)"></div>
-    <div class="bg-hannan-purple rounded-[50%] w-[343px] h-[343px] absolute left-[788px] top-[-185px]"
-      style="filter: blur(400px)"></div>
-    <div class="bg-hannan-orange rounded-[50%] w-[343px] h-[343px] absolute left-[1643px] top-[-117px]"
-      style="filter: blur(400px)"></div>
-    <!-- Decorative Elements -->
-    <img class="w-[5.37%] h-[14.84%] absolute right-[90.26%] left-[4.37%] bottom-[71.09%] top-[14.06%] opacity-20"
-      src="../assets/icons/shape-40.svg" alt="Decoration" />
-    <img class="w-[8.65%] h-[14.84%] absolute right-[95.16%] left-[-3.8%] bottom-[-3.52%] top-[88.67%] opacity-20"
-      src="../assets/icons/shape-50.svg" alt="Decoration" />
-    <img class="w-[2.1%] h-[14.84%] absolute right-[6.86%] left-[91.04%] bottom-[30.86%] top-[54.3%] opacity-20"
-      src="../assets/icons/group-10000010050.svg" alt="Decoration" />
-    <!-- Social Media Links -->
-    <div class="flex flex-row gap-4 items-center justify-start w-[1440px] absolute left-60 top-[50px]">
-      <div class="border-t-2 border-hannan-sub-text flex-1"></div>
-      <div class="flex flex-row gap-2.5 items-center justify-start">
-        <div class="flex flex-row gap-1 items-center justify-start">
-          <img src="../assets/icons/facebook0.svg" class="w-6 h-6" alt="Facebook" />
-          <span class="text-white font-worksans text-base leading-4 font-normal">Facebook</span>
-        </div>
-        <div class="border-l border-hannan-sub-text h-4"></div>
-        <div class="flex flex-row gap-1 items-center justify-start">
-          <img src="../assets/icons/twitter0.svg" class="w-6 h-6" alt="Twitter" />
-          <span class="text-white font-worksans text-base leading-4 font-normal">Twitter</span>
-        </div>
-        <div class="border-l border-hannan-sub-text h-4"></div>
-        <div class="flex flex-row gap-1 items-center justify-start">
-          <div class="w-6 h-6 relative overflow-hidden">
-            <img class="w-[66.46%] h-[63.43%] absolute right-[16.77%] left-[16.77%] bottom-[17.5%] top-[19.07%]"
-              src="../assets/icons/group0.svg" alt="Instagram" />
-          </div>
-          <span class="text-white font-worksans text-base leading-4 font-normal">Instagram</span>
-        </div>
-        <div class="border-l border-hannan-sub-text h-4"></div>
-        <div class="flex flex-row gap-1 items-center justify-start">
-          <img src="../assets/icons/linkedin0.svg" class="w-6 h-6" alt="LinkedIn" />
-          <span class="text-white font-worksans text-base leading-4 font-normal">LinkedIn</span>
-        </div>
-      </div>
-      <div class="border-t-2 border-hannan-sub-text flex-1"></div>
-    </div>
-    <!-- Footer Content -->
-    <div class="flex flex-row gap-[105px] items-start justify-start w-[1440px] absolute left-60 top-[154px]">
-      <!-- Office Address -->
-      <div class="flex flex-col gap-9 items-start justify-start w-[342px]">
-        <h3 class="text-white font-worksans-semibold text-xl leading-5 font-semibold">Office Address</h3>
-        <div class="flex flex-col gap-6">
-          <div class="flex flex-row gap-2.5 items-center">
-            <div class="border border-hannan-sub-text w-[34px] h-[34px] flex items-center justify-center">
-              <img src="../assets/icons/call1.svg" class="w-5 h-5" alt="Phone" />
-            </div>
-            <span class="text-white font-worksans text-base leading-4 font-normal">+9903652497</span>
-          </div>
-          <div class="flex flex-row gap-2.5 items-center">
-            <div class="border border-hannan-sub-text w-[34px] h-[34px] flex items-center justify-center">
-              <img src="../assets/icons/frame0.svg" class="w-5 h-5" alt="Email" />
-            </div>
-            <span class="text-white font-worksans text-base leading-4 font-normal">info@sparktro.com</span>
-          </div>
-          <div class="flex flex-row gap-2.5 items-center">
-            <div class="border border-hannan-sub-text w-[34px] h-[34px] flex items-center justify-center">
-              <img src="../assets/icons/frame1.svg" class="w-5 h-5" alt="Location" />
-            </div>
-            <span class="text-white font-worksans text-base leading-4 font-normal">3891 Ranchview Dr. Richardson,
-              California 62639</span>
-          </div>
-        </div>
-      </div>
-      <!-- Company Info -->
-      <div class="flex flex-col gap-9 items-start justify-start w-[220px]">
-        <h3 class="text-white font-worksans-semibold text-xl leading-5 font-semibold">Company Info</h3>
-        <div class="flex flex-col gap-6">
-          <a href="#"
-            class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">About
-            us</a>
-          <a href="ContactUs.html"
-            class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Contact
-            us</a>
-          <a href="TermsConditions.html"
-            class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Terms
-            & Conditions</a>
-          <a href="PrivacyPolicy.html"
-            class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Privacy
-            Policy</a>
-        </div>
-      </div>
-      <!-- Quick Links -->
-      <div class="flex flex-col gap-9 items-start justify-start w-[220px]">
-        <h3 class="text-white font-worksans-semibold text-xl leading-5 font-semibold">Quick Links</h3>
-        <div class="flex flex-col gap-6">
-          <a href="OurServices.html"
-            class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Services</a>
-          <a href="Products.html"
-            class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Products</a>
-          <a href="BlogPage2.html"
-            class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">Blogs</a>
-          <a href="#"
-            class="text-white font-worksans text-base leading-4 font-normal hover:text-hannan-primary-2 transition-colors">FAQs</a>
-        </div>
-      </div>
-      <!-- Newsletter -->
-      <div class="flex flex-col gap-9 items-start justify-start w-[342px]">
-        <h3 class="text-white font-worksans-semibold text-xl leading-5 font-semibold">Subscribe Newsletter</h3>
-        <div class="flex flex-col gap-6">
-          <p class="text-white font-worksans text-base leading-5 font-normal">
-            Subscribe for Social Media Growth Hacks & Marketing Insights
-          </p>
-          <div class="flex flex-row gap-1.5 items-center">
-            <div
-              class="border border-hannan-sub-text p-4 flex flex-row gap-2.5 items-center flex-1 h-12 bg-transparent">
-              <img src="../assets/icons/email1.svg" class="w-5 h-5" alt="Email" />
-              <input type="email" placeholder="Your Email"
-                class="text-hannan-fill-color font-worksans text-base leading-4 font-normal bg-transparent border-none outline-none flex-1">
-            </div>
+            <!-- CTA Button -->
             <button
-              class="bg-hannan-primary-2 p-4 flex items-center justify-center w-12 h-12 hover:bg-opacity-80 transition-colors">
-              <img src="../assets/icons/frame2.svg" class="w-5 h-5" alt="Send" />
+                class="rounded-[30px] border-2 border-[#0A97B0] px-4 py-2.5 flex items-center gap-1 bg-white hover:bg-[#0A97B0] hover:text-white transition-all duration-300 backdrop-blur-sm">
+                <span
+                    class="work-sans-medium text-base font-medium text-[#0A97B0] hover:text-white transition-colors">Let's
+                    Start</span>
+                <img class="w-4 h-4" src="/src/assets/icons/arrow2.svg" alt="Arrow" />
             </button>
-          </div>
-        </div>
-      </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="w-full max-w-[1440px] mx-auto px-4 lg:px-16 xl:px-60 pt-8 lg:pt-16">
+            <!-- Hero Section -->
+            <section class="flex flex-col gap-12 items-center justify-start mb-16">
+                <div class="flex flex-col gap-2.5 items-center justify-start w-full">
+                    <h1
+                        class="work-sans-bold text-3xl md:text-4xl lg:text-[40px] leading-tight font-bold text-center text-black">
+                        Discover Our Products
+                    </h1>
+                    <p class="work-sans text-base md:text-lg leading-7 font-normal text-center text-gray-600 max-w-4xl">
+                        With our innovative tools and solutions tailored to empower your business, you just need
+                        <br class="hidden md:block" />
+                        to sit back and see your problems solved, business operations.
+                    </p>
+
+                    <!-- Search Bar -->
+                    <div class="search-container w-full max-w-[708px] mt-4">
+                        <div
+                            class="rounded-[30px] border-2 border-gray-200 px-4 py-2.5 flex items-center justify-between w-full h-11 backdrop-blur-sm transition-all duration-300 hover:border-[#0A97B0] focus-within:border-[#0A97B0] focus-within:shadow-lg">
+                            <div class="flex items-center gap-1 flex-1">
+                                <img class="w-6 h-6" src="/src/assets/icons/search1.svg" alt="Search" />
+                                <input type="text" id="searchInput"
+                                    placeholder="Search products by name, category, or price..."
+                                    class="work-sans text-base text-gray-700 placeholder-gray-500 bg-transparent outline-none flex-1" />
+                            </div>
+                            <div id="searchSpinner" class="loading-spinner hidden"></div>
+                            <img class="w-4 h-4" src="/src/assets/icons/arrow3.svg" alt="Search" />
+                        </div>
+
+                        <!-- Search Results Dropdown -->
+                        <div id="searchResults" class="search-results">
+                            <!-- Results will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Products Grid -->
+            <section class="flex flex-col gap-6 mb-16 max-w-[1440px] mx-auto">
+                <!-- First Row -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Product Card 1 (Featured) -->
+                    <div class="dynamic-color-card rounded-lg overflow-hidden relative h-[494px] product-card fade-in-up"
+                        data-aos="fade-up" data-aos-delay="100" data-product-id="1">
+                        <!-- Background Effects -->
+                        <div class="color-effects">
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                        </div>
+
+                        <div class="relative z-10 p-2.5 flex flex-col gap-6 h-full">
+                            <img class="w-full h-[250px] object-cover rounded scale-in" data-aos="zoom-in"
+                                data-aos-delay="200" src="/src/assets/images/_150.png" alt="Product 1" />
+                            <div class="px-4 flex flex-col gap-4 flex-1">
+                                <div class="flex gap-2.5">
+                                    <span
+                                        class="bg-[rgba(10,151,176,0.10)] border border-[rgba(10,151,176,0.20)] rounded-[30px] px-2.5 py-1 work-sans-medium text-sm font-medium text-[#0A97B0] backdrop-blur-sm">
+                                        Full Applications
+                                    </span>
+                                    <span
+                                        class="bg-[rgba(10,151,176,0.10)] border border-[rgba(10,151,176,0.20)] rounded-[30px] px-2.5 py-1 work-sans-medium text-sm font-medium text-[#0A97B0] backdrop-blur-sm">
+                                        Version 5.1
+                                    </span>
+                                </div>
+                                <h3
+                                    class="work-sans-semibold text-xl leading-6 font-semibold text-black line-clamp-2 product-title">
+                                    Multi-Vendor eCommerce CMS - Mobile App, Website and Admin Panel
+                                </h3>
+                                <p
+                                    class="work-sans-semibold text-xl leading-6 font-semibold text-[#0A97B0] product-price">
+                                    $29.50
+                                </p>
+                                <div class="flex items-center justify-between mt-auto">
+                                    <span class="work-sans text-base text-gray-600 product-sales">250 Sales</span>
+                                    <button
+                                        class="border-2 border-[#0A97B0] rounded-[30px] px-4 py-2.5 flex items-center gap-1 h-11 backdrop-blur-sm hover:bg-[#0A97B0] hover:text-white transition-all duration-300">
+                                        <span
+                                            class="work-sans-medium text-base font-medium text-[#0A97B0] hover:text-white">Live
+                                            Preview</span>
+                                        <img class="w-4 h-4" src="/src/assets/icons/arrow5.svg" alt="Preview" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 2 -->
+                    <div class="dynamic-color-card rounded-lg overflow-hidden relative h-[494px] product-card fade-in-up"
+                        data-aos="fade-up" data-aos-delay="200" data-product-id="2">
+                        <!-- Background Effects -->
+                        <div class="color-effects">
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                        </div>
+
+                        <div class="relative z-10 p-2.5 flex flex-col gap-6 h-full">
+                            <img class="w-full h-[250px] object-cover rounded" src="/src/assets/images/_130.png"
+                                alt="Product 2" />
+                            <div class="px-4 flex flex-col gap-4 flex-1">
+                                <div class="flex gap-2.5">
+                                    <span
+                                        class="bg-[rgba(10,151,176,0.10)] border border-[rgba(10,151,176,0.20)] rounded-[30px] px-2.5 py-1 work-sans-medium text-sm font-medium text-[#0A97B0] backdrop-blur-sm">
+                                        Full Applications
+                                    </span>
+                                    <span
+                                        class="bg-[rgba(10,151,176,0.10)] border border-[rgba(10,151,176,0.20)] rounded-[30px] px-2.5 py-1 work-sans-medium text-sm font-medium text-[#0A97B0] backdrop-blur-sm">
+                                        Version 5.1
+                                    </span>
+                                </div>
+                                <h3
+                                    class="work-sans-semibold text-xl leading-6 font-semibold text-black line-clamp-2 product-title">
+                                    Multi-Vendor eCommerce CMS - Mobile App, Website and Admin Panel
+                                </h3>
+                                <p
+                                    class="work-sans-semibold text-xl leading-6 font-semibold text-[#0A97B0] product-price">
+                                    $29.50
+                                </p>
+                                <div class="flex items-center justify-between mt-auto">
+                                    <span class="work-sans text-base text-gray-600 product-sales">250 Sales</span>
+                                    <button
+                                        class="border-2 border-[#0A97B0] rounded-[30px] px-4 py-2.5 flex items-center gap-1 h-11 backdrop-blur-sm hover:bg-[#0A97B0] hover:text-white transition-all duration-300">
+                                        <span
+                                            class="work-sans-medium text-base font-medium text-[#0A97B0] hover:text-white">Live
+                                            Preview</span>
+                                        <img class="w-4 h-4" src="/src/assets/icons/arrow5.svg" alt="Preview" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 3 -->
+                    <div class="dynamic-color-card rounded-lg overflow-hidden relative h-[494px] product-card fade-in-up"
+                        data-aos="fade-up" data-aos-delay="300" data-product-id="3">
+                        <!-- Background Effects -->
+                        <div class="color-effects">
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                        </div>
+
+                        <div class="relative z-10 p-2.5 flex flex-col gap-6 h-full">
+                            <img class="w-full h-[250px] object-cover rounded" src="/src/assets/images/_140.png"
+                                alt="Product 3" />
+                            <div class="px-4 flex flex-col gap-4 flex-1">
+                                <div class="flex gap-2.5">
+                                    <span
+                                        class="bg-[rgba(10,151,176,0.10)] border border-[rgba(10,151,176,0.20)] rounded-[30px] px-2.5 py-1 work-sans-medium text-sm font-medium text-[#0A97B0] backdrop-blur-sm">
+                                        Full Applications
+                                    </span>
+                                    <span
+                                        class="bg-[rgba(10,151,176,0.10)] border border-[rgba(10,151,176,0.20)] rounded-[30px] px-2.5 py-1 work-sans-medium text-sm font-medium text-[#0A97B0] backdrop-blur-sm">
+                                        Version 5.1
+                                    </span>
+                                </div>
+                                <h3
+                                    class="work-sans-semibold text-xl leading-6 font-semibold text-black line-clamp-2 product-title">
+                                    Multi-Vendor eCommerce CMS - Mobile App, Website and Admin Panel
+                                </h3>
+                                <p
+                                    class="work-sans-semibold text-xl leading-6 font-semibold text-[#0A97B0] product-price">
+                                    $29.50
+                                </p>
+                                <div class="flex items-center justify-between mt-auto">
+                                    <span class="work-sans text-base text-gray-600 product-sales">250 Sales</span>
+                                    <button
+                                        class="border-2 border-[#0A97B0] rounded-[30px] px-4 py-2.5 flex items-center gap-1 h-11 backdrop-blur-sm hover:bg-[#0A97B0] hover:text-white transition-all duration-300">
+                                        <span
+                                            class="work-sans-medium text-base font-medium text-[#0A97B0] hover:text-white">Live
+                                            Preview</span>
+                                        <img class="w-4 h-4" src="/src/assets/icons/arrow6.svg" alt="Preview" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Row -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Product Card 4 -->
+                    <div class="dynamic-color-card rounded-lg overflow-hidden relative h-[494px] product-card fade-in-up"
+                        data-aos="fade-up" data-aos-delay="400" data-product-id="4">
+                        <!-- Background Effects -->
+                        <div class="color-effects">
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                        </div>
+
+                        <div class="relative z-10 p-2.5 flex flex-col gap-6 h-full">
+                            <img class="w-full h-[250px] object-cover rounded" src="/src/assets/images/_120.png"
+                                alt="Product 4" />
+                            <div class="px-4 flex flex-col gap-4 flex-1">
+                                <div class="flex gap-2.5">
+                                    <span
+                                        class="bg-[rgba(10,151,176,0.10)] border border-[rgba(10,151,176,0.20)] rounded-[30px] px-2.5 py-1 work-sans-medium text-sm font-medium text-[#0A97B0] backdrop-blur-sm">
+                                        Full Applications
+                                    </span>
+                                    <span
+                                        class="bg-[rgba(10,151,176,0.10)] border border-[rgba(10,151,176,0.20)] rounded-[30px] px-2.5 py-1 work-sans-medium text-sm font-medium text-[#0A97B0] backdrop-blur-sm">
+                                        Version 5.1
+                                    </span>
+                                </div>
+                                <h3
+                                    class="work-sans-semibold text-xl leading-6 font-semibold text-black line-clamp-2 product-title">
+                                    Multi-Vendor eCommerce CMS - Mobile App, Website and Admin Panel
+                                </h3>
+                                <p
+                                    class="work-sans-semibold text-xl leading-6 font-semibold text-[#0A97B0] product-price">
+                                    $29.50
+                                </p>
+                                <div class="flex items-center justify-between mt-auto">
+                                    <span class="work-sans text-base text-gray-600 product-sales">250 Sales</span>
+                                    <button
+                                        class="border-2 border-[#0A97B0] rounded-[30px] px-4 py-2.5 flex items-center gap-1 h-11 backdrop-blur-sm hover:bg-[#0A97B0] hover:text-white transition-all duration-300">
+                                        <span
+                                            class="work-sans-medium text-base font-medium text-[#0A97B0] hover:text-white">Live
+                                            Preview</span>
+                                        <img class="w-4 h-4" src="/src/assets/icons/arrow7.svg" alt="Preview" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 5 -->
+                    <div class="dynamic-color-card rounded-lg overflow-hidden relative h-[494px] product-card fade-in-up"
+                        data-aos="fade-up" data-aos-delay="500" data-product-id="5">
+                        <!-- Background Effects -->
+                        <div class="color-effects">
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                        </div>
+
+                        <div class="relative z-10 p-2.5 flex flex-col gap-6 h-full">
+                            <img class="w-full h-[250px] object-cover rounded" src="/src/assets/images/_160.png"
+                                alt="Product 5" />
+                            <div class="px-4 flex flex-col gap-4 flex-1">
+                                <div class="flex gap-2.5">
+                                    <span
+                                        class="bg-[rgba(10,151,176,0.10)] border border-[rgba(10,151,176,0.20)] rounded-[30px] px-2.5 py-1 work-sans-medium text-sm font-medium text-[#0A97B0] backdrop-blur-sm">
+                                        Full Applications
+                                    </span>
+                                    <span
+                                        class="bg-[rgba(10,151,176,0.10)] border border-[rgba(10,151,176,0.20)] rounded-[30px] px-2.5 py-1 work-sans-medium text-sm font-medium text-[#0A97B0] backdrop-blur-sm">
+                                        Version 5.1
+                                    </span>
+                                </div>
+                                <h3
+                                    class="work-sans-semibold text-xl leading-6 font-semibold text-black line-clamp-2 product-title">
+                                    Multi-Vendor eCommerce CMS - Mobile App, Website and Admin Panel
+                                </h3>
+                                <p
+                                    class="work-sans-semibold text-xl leading-6 font-semibold text-[#0A97B0] product-price">
+                                    $29.50
+                                </p>
+                                <div class="flex items-center justify-between mt-auto">
+                                    <span class="work-sans text-base text-gray-600 product-sales">250 Sales</span>
+                                    <button
+                                        class="border-2 border-[#0A97B0] rounded-[30px] px-4 py-2.5 flex items-center gap-1 h-11 backdrop-blur-sm hover:bg-[#0A97B0] hover:text-white transition-all duration-300">
+                                        <span
+                                            class="work-sans-medium text-base font-medium text-[#0A97B0] hover:text-white">Live
+                                            Preview</span>
+                                        <img class="w-4 h-4" src="/src/assets/icons/arrow8.svg" alt="Preview" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Card 6 -->
+                    <div class="dynamic-color-card rounded-lg overflow-hidden relative h-[494px] product-card fade-in-up"
+                        data-aos="fade-up" data-aos-delay="600" data-product-id="6">
+                        <!-- Background Effects -->
+                        <div class="color-effects">
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                            <div class="color-orb"></div>
+                        </div>
+
+                        <div class="relative z-10 p-2.5 flex flex-col gap-6 h-full">
+                            <img class="w-full h-[250px] object-cover rounded" src="/src/assets/images/_170.png"
+                                alt="Product 6" />
+                            <div class="px-4 flex flex-col gap-4 flex-1">
+                                <div class="flex gap-2.5">
+                                    <span
+                                        class="bg-[rgba(10,151,176,0.10)] border border-[rgba(10,151,176,0.20)] rounded-[30px] px-2.5 py-1 work-sans-medium text-sm font-medium text-[#0A97B0] backdrop-blur-sm">
+                                        Full Applications
+                                    </span>
+                                    <span
+                                        class="bg-[rgba(10,151,176,0.10)] border border-[rgba(10,151,176,0.20)] rounded-[30px] px-2.5 py-1 work-sans-medium text-sm font-medium text-[#0A97B0] backdrop-blur-sm">
+                                        Version 5.1
+                                    </span>
+                                </div>
+                                <h3
+                                    class="work-sans-semibold text-xl leading-6 font-semibold text-black line-clamp-2 product-title">
+                                    Multi-Vendor eCommerce CMS - Mobile App, Website and Admin Panel
+                                </h3>
+                                <p
+                                    class="work-sans-semibold text-xl leading-6 font-semibold text-[#0A97B0] product-price">
+                                    $29.50
+                                </p>
+                                <div class="flex items-center justify-between mt-auto">
+                                    <span class="work-sans text-base text-gray-600 product-sales">250 Sales</span>
+                                    <button
+                                        class="border-2 border-[#0A97B0] rounded-[30px] px-4 py-2.5 flex items-center gap-1 h-11 backdrop-blur-sm hover:bg-[#0A97B0] hover:text-white transition-all duration-300">
+                                        <span
+                                            class="work-sans-medium text-base font-medium text-[#0A97B0] hover:text-white">Live
+                                            Preview</span>
+                                        <img class="w-4 h-4" src="/src/assets/icons/arrow9.svg" alt="Preview" />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Load More Button -->
+            <div class="flex justify-center mb-16" data-aos="zoom-in" data-aos-delay="700">
+                <button
+                    class="bg-[#0A97B0] rounded-[30px] px-8 py-5 flex items-center gap-2 w-[200px] h-[58px] hover:bg-[#0889a0] transition-all duration-300 pulse-glow hover:scale-105 transform">
+                    <span class="work-sans-semibold text-base font-semibold text-white">Load More</span>
+                    <img class="w-4 h-4" src="/src/assets/icons/arrow10.svg" alt="Load More" />
+                </button>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="relative w-full max-w-[1920px] mx-auto bg-[#1E2533] overflow-hidden pt-12 pb-6 px-4 md:px-16">
+            <!-- Blurred colored circles for background -->
+            <div
+                class="absolute w-[120px] h-[120px] md:w-[350px] md:h-[350px] rounded-full bg-[#0482F9] opacity-60 blur-[80px] md:blur-[200px] left-[5%] bottom-[10%] pointer-events-none">
+            </div>
+            <div
+                class="absolute w-[120px] h-[120px] md:w-[350px] md:h-[350px] rounded-full bg-[#6BB54A] opacity-60 blur-[80px] md:blur-[200px] right-[5%] top-[10%] pointer-events-none">
+            </div>
+            <div
+                class="absolute w-[100px] h-[100px] md:w-[343px] md:h-[343px] rounded-full bg-[#EE2358] opacity-80 blur-[80px] md:blur-[200px] left-[-40px] top-[-60px] pointer-events-none">
+            </div>
+            <div
+                class="absolute w-[100px] h-[100px] md:w-[343px] md:h-[343px] rounded-full bg-[#EE23DA] opacity-80 blur-[80px] md:blur-[200px] left-[40%] top-[-90px] pointer-events-none">
+            </div>
+            <div
+                class="absolute w-[100px] h-[100px] md:w-[343px] md:h-[343px] rounded-full bg-[#FDD40F] opacity-80 blur-[80px] md:blur-[200px] right-[-60px] top-[-60px] pointer-events-none">
+            </div>
+            <!-- Decorative SVGs -->
+            <img class="absolute left-[24px] top-[32px] w-[30px] h-[30px] md:left-[84px] md:top-[72px] md:w-[60px] md:h-[60px] opacity-20"
+                src="/src/assets/icons/shape-40.svg" alt="dots" />
+            <img class="absolute right-[24px] bottom-[32px] w-[30px] h-[30px] md:right-[84px] md:bottom-[72px] md:w-[60px] md:h-[60px] opacity-20"
+                src="/src/assets/icons/shape-50.svg" alt="dots" />
+
+            <!-- Social Media Links -->
+            <div class="w-full flex flex-row items-center justify-center py-4 mb-10">
+                <div class="flex-1 h-px bg-hannan-sub-text mr-6"></div>
+                <div class="flex flex-row gap-6 items-center justify-center">
+                    <div class="flex flex-row gap-1 items-center">
+                        <img src="/src/assets/icons/facebook0.svg" class="w-6 h-6" alt="Facebook" />
+                        <span class="text-white font-worksans text-base leading-4 font-normal">Facebook</span>
+                    </div>
+                    <span class="text-[#7B8A9D] text-base font-worksans font-normal">|</span>
+                    <div class="flex flex-row gap-1 items-center">
+                        <img src="/src/assets/icons/twitter0.svg" class="w-6 h-6" alt="Twitter" />
+                        <span class="text-white font-worksans text-base leading-4 font-normal">Twitter</span>
+                    </div>
+                    <span class="text-[#7B8A9D] text-base font-worksans font-normal">|</span>
+                    <div class="flex flex-row gap-1 items-center">
+                        <div class="w-6 h-6 relative overflow-hidden">
+                            <img class="w-[66.46%] h-[63.43%] absolute right-[16.77%] left-[16.77%] bottom-[17.5%] top-[19.07%]"
+                                src="/src/assets/icons/group0.svg" alt="Instagram" />
+                        </div>
+                        <span class="text-white font-worksans text-base leading-4 font-normal">Instagram</span>
+                    </div>
+                    <span class="text-[#7B8A9D] text-base font-worksans font-normal">|</span>
+                    <div class="flex flex-row gap-1 items-center">
+                        <img src="/src/assets/icons/linkedin0.svg" class="w-6 h-6" alt="LinkedIn" />
+                        <span class="text-white font-worksans text-base leading-4 font-normal">LinkedIn</span>
+                    </div>
+                </div>
+                <div class="flex-1 h-px bg-hannan-sub-text ml-6"></div>
+            </div>
+
+            <!-- Main Footer Grid -->
+            <div class="w-full max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 mb-10">
+                <!-- Office Address -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold font-['Work_Sans',sans-serif] mb-6">Office Address</h3>
+                    <div class="flex flex-col gap-6">
+                        <div class="flex items-center gap-3">
+                            <span class="border border-[#5A556E] rounded w-9 h-9 flex items-center justify-center"><img
+                                    src="/src/assets/icons/call1.svg" class="w-5 h-5" alt="Phone" /></span>
+                            <span
+                                class="text-white text-base font-normal font-['Work_Sans',sans-serif]">+9903652497</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="border border-[#5A556E] rounded w-9 h-9 flex items-center justify-center"><img
+                                    src="/src/assets/icons/email1.svg" class="w-5 h-5" alt="Email" /></span>
+                            <span
+                                class="text-white text-base font-normal font-['Work_Sans',sans-serif]">info@sparktro.com</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <span class="border border-[#5A556E] rounded w-9 h-9 flex items-center justify-center"><img
+                                    src="/src/assets/icons/frame9.svg" class="w-5 h-5" alt="Location" /></span>
+                            <span class="text-white text-base font-normal font-['Work_Sans',sans-serif]">3891 Ranchview
+                                Dr.
+                                Richardson, California 62639</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold font-['Work_Sans',sans-serif] mb-6">Company Info</h3>
+                    <ul class="flex flex-col gap-6">
+                        <li><a href="/src/pages/AboutUs.html"
+                                class="text-white text-base font-normal font-['Work_Sans',sans-serif] hover:underline">About
+                                us</a></li>
+                        <li><a href="/src/pages/ContactUs.html"
+                                class="text-white text-base font-normal font-['Work_Sans',sans-serif] hover:underline">Contact
+                                us</a></li>
+                        <li><a href="/src/pages/TermsConditions.html"
+                                class="text-white text-base font-normal font-['Work_Sans',sans-serif] hover:underline">Terms
+                                &
+                                Conditions</a></li>
+                        <li><a href="/src/pages/PrivacyPolicy.html"
+                                class="text-white text-base font-normal font-['Work_Sans',sans-serif] hover:underline">Privacy
+                                Policy</a></li>
+                    </ul>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold font-['Work_Sans',sans-serif] mb-6">Quick Links</h3>
+                    <ul class="flex flex-col gap-6">
+                        <li><a href="/src/pages/OurServices.html"
+                                class="text-white text-base font-normal font-['Work_Sans',sans-serif] hover:underline">Services</a>
+                        </li>
+                        <li><a href="/src/pages/Products.html"
+                                class="text-white text-base font-normal font-['Work_Sans',sans-serif] hover:underline">Products</a>
+                        </li>
+                        <li><a href="/src/pages/BlogPage.html"
+                                class="text-white text-base font-normal font-['Work_Sans',sans-serif] hover:underline">Blogs</a>
+                        </li>
+                        <li><a href="#"
+                                class="text-white text-base font-normal font-['Work_Sans',sans-serif] hover:underline">FAQs</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-white text-lg font-semibold font-['Work_Sans',sans-serif] mb-6">Subscribe Newsletter
+                    </h3>
+                    <p class="text-white text-base font-normal font-['Work_Sans',sans-serif] mb-4">Subscribe for Social
+                        Media
+                        Growth Hacks & Marketing Insights</p>
+                    <form class="flex flex-row gap-2 w-full max-w-xs">
+                        <div class="flex items-center border border-[#5A556E] rounded px-4 w-full h-12 bg-transparent">
+                            <img src="/src/assets/icons/email1.svg" class="w-5 h-5 mr-2" alt="Email" />
+                            <input type="email" placeholder="Your Email"
+                                class="bg-transparent outline-none border-none text-white placeholder-[#7B8A9D] w-full font-['Work_Sans',sans-serif]" />
+                        </div>
+                        <button type="submit"
+                            class="bg-[#0A97B0] rounded flex items-center justify-center w-12 h-12 hover:scale-110 transition-transform duration-200">
+                            <img src="/src/assets/icons/send.svg" class="w-5 h-5" alt="Send" />
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Row -->
+            <div
+                class="w-full max-w-[1440px] mx-auto flex flex-col md:flex-row items-center justify-between gap-4 border-t border-[#3A4253] pt-6 mt-10">
+                <div class="logo">
+                    <img src="/src/assets/icons/sparktro-s.svg" alt="Sparktro S" class="logo-s" width="21"
+                        height="20" />
+                    <span class="logo-text">
+                        <span class="logo-park">PARK</span>
+                        <span class="logo-tro">TRO</span>
+                    </span>
+                </div>
+                <div class="text-white text-base font-normal font-['Work_Sans',sans-serif] text-center md:text-right">©
+                    2025
+                    Sparktro. All rights reserved</div>
+            </div>
+        </footer>
+
     </div>
-    <!-- Footer Bottom -->
-    <div class="flex flex-col gap-6 items-start justify-start w-[1440px] absolute left-60 top-[440px]">
-      <div class="border-t-2 border-hannan-sub-text self-stretch"></div>
-      <div class="flex flex-row items-center justify-between self-stretch">
-        <div class="flex items-center gap-2">
-          <img src="../assets/icons/icon1.svg" class="w-4 h-6" alt="Sparktro Icon" />
-          <div class="text-left font-goodtimes text-2xl leading-6 font-normal uppercase">
-            <span class="text-hannan-primary-2">park</span>
-            <span class="text-white">tro</span>
-          </div>
-        </div>
-        <span class="text-white font-worksans text-base leading-4 font-normal">
-          © 2025 Sparktro. All rights reserved
-        </span>
-      </div>
-    </div>
-    <!-- Decorative Circle -->
-    <div
-      class="rounded-[50%] border border-hannan-yellow w-[60px] h-[60px] absolute left-[1688px] top-[77px] opacity-30">
-    </div>
-  </div>
-  <!-- JavaScript -->
-  <script src="../js/utils.js"></script>
-  <script src="../js/footer.js"></script>
+
+    <!-- JavaScript for Animations and Search Functionality -->
+    <script>
+        // Initialize AOS (Animate On Scroll)
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            offset: 100
+        });
+
+        // Product data for search functionality
+        const products = [
+            {
+                id: 1,
+                name: "Multi-Vendor eCommerce CMS - Mobile App, Website and Admin Panel",
+                category: "Full Applications",
+                version: "Version 5.1",
+                price: "$29.50",
+                sales: "250 Sales",
+                image: "/src/assets/images/_150.png",
+                featured: true
+            },
+            {
+                id: 2,
+                name: "Multi-Vendor eCommerce CMS - Mobile App, Website and Admin Panel",
+                category: "Full Applications",
+                version: "Version 5.1",
+                price: "$29.50",
+                sales: "250 Sales",
+                image: "/src/assets/images/_130.png"
+            },
+            {
+                id: 3,
+                name: "Multi-Vendor eCommerce CMS - Mobile App, Website and Admin Panel",
+                category: "Full Applications",
+                version: "Version 5.1",
+                price: "$29.50",
+                sales: "250 Sales",
+                image: "/src/assets/images/_140.png"
+            },
+            {
+                id: 4,
+                name: "Multi-Vendor eCommerce CMS - Mobile App, Website and Admin Panel",
+                category: "Full Applications",
+                version: "Version 5.1",
+                price: "$29.50",
+                sales: "250 Sales",
+                image: "/src/assets/images/_120.png"
+            },
+            {
+                id: 5,
+                name: "Multi-Vendor eCommerce CMS - Mobile App, Website and Admin Panel",
+                category: "Full Applications",
+                version: "Version 5.1",
+                price: "$29.50",
+                sales: "250 Sales",
+                image: "/src/assets/images/_160.png"
+            },
+            {
+                id: 6,
+                name: "Multi-Vendor eCommerce CMS - Mobile App, Website and Admin Panel",
+                category: "Full Applications",
+                version: "Version 5.1",
+                price: "$29.50",
+                sales: "250 Sales",
+                image: "/src/assets/images/_170.png"
+            }
+        ];
+
+        // Search functionality
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        const searchSpinner = document.getElementById('searchSpinner');
+        let searchTimeout;
+
+        searchInput.addEventListener('input', function () {
+            const query = this.value.trim().toLowerCase();
+
+            // Clear previous timeout
+            clearTimeout(searchTimeout);
+
+            // Show spinner
+            searchSpinner.classList.remove('hidden');
+
+            // Simulate search delay
+            searchTimeout = setTimeout(() => {
+                searchSpinner.classList.add('hidden');
+
+                if (query.length === 0) {
+                    searchResults.classList.remove('show');
+                    return;
+                }
+
+                // Filter products
+                const filteredProducts = products.filter(product =>
+                    product.name.toLowerCase().includes(query) ||
+                    product.category.toLowerCase().includes(query) ||
+                    product.price.toLowerCase().includes(query) ||
+                    product.version.toLowerCase().includes(query)
+                );
+
+                displaySearchResults(filteredProducts);
+            }, 300);
+        });
+
+        function displaySearchResults(results) {
+            if (results.length === 0) {
+                searchResults.innerHTML = `
+                    <div class="search-result-item">
+                        <p class="work-sans text-base text-gray-500">No products found</p>
+                    </div>
+                `;
+            } else {
+                searchResults.innerHTML = results.map(product => `
+                    <div class="search-result-item" onclick="selectProduct(${product.id})">
+                        <div class="flex items-center gap-3">
+                            <img src="${product.image}" alt="${product.name}" class="w-12 h-12 object-cover rounded">
+                            <div class="flex-1">
+                                <h4 class="work-sans-medium text-sm font-medium text-black truncate">${product.name}</h4>
+                                <div class="flex items-center gap-2 mt-1">
+                                    <span class="work-sans text-xs text-[#0A97B0]">${product.category}</span>
+                                    <span class="work-sans text-xs text-gray-500">${product.version}</span>
+                                </div>
+                                <p class="work-sans-semibold text-sm font-semibold text-[#0A97B0] mt-1">${product.price}</p>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            searchResults.classList.add('show');
+        }
+
+        function selectProduct(productId) {
+            // Scroll to the product card
+            const productCard = document.querySelector(`[data-product-id="${productId}"]`);
+            if (productCard) {
+                productCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                // Add highlight animation
+                productCard.classList.add('pulse-glow');
+                setTimeout(() => {
+                    productCard.classList.remove('pulse-glow');
+                }, 2000);
+            }
+
+            // Clear search
+            searchInput.value = '';
+            searchResults.classList.remove('show');
+        }
+
+        // Close search results when clicking outside
+        document.addEventListener('click', function (e) {
+            if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+                searchResults.classList.remove('show');
+            }
+        });
+
+        // Product card hover effects with dynamic colors
+        document.querySelectorAll('.dynamic-color-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                // Remove colors from all other cards
+                document.querySelectorAll('.dynamic-color-card').forEach(otherCard => {
+                    if (otherCard !== this) {
+                        otherCard.style.background = 'white';
+                        otherCard.style.border = '2px solid #e5e7eb';
+
+                        // Hide color effects on other cards
+                        const otherColorEffects = otherCard.querySelector('.color-effects');
+                        if (otherColorEffects) {
+                            otherColorEffects.style.opacity = '0';
+                        }
+                    }
+                });
+
+                // Add colors to hovered card
+                this.style.background = 'black';
+                this.style.border = 'none';
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 20px 40px rgba(10, 151, 176, 0.15)';
+
+                // Show color effects
+                const colorEffects = this.querySelector('.color-effects');
+                if (colorEffects) {
+                    colorEffects.style.opacity = '1';
+                }
+            });
+
+            card.addEventListener('mouseleave', function () {
+                // Reset all cards to normal state
+                this.style.background = 'white';
+                this.style.border = '2px solid #e5e7eb';
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+
+                // Hide color effects
+                const colorEffects = this.querySelector('.color-effects');
+                if (colorEffects) {
+                    colorEffects.style.opacity = '0';
+                }
+            });
+        });
+
+        // Initialize all cards to white background
+        document.querySelectorAll('.dynamic-color-card').forEach(card => {
+            card.style.background = 'white';
+            card.style.border = '2px solid #e5e7eb';
+            const colorEffects = card.querySelector('.color-effects');
+            if (colorEffects) {
+                colorEffects.style.opacity = '0';
+            }
+        });
+
+        // Load More button functionality
+        const loadMoreBtn = document.querySelector('button:contains("Load More")');
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', function () {
+                // Add loading state
+                const originalText = this.querySelector('span').textContent;
+                this.querySelector('span').textContent = 'Loading...';
+                this.disabled = true;
+
+                // Simulate loading
+                setTimeout(() => {
+                    this.querySelector('span').textContent = originalText;
+                    this.disabled = false;
+
+                    // Show success message
+                    showNotification('More products loaded successfully!', 'success');
+                }, 2000);
+            });
+        }
+
+        // Live Preview button functionality
+        document.querySelectorAll('button:contains("Live Preview")').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                e.preventDefault();
+                showNotification('Opening live preview...', 'info');
+
+                // Simulate opening preview
+                setTimeout(() => {
+                    showNotification('Live preview opened in new tab!', 'success');
+                }, 1000);
+            });
+        });
+
+        // Notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.className = `fixed top-4 right-4 z-50 p-4 rounded-lg shadow-lg transition-all duration-300 transform translate-x-full`;
+
+            const colors = {
+                success: 'bg-green-500 text-white',
+                error: 'bg-red-500 text-white',
+                info: 'bg-[#0A97B0] text-white',
+                warning: 'bg-yellow-500 text-black'
+            };
+
+            notification.className += ` ${colors[type]}`;
+            notification.innerHTML = `
+                <div class="flex items-center gap-2">
+                    <span class="work-sans-medium text-sm font-medium">${message}</span>
+                    <button onclick="this.parentElement.parentElement.remove()" class="ml-2 text-white hover:text-gray-200">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            `;
+
+            document.body.appendChild(notification);
+
+            // Animate in
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+
+            // Auto remove after 3 seconds
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for custom animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements with custom animation classes
+        document.querySelectorAll('.fade-in-up, .scale-in, .slide-in-left, .slide-in-right, .bounce-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Parallax effect for background elements
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.floating');
+
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                element.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+
+        // Initialize tooltips for product cards
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                const tooltip = document.createElement('div');
+                tooltip.className = 'absolute z-20 bg-black text-white px-3 py-2 rounded-lg text-sm work-sans-medium -top-12 left-1/2 transform -translate-x-1/2 opacity-0 transition-opacity duration-300';
+                tooltip.textContent = 'Click for details';
+                tooltip.style.pointerEvents = 'none';
+
+                this.appendChild(tooltip);
+
+                setTimeout(() => {
+                    tooltip.style.opacity = '1';
+                }, 100);
+            });
+
+            card.addEventListener('mouseleave', function () {
+                const tooltip = this.querySelector('div[class*="absolute z-20"]');
+                if (tooltip) {
+                    tooltip.style.opacity = '0';
+                    setTimeout(() => {
+                        tooltip.remove();
+                    }, 300);
+                }
+            });
+        });
+
+        // Add data-product-id attributes to product cards
+        document.querySelectorAll('.product-card').forEach((card, index) => {
+            card.setAttribute('data-product-id', index + 1);
+        });
+
+        console.log('Products page enhanced with animations and search functionality!');
+    </script>
 </body>
 
 </html>
