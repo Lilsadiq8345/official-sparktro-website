@@ -64,32 +64,35 @@
           the company's vision, mission, values, products, services, target market, and competitive advantages.</p>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-4">
           <div class="flex flex-col items-center">
-            <span class="text-hannan-black font-worksans-bold text-3xl sm:text-4xl font-bold">10+</span>
+            <span class="text-hannan-black font-worksans-bold text-3xl sm:text-4xl font-bold counter" data-target="10"
+              data-suffix="+">0+</span>
             <span class="text-hannan-sub-text font-worksans text-base leading-6">Years of Codecanyon Experience</span>
           </div>
           <div class="flex flex-col items-center">
-            <span class="text-hannan-black font-worksans-bold text-3xl sm:text-4xl font-bold">250+</span>
+            <span class="text-hannan-black font-worksans-bold text-3xl sm:text-4xl font-bold counter" data-target="250"
+              data-suffix="+">0+</span>
             <span class="text-hannan-sub-text font-worksans text-base leading-6">Successfully Projects Done</span>
           </div>
           <div class="flex flex-col items-center">
-            <span class="text-hannan-black font-worksans-bold text-3xl sm:text-4xl font-bold">15+</span>
+            <span class="text-hannan-black font-worksans-bold text-3xl sm:text-4xl font-bold counter" data-target="15"
+              data-suffix="+">0+</span>
             <span class="text-hannan-sub-text font-worksans text-base leading-6">Company or Clients Achievement</span>
           </div>
           <div class="flex flex-col items-center">
-            <span class="text-hannan-black font-worksans-bold text-3xl sm:text-4xl font-bold">98%</span>
+            <span class="text-hannan-black font-worksans-bold text-3xl sm:text-4xl font-bold counter" data-target="98"
+              data-suffix="%">0%</span>
             <span class="text-hannan-sub-text font-worksans text-base leading-6">Clients Satisfied & Retention</span>
           </div>
         </div>
       </div>
-      <img class="w-full max-w-[586px] h-auto rounded-xl shadow-card animate-float"
-        style="object-fit: cover; aspect-ratio: 586/468"
+      <img class="w-full max-w-[586px] h-auto rounded-xl shadow-card" style="object-fit: cover; aspect-ratio: 586/468"
         src="../assets/images/group-business-people-looking-his-female-colleague-standing-desk-office0.png"
         alt="Business Team" />
     </section>
 
     <!-- Section: Mission & Vision -->
     <section class="flex flex-col lg:flex-row gap-10 items-center justify-between w-full">
-      <img class="w-full max-w-[586px] h-auto rounded-xl shadow-card animate-float" style="object-fit: cover"
+      <img class="w-full max-w-[586px] h-auto rounded-xl shadow-card" style="object-fit: cover"
         src="../assets/images/male-real-estate-agent-doing-business-showing-house-potential-buying-couple0.png"
         alt="Mission" />
       <div class="flex-1 flex flex-col gap-4">
@@ -126,15 +129,15 @@
           problems solved, business operations.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
-        <img class="w-full h-[300px] object-cover rounded-xl shadow-card animate-float"
-          src="../assets/images/_182690.png" alt="Gallery 1" />
+        <img class="w-full h-[300px] object-cover rounded-xl shadow-card" src="../assets/images/_182690.png"
+          alt="Gallery 1" />
         <div class="flex flex-col gap-6">
-          <img class="w-full h-[140px] object-cover rounded-xl shadow-card animate-float"
+          <img class="w-full h-[140px] object-cover rounded-xl shadow-card"
             src="../assets/images/woman-hanging-painting-wall-art-gallery-back-view0.png" alt="Gallery 2" />
           <div class="w-full h-[140px] bg-hannan-border-2 rounded-xl"></div>
         </div>
-        <img class="w-full h-[300px] object-cover rounded-xl shadow-card animate-float"
-          src="../assets/images/_182660.png" alt="Gallery 3" />
+        <img class="w-full h-[300px] object-cover rounded-xl shadow-card" src="../assets/images/_182660.png"
+          alt="Gallery 3" />
       </div>
     </section>
 
@@ -172,6 +175,148 @@
   <script src="../js/scripts.js"></script>
   <script src="../js/utils.js"></script>
   <script src="../js/footer.js"></script>
+
+  <!-- Professional Counter Animation Script -->
+  <script>
+    // Professional Counter Animation
+    class CounterAnimation {
+      constructor() {
+        this.counters = document.querySelectorAll('.counter');
+        this.observerOptions = {
+          threshold: 0.5,
+          rootMargin: '0px 0px -100px 0px'
+        };
+        this.init();
+      }
+
+      init() {
+        // Start animation immediately when page loads
+        this.counters.forEach(counter => {
+          this.animateCounter(counter);
+        });
+      }
+
+      animateCounter(counterElement) {
+        const target = parseInt(counterElement.getAttribute('data-target'));
+        const suffix = counterElement.getAttribute('data-suffix') || '';
+        const duration = 2000; // 5 seconds
+        const steps = 100; // 100 steps for smooth animation
+        const stepValue = target / steps;
+        const stepDuration = duration / steps;
+        let currentValue = 0;
+        let step = 0;
+
+        // Add animation class for visual effects
+        counterElement.classList.add('counting');
+
+        const timer = setInterval(() => {
+          step++;
+          currentValue = Math.min(step * stepValue, target);
+
+          // Format the number based on target value
+          let displayValue;
+          if (target >= 100) {
+            displayValue = Math.floor(currentValue).toLocaleString();
+          } else if (target >= 10) {
+            displayValue = Math.floor(currentValue);
+          } else {
+            displayValue = currentValue.toFixed(1);
+          }
+
+          // Update the counter display
+          counterElement.textContent = displayValue + suffix;
+
+          // Add bounce effect when reaching target
+          if (currentValue >= target) {
+            counterElement.classList.add('counter-complete');
+            clearInterval(timer);
+          }
+        }, stepDuration);
+      }
+    }
+
+    // Initialize counter animation when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function () {
+      new CounterAnimation();
+    });
+  </script>
+
+  <!-- Counter Animation Styles -->
+  <style>
+    /* Counter Animation Styles */
+    .counter {
+      transition: all 0.3s ease;
+      transform: scale(1);
+    }
+
+    .counter.counting {
+      animation: pulse 0.5s ease-in-out;
+    }
+
+    .counter.counter-complete {
+      animation: bounce 0.6s ease-in-out;
+      color: #1E2533;
+      /* Keep original color when complete */
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bounce {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(-10px);
+      }
+
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* Smooth number transitions */
+    .counter {
+      font-variant-numeric: tabular-nums;
+      transition: color 0.3s ease;
+    }
+
+    /* Hover effects for interactivity */
+    .counter:hover {
+      transform: scale(1.02);
+      transition: transform 0.2s ease;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .counter {
+        font-size: 1.5rem !important;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .counter {
+        font-size: 1.25rem !important;
+      }
+    }
+  </style>
 </body>
 
 </html>
