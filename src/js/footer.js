@@ -4,15 +4,25 @@ document.addEventListener('DOMContentLoaded', function () {
     const footer = document.querySelector('footer');
     if (!footer) return;
 
-    // Map link text to page URLs
+    // Get the current page path to determine the correct relative paths
+    const currentPath = window.location.pathname;
+    let basePath = '';
+
+    // Check if we're in the pages directory
+    if (currentPath.includes('/pages/') || currentPath.includes('pages/')) {
+        // If we're in pages directory, go up one level
+        basePath = '../';
+    }
+
+    // Map link text to page URLs with correct relative paths
     const linkMap = {
-        'about us': './pages/AboutUs.html',
-        'contact us': './pages/ContactUs.html',
-        'terms & conditions': './pages/TermsConditions.html',
-        'privacy policy': './pages/PrivacyPolicy.html',
-        'services': './pages/OurServices.html',
-        'products': './pages/Products.html',
-        'blogs': './pages/BlogPage2.html',
+        'about us': basePath + 'pages/AboutUs.html',
+        'contact us': basePath + 'pages/ContactUs.html',
+        'terms & conditions': basePath + 'pages/TermsConditions.html',
+        'privacy policy': basePath + 'pages/PrivacyPolicy.html',
+        'services': basePath + 'pages/OurServices.html',
+        'products': basePath + 'pages/Products.html',
+        'blogs': basePath + 'pages/BlogPage2.html',
         'faqs': '#faq-list',
     };
 
